@@ -20,6 +20,20 @@
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
+},
+"killer": {
+"image": "res://Sprites/Dialogue/Placeholder/killer.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"killer_angry": {
+"image": "res://Sprites/Dialogue/Placeholder/killer_angry.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
 }
 },
 "scale": 1.0
