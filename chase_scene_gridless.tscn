@@ -26,7 +26,7 @@ debug_color = Color(0.623529, 0.00392157, 0.862745, 0.780392)
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("2_uhs62")
 
-[node name="Node" type="Node" parent="Player"]
+[node name="Inventory" type="Node" parent="Player"]
 script = ExtResource("3_v46dn")
 
 [node name="Killer" type="RigidBody2D" parent="."]
