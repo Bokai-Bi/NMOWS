@@ -13,7 +13,7 @@ func _ready():
 func _physics_process(delta):
 	if player == null:
 		return
-	var vec_to_player =  global_position - player.global_position
+	var vec_to_player =  player.global_position - global_position
 	vec_to_player = vec_to_player.normalized()
 	print(vec_to_player)
 	move_and_collide(vec_to_player * MOVE_SPEED * delta)

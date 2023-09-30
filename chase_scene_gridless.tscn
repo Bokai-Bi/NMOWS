@@ -5,27 +5,31 @@
 [ext_resource type="Script" path="res://Killer.gd" id="3_qvqda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7sev6"]
-size = Vector2(400, 400)
+size = Vector2(140, 140)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhu4y"]
+size = Vector2(140, 140)
 
 [node name="ChaseScene" type="Node2D"]
 
 [node name="Player" type="RigidBody2D" parent="."]
+position = Vector2(100, 100)
 gravity_scale = 0.0
 script = ExtResource("1_4rljh")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_7sev6")
 debug_color = Color(0.623529, 0.00392157, 0.862745, 0.780392)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(606, 328)
 texture = ExtResource("2_uhs62")
 
 [node name="Killer" type="RigidBody2D" parent="."]
+position = Vector2(500, 500)
 gravity_scale = 0.0
 script = ExtResource("3_qvqda")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killer"]
 shape = SubResource("RectangleShape2D_lhu4y")
