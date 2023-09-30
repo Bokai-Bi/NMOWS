@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdx1ek01dtrwi"]
+
+[ext_resource type="Texture2D" uid="uid://cso5s4rh1m7rp" path="res://keytmp.png" id="1_1skpi"]
+[ext_resource type="Script" path="res://key.gd" id="1_dobh8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dyafe"]
+
+[node name="Key" type="Area2D"]
+script = ExtResource("1_dobh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dyafe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_1skpi")
