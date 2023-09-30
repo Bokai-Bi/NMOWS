@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5x585itso8ef"]
 
-[ext_resource type="Texture2D" uid="uid://cso5s4rh1m7rp" path="res://keytmp.png" id="1_1skpi"]
-[ext_resource type="Script" path="res://key.gd" id="1_dobh8"]
+[ext_resource type="Texture2D" uid="uid://cso5s4rh1m7rp" path="res://Sprites/Chase/keytmp.png" id="1_1skpi"]
+[ext_resource type="Script" path="res://Scripts/key.gd" id="1_dobh8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dyafe"]
 

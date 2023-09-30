@@ -17,3 +17,11 @@ func _process(delta):
 func add_item(item_name):
 	# Add 1 to number of item held, or set to 1 if item isn't yet held
 	items[item_name] = 1 + items[item_name] if items.has(item_name) else 1
+
+func remove_item(item_name):
+	if items.has(item_name):
+		# Erase key if only one of item is held. Otherwise, decrement number.
+		if items[item_name] == 1:
+			items.erase(item_name)
+		else:
+			items[item_name] = items[item_name] - 1

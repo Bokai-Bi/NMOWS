@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cso5s4rh1m7rp"
-path="res://.godot/imported/keytmp.png-9ec56eb66ecd31797516c910de192538.ctex"
+path="res://.godot/imported/keytmp.png-84c89915c36314bbb291ef2105fcecc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://keytmp.png"
-dest_files=["res://.godot/imported/keytmp.png-9ec56eb66ecd31797516c910de192538.ctex"]
+source_file="res://Sprites/Chase/keytmp.png"
+dest_files=["res://.godot/imported/keytmp.png-84c89915c36314bbb291ef2105fcecc3.ctex"]
 
 [params]
 
