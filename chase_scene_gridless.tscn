@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://blde486qg3q5g"]
+[gd_scene load_steps=7 format=3 uid="uid://blde486qg3q5g"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4rljh"]
 [ext_resource type="Texture2D" uid="uid://dpc0bus1tuuns" path="res://icon.svg" id="2_uhs62"]
 [ext_resource type="Script" path="res://Killer.gd" id="3_qvqda"]
+[ext_resource type="Script" path="res://Scripts/inventory.gd" id="3_v46dn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7sev6"]
 size = Vector2(140, 140)
@@ -24,6 +25,9 @@ debug_color = Color(0.623529, 0.00392157, 0.862745, 0.780392)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("2_uhs62")
+
+[node name="Node" type="Node" parent="Player"]
+script = ExtResource("3_v46dn")
 
 [node name="Killer" type="RigidBody2D" parent="."]
 position = Vector2(500, 500)
