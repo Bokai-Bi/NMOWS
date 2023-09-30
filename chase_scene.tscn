@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://b1ifbbnpyurls"]
+[gd_scene load_steps=4 format=3 uid="uid://b1ifbbnpyurls"]
+
+[ext_resource type="Script" path="res://Player.cs" id="1_ohaq7"]
+[ext_resource type="Texture2D" uid="uid://dpc0bus1tuuns" path="res://icon.svg" id="2_2eld8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3doi0"]
 
 [node name="ChaseScene" type="Node2D"]
+
+[node name="Player" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+script = ExtResource("1_ohaq7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_3doi0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(606, 328)
+texture = ExtResource("2_2eld8")
