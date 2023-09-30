@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cso5s4rh1m7rp"
-path="res://.godot/imported/keytmp.png-9ec56eb66ecd31797516c910de192538.ctex"
+uid="uid://b82xdepirx28i"
+path="res://.godot/imported/killer.png-4989ddd0d515b74bb482a06e763f9bac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://keytmp.png"
-dest_files=["res://.godot/imported/keytmp.png-9ec56eb66ecd31797516c910de192538.ctex"]
+source_file="res://Sprites/Dialogue/Placeholder/killer.png"
+dest_files=["res://.godot/imported/killer.png-4989ddd0d515b74bb482a06e763f9bac.ctex"]
 
 [params]
 
