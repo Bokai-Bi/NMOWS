@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1ifbbnpyurls"]
+[gd_scene load_steps=6 format=3 uid="uid://b1ifbbnpyurls"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4rljh"]
 [ext_resource type="Texture2D" uid="uid://dpc0bus1tuuns" path="res://icon.svg" id="2_uhs62"]
+[ext_resource type="Script" path="res://Killer.gd" id="3_qvqda"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3doi0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sev6"]
+size = Vector2(400, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhu4y"]
 
 [node name="ChaseScene" type="Node2D"]
 
@@ -12,8 +16,20 @@ gravity_scale = 0.0
 script = ExtResource("1_4rljh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CircleShape2D_3doi0")
+shape = SubResource("RectangleShape2D_7sev6")
+debug_color = Color(0.623529, 0.00392157, 0.862745, 0.780392)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(606, 328)
+texture = ExtResource("2_uhs62")
+
+[node name="Killer" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+script = ExtResource("3_qvqda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killer"]
+shape = SubResource("RectangleShape2D_lhu4y")
+debug_color = Color(0.941176, 0, 0.615686, 0.886275)
+
+[node name="Sprite2D" type="Sprite2D" parent="Killer"]
 texture = ExtResource("2_uhs62")

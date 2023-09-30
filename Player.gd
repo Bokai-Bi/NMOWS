@@ -1,9 +1,11 @@
 extends RigidBody2D
 
 
-@export var speed = 30
+@export var speed = 60
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	await get_tree().process_frame
+	get_tree().call_group("killer", "set_player", self)
 	pass # Replace with function body.
 
 
