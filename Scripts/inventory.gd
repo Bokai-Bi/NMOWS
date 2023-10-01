@@ -5,22 +5,21 @@ extends Node
 # value is number of item held by the player
 var items = {}
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
+# func _ready():
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+# func _process(delta):
 
 # Add item specified by item_name to inventory
 func add_item(item_name):
 	# Add 1 to number of item held, or set to 1 if item isn't yet held
 	items[item_name] = 1 + items[item_name] if items.has(item_name) else 1
+	print("Item added to inventory: ", item_name)
+	print("Current inventory: ", items)
 
+# Remove item specified by item_name from inventory
 func remove_item(item_name):
 	if items.has(item_name):
-		# Erase key if only one of item is held. Otherwise, decrement number.
+		# Erase key if only one of item is held. Otherwise, decrement number
 		if items[item_name] == 1:
 			items.erase(item_name)
 		else:
