@@ -3,5 +3,7 @@ Killer: Hey daddy >_<
 Killer: how are you
 - good
 	Killer: \:D
+	[signal arg="goodChoice"]
 - bad
 	Killer (killer_angry): are u freaking serious -_-
+	[signal arg="badChoice"]
