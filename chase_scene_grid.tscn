@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cseitdblktq8k"]
+[gd_scene load_steps=10 format=3 uid="uid://cseitdblktq8k"]
 
 [ext_resource type="Texture2D" uid="uid://ctpfs6hoi27ue" path="res://Solaria Demo Update 01.png" id="1_y0qae"]
 [ext_resource type="Texture2D" uid="uid://dpc0bus1tuuns" path="res://icon.svg" id="2_355jf"]
 [ext_resource type="Script" path="res://GridPlayer.gd" id="2_xrvan"]
 [ext_resource type="Script" path="res://GridKiller.gd" id="4_mdy82"]
+[ext_resource type="AudioStream" uid="uid://cte5pbcyhu3wp" path="res://Audio/brgd_sample_2.mp3" id="5_srij8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ob1of"]
 texture = ExtResource("1_y0qae")
@@ -418,3 +419,8 @@ shape = SubResource("RectangleShape2D_dcjn1")
 [node name="Sprite2D" type="Sprite2D" parent="GridKiller"]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_355jf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_srij8")
+volume_db = 24.0
+autoplay = true
