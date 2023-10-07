@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://blde486qg3q5g"]
+[gd_scene load_steps=16 format=3 uid="uid://bdvi6vngpqpwu"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4rljh"]
 [ext_resource type="Texture2D" uid="uid://dpc0bus1tuuns" path="res://icon.svg" id="2_uhs62"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://tbhgc87g7x0h" path="res://Items/key_red.tres" id="9_gt2q6"]
 [ext_resource type="Texture2D" uid="uid://vmvduejr3fsv" path="res://Sprites/Chase/keytmp_red.png" id="10_wfu71"]
 [ext_resource type="Script" path="res://Scripts/Inventory_Display.gd" id="11_ure5k"]
+[ext_resource type="Texture2D" uid="uid://dem7dsdrk0lau" path="res://Sprites/Chase/junimo_obstacle.png" id="12_bcn5t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7sev6"]
 size = Vector2(140, 140)
@@ -113,6 +114,32 @@ script = ExtResource("11_ure5k")
 [node name="Label" type="Label" parent="MarginContainer/Inventory_Display"]
 layout_mode = 2
 text = "Inventory:"
+
+[node name="Obstacle" type="StaticBody2D" parent="."]
+position = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle"]
+position = Vector2(273, 270)
+scale = Vector2(0.240002, 0.240002)
+texture = ExtResource("12_bcn5t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacle"]
+position = Vector2(273, 270)
+scale = Vector2(0.240002, 0.240002)
+polygon = PackedVector2Array(21.5, -214, 124.5, -214, 124.5, -211, 126.4, -179, 158.3, -179, 161.5, -175.8, 161.5, -144, 193.3, -144, 196.5, -140.8, 196.5, -109, 228.3, -109, 231.5, -105.8, 231.5, 31.1, 266.5, 33.1, 266.5, 66, 297.5, 66, 297.5, 109, 260.6, 109, 258.6, 74, 231.5, 74, 231.5, 141.9, 196.5, 143.9, 196.5, 175.8, 193.3, 179, 161.5, 179, 161.5, 241.1, 196.5, 243.1, 196.5, 280, 153.5, 280, 153.5, 249, 121.7, 249, 118.5, 245.8, 118.5, 214, -118.5, 214, -118.5, 246.9, -153.5, 248.9, -153.5, 280, -196.5, 280, -196.5, 243.1, -161.5, 241.1, -161.5, 179, -194.4, 179, -196.4, 144, -228.3, 144, -231.5, 140.8, -231.5, 74, -258.6, 74, -260.6, 109, -297.5, 109, -297.5, 66, -266.4, 66, -264.4, 31, -231.5, 31, -231.5, -107, -228.6, -107, -196.5, -108.9, -196.5, -140.8, -193.3, -144, -161.5, -144, -161.5, -175.8, -158.3, -179, -126.5, -179, -126.5, -210.8, -123.3, -214, -21.5, -214, -21.5, -241.1, -56.5, -243.1, -56.5, -280, 21.5, -280)
+
+[node name="Obstacle2" type="StaticBody2D" parent="."]
+position = Vector2(315, -79)
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle2"]
+position = Vector2(273, 270)
+scale = Vector2(0.240002, 0.240002)
+texture = ExtResource("12_bcn5t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacle2"]
+position = Vector2(273, 270)
+scale = Vector2(0.240002, 0.240002)
+polygon = PackedVector2Array(21.5, -214, 124.5, -214, 124.5, -211, 126.4, -179, 158.3, -179, 161.5, -175.8, 161.5, -144, 193.3, -144, 196.5, -140.8, 196.5, -109, 228.3, -109, 231.5, -105.8, 231.5, 31.1, 266.5, 33.1, 266.5, 66, 297.5, 66, 297.5, 109, 260.6, 109, 258.6, 74, 231.5, 74, 231.5, 141.9, 196.5, 143.9, 196.5, 175.8, 193.3, 179, 161.5, 179, 161.5, 241.1, 196.5, 243.1, 196.5, 280, 153.5, 280, 153.5, 249, 121.7, 249, 118.5, 245.8, 118.5, 214, -118.5, 214, -118.5, 246.9, -153.5, 248.9, -153.5, 280, -196.5, 280, -196.5, 243.1, -161.5, 241.1, -161.5, 179, -194.4, 179, -196.4, 144, -228.3, 144, -231.5, 140.8, -231.5, 74, -258.6, 74, -260.6, 109, -297.5, 109, -297.5, 66, -266.4, 66, -264.4, 31, -231.5, 31, -231.5, -107, -228.6, -107, -196.5, -108.9, -196.5, -140.8, -193.3, -144, -161.5, -144, -161.5, -175.8, -158.3, -179, -126.5, -179, -126.5, -210.8, -123.3, -214, -21.5, -214, -21.5, -241.1, -56.5, -243.1, -56.5, -280, 21.5, -280)
 
 [connection signal="inventory_updated" from="Player/Inventory" to="MarginContainer/Inventory_Display" method="refresh_display"]
 [connection signal="body_entered" from="Key_White" to="Key_White" method="_on_body_entered" flags=18]
