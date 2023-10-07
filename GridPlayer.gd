@@ -1,15 +1,15 @@
 extends RigidBody2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	await get_tree().process_frame
-	get_tree().call_group("killer", "set_player", self)
-	pass # Replace with function body.
 
 var frameCounter = 0  # Initialize a variable to keep track of the frame count.
 var dir = 0
 var pixelSize = 32
 var numFrames = 5
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	await get_tree().process_frame
+	get_tree().call_group("killer", "set_player", self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func movement_function():
