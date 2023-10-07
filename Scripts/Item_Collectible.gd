@@ -1,28 +1,22 @@
+# @tool makes it so that this code is run in the editor itself.
+# so if we change the item_info it will change the texture of the sprite.
+#@tool
 extends Area2D
 
-@export var item_name : String
+@export var item_info: Item_Info
+"""
+	set(value):
+		# Set the texture of the attached Sprite2D to that specified in the item_info
+		item_info = value
+		if is_inside_tree():
+			initialize()
+"""
+func _ready():
+	initialize()
 
-signal picked_up(_item_name)
+# Destroy item
+func collect_item():
+	queue_free()
 
-var is_overlapping_player : bool
-
-# func _ready():
-
-func _process(delta):
-	if Input.is_action_just_pressed("interact") && is_overlapping_player:
-			picked_up.emit(item_name)
-			queue_free()
-
-# If colliding with player, connect signal for adding to inventory
-func _on_body_entered(body):
-	if body.name == "Player":
-		is_overlapping_player = true
-		var player_inventory = body.get_node("Inventory")
-		connect("picked_up", player_inventory.add_item)
-
-# If exiting collision with player, disconnect signal for adding to inventory
-func _on_body_exited(body):
-	if body.name == "Player":
-		is_overlapping_player = false
-		var player_inventory = body.get_node("Inventory")
-		disconnect("picked_up", player_inventory.add_item)
+func initialize():
+	$Sprite2D.texture = item_info.texture

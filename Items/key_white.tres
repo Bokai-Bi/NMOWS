@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item_Info" load_steps=3 format=3 uid="uid://dw0l5txf2ftny"]
+
+[ext_resource type="Script" path="res://Scripts/Item_Info.gd" id="1_3ygtq"]
+[ext_resource type="Texture2D" uid="uid://cso5s4rh1m7rp" path="res://Sprites/Chase/keytmp.png" id="2_6vwui"]
+
+[resource]
+script = ExtResource("1_3ygtq")
+name = "key_white"
+texture = ExtResource("2_6vwui")
