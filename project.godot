@@ -23,7 +23,10 @@ GlobalData="*res://globalData.gd"
 [dialogic]
 
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"failedRizzes": "0",
+"successfulRizzes": "0"
+}
 
 [dotnet]
 

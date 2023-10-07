@@ -9,9 +9,7 @@ func _ready():
 	# TODO connect signals when dialogue ends
 	# new_dialog.connect("timeline_end", self, 'after_dialog')
 	#new_dialog.timeline_end.connect(self.after_dialog)
-	print("hi")
 	#new_dialog.dialogic_signal.connect(self.dialogic_signal)
-	print("hi")
 	
 func after_dialog(timeline_name):
 	print ('RESUME THE GAME?!')
