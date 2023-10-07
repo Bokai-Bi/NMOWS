@@ -9,6 +9,7 @@ var numFrames = 10
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("killer")
+	$AnimationPlayer.play("Idle")
 	
 func _process(delta):
 	if player == null:
@@ -28,17 +29,21 @@ func movement_function():
 	if(abs(vec.x) > abs(vec.y)):
 		if(vec.x < 0):
 			move.x -= pixelSize
+			$AnimationPlayer.play("WalkLeft")
 			print("LEFT")
 		else:
 			move.x += pixelSize
+			$AnimationPlayer.play("WalkRight")
 			print("RIGHT")
 			
 	else:
 		if(vec.y < 0):
 			move.y -= pixelSize
+			$AnimationPlayer.play("WalkUp")
 			print("UP")
 		else:
 			move.y += pixelSize
+			$AnimationPlayer.play("WalkDown")
 			print("DOWN")
 	print("MOVE ", move)
 	move_and_collide(move)
