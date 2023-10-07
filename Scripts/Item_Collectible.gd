@@ -16,7 +16,18 @@ func _ready():
 
 # Destroy item
 func collect_item():
+	print("collection trigger ")
 	queue_free()
+	
+func _on_body_entered(e):
+	print(e)
+	print("well THAT just happened")
+	
+func _on_body_exited(e):
+	print(e)
+	print("well THAT just unhappened")
+	
 
 func initialize():
 	$Sprite2D.texture = item_info.texture
+
