@@ -103,11 +103,12 @@ gravity_scale = 0.0
 script = ExtResource("1_k1buu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_734vd")
 debug_color = Color(0.882353, 0, 0.819608, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
 texture = ExtResource("2_jao5y")
 hframes = 4
 vframes = 5
@@ -125,8 +126,11 @@ texture = ExtResource("3_n1e5s")
 [node name="InteractionRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_5etaa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 3)
 
 [connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
 [connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]

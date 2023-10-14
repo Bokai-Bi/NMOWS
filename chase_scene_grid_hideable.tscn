@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c5a5d6pbsgqr8"]
+[gd_scene load_steps=18 format=3 uid="uid://b8q7l6g74nnv2"]
 
 [ext_resource type="Texture2D" uid="uid://ctpfs6hoi27ue" path="res://Solaria Demo Update 01.png" id="1_dqfef"]
 [ext_resource type="Script" path="res://GridPlayer.gd" id="2_jkcxo"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://GridKiller.gd" id="4_47qo7"]
 [ext_resource type="Texture2D" uid="uid://dgk3pufwu5gfm" path="res://Sprites/Chase/killer_run.png" id="5_27e3i"]
 [ext_resource type="AudioStream" uid="uid://2oxklpkl7amk" path="res://Audio/Running_from_bald_george.mp3" id="6_8x6l8"]
-[ext_resource type="PackedScene" uid="uid://ie2o72pt712x" path="res://hideable_box.tscn" id="7_24go1"]
+[ext_resource type="PackedScene" uid="uid://co47ryuw02pk4" path="res://hideable_box.tscn" id="7_24go1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ob1of"]
 texture = ExtResource("1_dqfef")

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ctpfs6hoi27ue" path="res://Solaria Demo Update 01.png" id="1_y0qae"]
 [ext_resource type="PackedScene" uid="uid://botod5i770as7" path="res://ObjectScenes/grid_player.tscn" id="2_p6ktb"]
 [ext_resource type="PackedScene" uid="uid://f7q0pgcgmc4v" path="res://ObjectScenes/grid_killer.tscn" id="3_owq0x"]
-[ext_resource type="PackedScene" uid="uid://ie2o72pt712x" path="res://hideable_box.tscn" id="5_3yki2"]
+[ext_resource type="PackedScene" uid="uid://co47ryuw02pk4" path="res://hideable_box.tscn" id="5_3yki2"]
 [ext_resource type="AudioStream" uid="uid://2oxklpkl7amk" path="res://Audio/Running_from_bald_george.mp3" id="6_24242"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ob1of"]
@@ -380,7 +380,7 @@ texture = ExtResource("1_y0qae")
 [sub_resource type="TileSet" id="TileSet_lkp4i"]
 sources/0 = SubResource("TileSetAtlasSource_ob1of")
 
-[node name="chase_scene_grid" type="Node2D"]
+[node name="chase_scene_grid2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
@@ -400,4 +400,5 @@ volume_db = 24.0
 autoplay = true
 
 [node name="hideable_box" parent="." instance=ExtResource("5_3yki2")]
-position = Vector2(349, 348)
+position = Vector2(199, 154)
+scale = Vector2(0.5, 0.5)
