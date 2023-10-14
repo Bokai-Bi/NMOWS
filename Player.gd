@@ -2,6 +2,9 @@ extends RigidBody2D
 
 @export var speed = 180
 
+
+signal hide
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await get_tree().process_frame
@@ -26,3 +29,13 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("interact"):
 			$Collector.collect_items_if_any()
+			
+
+func _on_body_entered(collision_object):
+	if collision_object.name.substr(0,8) == "hideable":
+		
+		
+		
+	
+
+

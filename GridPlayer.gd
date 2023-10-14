@@ -48,4 +48,8 @@ func _process(delta):
 		dir = 3
 	else:
 		dir = 4
+		
+func _on_body_entered(Hideable_Box):
+	get_tree().call_group("killer", "set_player", null)
+	
 
