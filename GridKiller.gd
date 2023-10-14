@@ -16,39 +16,44 @@ func _ready():
 func _process(delta):
 	if player == null:
 		return
+	if playerHiding:
+		return # change in the future
+		
 	frameCounter += 1
 	# Check if the frame counter has reached 5 (or any desired frame interval).
 	if frameCounter >= numFrames:
 		frameCounter = 0  # Reset the frame counter.
 		movement_function()
 
+		
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func movement_function():
 	var move = Vector2.ZERO
 	var vec =  player.global_position - global_position
-	print("POSITION", global_position)
-	print("VEC ", vec)
+	#print("POSITION", global_position)
+	#print("VEC ", vec)
 	
 	if(abs(vec.x) > abs(vec.y)):
 		if(vec.x < 0):
 			move.x -= pixelSize
 			$AnimationPlayer.play("WalkLeft")
-			print("LEFT")
+			#print("LEFT")
 		else:
 			move.x += pixelSize
 			$AnimationPlayer.play("WalkRight")
-			print("RIGHT")
+			#print("RIGHT")
 			
 	else:
 		if(vec.y < 0):
 			move.y -= pixelSize
 			$AnimationPlayer.play("WalkUp")
-			print("UP")
+			#print("UP")
 		else:
 			move.y += pixelSize
 			$AnimationPlayer.play("WalkDown")
-			print("DOWN")
-	print("MOVE ", move)
+			#print("DOWN")
+	#print("MOVE ", move)
 	move_and_collide(move)
 	
 
