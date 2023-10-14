@@ -5,11 +5,14 @@ var frameCounter = 0  # Initialize a variable to keep track of the frame count.
 var pixelSize = 32
 var numFrames = 10
 
+var playerHiding
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("killer")
 	$AnimationPlayer.play("Idle")
+	playerHiding = false
 	
 func _process(delta):
 	if player == null:
@@ -26,6 +29,7 @@ func movement_function():
 	var vec =  player.global_position - global_position
 	print("POSITION", global_position)
 	print("VEC ", vec)
+	
 	if(abs(vec.x) > abs(vec.y)):
 		if(vec.x < 0):
 			move.x -= pixelSize
@@ -52,3 +56,6 @@ func movement_function():
 func set_player(p):
 	player = p
 	print(player)
+	
+func set_hiding(hiding):
+	playerHiding = hiding

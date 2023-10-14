@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://vmvduejr3fsv" path="res://Sprites/Chase/keytmp_red.png" id="10_wfu71"]
 [ext_resource type="Script" path="res://Scripts/Inventory_Display.gd" id="11_ure5k"]
 [ext_resource type="Texture2D" uid="uid://dem7dsdrk0lau" path="res://Sprites/Chase/junimo_obstacle.png" id="12_bcn5t"]
-[ext_resource type="PackedScene" path="res://Key_Door_Pair.tscn" id="12_muxqt"]
+[ext_resource type="PackedScene" uid="uid://bo4t84tk18bpj" path="res://Key_Door_Pair.tscn" id="12_muxqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7sev6"]
 size = Vector2(140, 140)
