@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://f7q0pgcgmc4v"]
+[gd_scene load_steps=12 format=3 uid="uid://f7q0pgcgmc4v"]
 
 [ext_resource type="Script" path="res://GridKiller.gd" id="1_vfjmc"]
 [ext_resource type="Texture2D" uid="uid://dgk3pufwu5gfm" path="res://Sprites/Chase/killer_run.png" id="2_wsuh7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcjn1"]
 
 [sub_resource type="Animation" id="Animation_axq2i"]
 resource_name = "Idle"
@@ -94,14 +92,30 @@ _data = {
 "WalkUp": SubResource("Animation_eqjrh")
 }
 
+[sub_resource type="GDScript" id="GDScript_qqyvd"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcjn1"]
+size = Vector2(10, 12.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpdad"]
+size = Vector2(14, 18)
+
 [node name="GridKiller" type="RigidBody2D"]
 position = Vector2(176, 16)
 gravity_scale = 0.0
 script = ExtResource("1_vfjmc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.6, 1.6)
-shape = SubResource("RectangleShape2D_dcjn1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_wsuh7")
@@ -112,3 +126,18 @@ vframes = 5
 libraries = {
 "": SubResource("AnimationLibrary_dv04f")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_qqyvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -9.53674e-07)
+scale = Vector2(1.6, 1.6)
+shape = SubResource("RectangleShape2D_dcjn1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_tpdad")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
