@@ -6,10 +6,17 @@ var dir = 0
 var pixelSize = 32
 var numFrames = 5
 
+var hiding = false
+var visionBlockerSizeNormal = 0.2
+var visionBlockerSizeHiding = 0.1
+var visionBlockerSizeChangeSpeed = 0.0003
+var visionBlocker
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await get_tree().process_frame
 	get_tree().call_group("killer", "set_player", self)
+	visionBlocker = get_node("VisionBlocker")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func movement_function():
@@ -49,7 +56,23 @@ func _process(delta):
 	else:
 		dir = 4
 		
+	if hiding:
+		var currsize = visionBlocker.scale
+		currsize.x = max(currsize.x - visionBlockerSizeChangeSpeed, visionBlockerSizeHiding)
+		currsize.y = max(currsize.y - visionBlockerSizeChangeSpeed, visionBlockerSizeHiding)
+		visionBlocker.scale = currsize
+	else:
+		var currsize = visionBlocker.scale
+		currsize.x = min(currsize.x + visionBlockerSizeChangeSpeed, visionBlockerSizeNormal)
+		currsize.y = min(currsize.y + visionBlockerSizeChangeSpeed, visionBlockerSizeNormal)
+		visionBlocker.scale = currsize
+		
+
 func _on_body_entered(Hideable_Box):
 	get_tree().call_group("killer", "set_player", null)
 	
+		
+func hide_player():
+	hiding = not hiding
+	get_tree().call_group("killer", "set_hiding", hiding)
 
