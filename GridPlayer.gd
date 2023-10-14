@@ -101,6 +101,7 @@ func hide_player():
 	# disable movement and rendering
 	canMove = false
 	get_node("Sprite2D").visible = false
+	popupText.text = "Press E to unhide"
 
 func unhide_player():
 	print("Unhiding")
@@ -110,6 +111,7 @@ func unhide_player():
 	# enable movement and rendering
 	canMove = true
 	get_node("Sprite2D").visible = true
+	popupText.text = "Press E to hide"
 	
 
 func _on_interaction_range_body_entered(body):
