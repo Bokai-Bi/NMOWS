@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cseitdblktq8k"]
+[gd_scene load_steps=17 format=3 uid="uid://cseitdblktq8k"]
 
 [ext_resource type="Texture2D" uid="uid://ctpfs6hoi27ue" path="res://Solaria Demo Update 01.png" id="1_y0qae"]
-[ext_resource type="Texture2D" uid="uid://dpc0bus1tuuns" path="res://icon.svg" id="2_355jf"]
 [ext_resource type="Script" path="res://GridPlayer.gd" id="2_xrvan"]
+[ext_resource type="Texture2D" uid="uid://dj8s4ubel5p64" path="res://Sprites/Chase/player_run_PLACEHOLDER.png" id="3_fblrk"]
 [ext_resource type="Script" path="res://GridKiller.gd" id="4_mdy82"]
-[ext_resource type="AudioStream" uid="uid://cte5pbcyhu3wp" path="res://Audio/brgd_sample_2.mp3" id="5_srij8"]
+[ext_resource type="Texture2D" uid="uid://dgk3pufwu5gfm" path="res://Sprites/Chase/killer_run.png" id="5_js5lv"]
+[ext_resource type="AudioStream" uid="uid://2oxklpkl7amk" path="res://Audio/Running_from_bald_george.mp3" id="6_24242"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ob1of"]
 texture = ExtResource("1_y0qae")
@@ -382,6 +383,95 @@ sources/0 = SubResource("TileSetAtlasSource_ob1of")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_734vd"]
 
+[sub_resource type="Animation" id="Animation_j47fr"]
+resource_name = "WalkDown"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_gxd3b"]
+resource_name = "WalkLeft"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_8ft1t"]
+resource_name = "WalkRight"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_eqjrh"]
+resource_name = "WalkUp"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_axq2i"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dv04f"]
+_data = {
+"Idle": SubResource("Animation_axq2i"),
+"WalkDown": SubResource("Animation_j47fr"),
+"WalkLeft": SubResource("Animation_gxd3b"),
+"WalkRight": SubResource("Animation_8ft1t"),
+"WalkUp": SubResource("Animation_eqjrh")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcjn1"]
 
 [node name="chase_scene_grid" type="Node2D"]
@@ -404,8 +494,15 @@ shape = SubResource("RectangleShape2D_734vd")
 debug_color = Color(0.882353, 0, 0.819608, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="GridPlayer"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_355jf")
+texture = ExtResource("3_fblrk")
+hframes = 4
+vframes = 5
+frame = 16
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GridPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_dv04f")
+}
 
 [node name="GridKiller" type="RigidBody2D" parent="."]
 position = Vector2(176, 16)
@@ -417,10 +514,16 @@ scale = Vector2(1.6, 1.6)
 shape = SubResource("RectangleShape2D_dcjn1")
 
 [node name="Sprite2D" type="Sprite2D" parent="GridKiller"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_355jf")
+texture = ExtResource("5_js5lv")
+hframes = 4
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GridKiller"]
+libraries = {
+"": SubResource("AnimationLibrary_dv04f")
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_srij8")
+stream = ExtResource("6_24242")
 volume_db = 24.0
 autoplay = true

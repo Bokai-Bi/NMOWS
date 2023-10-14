@@ -16,12 +16,16 @@ func movement_function():
 	var direction = Vector2.ZERO
 
 	if dir == 0: 
+		$AnimationPlayer.play("WalkRight")
 		direction.x += pixelSize
 	if dir == 1:
+		$AnimationPlayer.play("WalkLeft")
 		direction.x -= pixelSize
 	if dir == 2: 
+		$AnimationPlayer.play("WalkDown")
 		direction.y += pixelSize
 	if dir == 3:
+		$AnimationPlayer.play("WalkUp")
 		direction.y -= pixelSize
 
 	move_and_collide(direction)
