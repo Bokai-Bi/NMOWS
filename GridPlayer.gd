@@ -67,6 +67,10 @@ func _process(delta):
 		currsize.y = min(currsize.y + visionBlockerSizeChangeSpeed, visionBlockerSizeNormal)
 		visionBlocker.scale = currsize
 		
+
+func _on_body_entered(Hideable_Box):
+	get_tree().call_group("killer", "set_player", null)
+	
 		
 func hide_player():
 	hiding = not hiding
