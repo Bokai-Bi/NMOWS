@@ -7,7 +7,6 @@ var numFrames = 20
 
 var playerHiding
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("killer")
@@ -59,3 +58,9 @@ func set_player(p):
 	
 func set_hiding(hiding):
 	playerHiding = hiding
+
+
+func _on_area_2d_body_entered(body):
+	if body.name == "GridPlayer":
+		get_tree().change_scene_to_file("res://lose_screen.tscn")		
+	pass # Replace with function body.
