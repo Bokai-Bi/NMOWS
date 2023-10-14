@@ -7,12 +7,13 @@ var pixelSize = 32
 var numFrames = 5
 
 var hiding = false
-var visionBlockerSizeNormal = 0.2
-var visionBlockerSizeHiding = 0.1
+var visionBlockerSizeNormal = 0.3
+var visionBlockerSizeHiding = 0.15
 var visionBlockerSizeChangeSpeed = 0.0003
 var visionBlocker
 
 var in_hiding_range
+var preHideLocation
 
 var canMove
 
@@ -87,6 +88,7 @@ func _process(delta):
 		
 func hide_player():
 	print("Hiding")
+	preHideLocation = position
 	hiding = not hiding
 	get_tree().call_group("killer", "set_hiding", hiding)
 	# disable movement and rendering
@@ -95,6 +97,7 @@ func hide_player():
 
 func unhide_player():
 	print("Unhiding")
+	position = preHideLocation
 	hiding = not hiding
 	get_tree().call_group("killer", "set_hiding", hiding)
 	# enable movement and rendering

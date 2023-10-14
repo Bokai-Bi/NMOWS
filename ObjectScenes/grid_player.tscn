@@ -128,5 +128,12 @@ texture = ExtResource("3_n1e5s")
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_5etaa")
 
+[node name="Label" type="Label" parent="."]
+offset_left = -101.0
+offset_top = -31.0
+offset_right = 96.0
+offset_bottom = -5.0
+text = "When the amongus is sus"
+
 [connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
 [connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]
