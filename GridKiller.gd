@@ -3,7 +3,7 @@ extends RigidBody2D
 var player = null
 var frameCounter = 0  # Initialize a variable to keep track of the frame count.
 var pixelSize = 32
-var numFrames = 20
+var numFrames = 60
 
 var playerHiding
 

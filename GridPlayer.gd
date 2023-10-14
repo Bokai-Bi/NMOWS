@@ -4,26 +4,32 @@ extends RigidBody2D
 var frameCounter = 0  # Initialize a variable to keep track of the frame count.
 var dir = 0
 var pixelSize = 32
-var numFrames = 5
+var numFrames = 20
 
 var hiding = false
 var visionBlockerSizeNormal = 0.3
 var visionBlockerSizeHiding = 0.15
 var visionBlockerSizeChangeSpeed = 0.0003
 var visionBlocker
+var popupText
 
 var in_hiding_range
 var preHideLocation
+var hideLocation
+
 
 var canMove
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await get_tree().process_frame
 	get_tree().call_group("killer", "set_player", self)
 	visionBlocker = get_node("VisionBlocker")
+	popupText = get_node("Label")
 	in_hiding_range = false
 	canMove = true
+	popupText.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func movement_function():
@@ -88,7 +94,8 @@ func _process(delta):
 		
 func hide_player():
 	print("Hiding")
-	preHideLocation = position
+	#preHideLocation = global_position
+	#global_position = hideLocation
 	hiding = not hiding
 	get_tree().call_group("killer", "set_hiding", hiding)
 	# disable movement and rendering
@@ -97,7 +104,7 @@ func hide_player():
 
 func unhide_player():
 	print("Unhiding")
-	position = preHideLocation
+	#global_position = preHideLocation
 	hiding = not hiding
 	get_tree().call_group("killer", "set_hiding", hiding)
 	# enable movement and rendering
@@ -110,6 +117,9 @@ func _on_interaction_range_body_entered(body):
 	if (body.name.substr(0, 8) == "hideable"):
 		print("EnteringHideable")
 		in_hiding_range = true
+		hideLocation = body.global_position
+		popupText.visible = true
+		popupText.text = "Press E to hide"
 		
 		
 
@@ -119,4 +129,5 @@ func _on_interaction_range_body_exited(body):
 	if (body.name.substr(0, 8) == "hideable"):
 		print("ExitingHideable")
 		in_hiding_range = false
+		popupText.visible = false
 		

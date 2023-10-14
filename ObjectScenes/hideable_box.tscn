@@ -8,7 +8,6 @@ shader = ExtResource("1_6rcka")
 shader_parameter/whiten = false
 
 [node name="hideable_box" type="Node2D"]
-scale = Vector2(0.5, 0.5)
 
 [node name="hideable_Box" type="StaticBody2D" parent="."]
 
@@ -20,5 +19,6 @@ flip_h = true
 flip_v = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable_Box"]
+position = Vector2(-4.76837e-07, 2)
 scale = Vector2(3.42188, 3.60938)
-polygon = PackedVector2Array(-65, 58.6, -65, -60, -60.6, -65, 58, -65, 63, -60.6, 63, 58.6, 58, 62.9, -60, 63)
+polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
