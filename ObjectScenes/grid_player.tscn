@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://botod5i770as7"]
+[gd_scene load_steps=12 format=3 uid="uid://botod5i770as7"]
 
 [ext_resource type="Script" path="res://GridPlayer.gd" id="1_k1buu"]
 [ext_resource type="Texture2D" uid="uid://dj8s4ubel5p64" path="res://Sprites/Chase/player_run_PLACEHOLDER.png" id="2_jao5y"]
@@ -95,6 +95,8 @@ _data = {
 "WalkUp": SubResource("Animation_eqjrh")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5etaa"]
+
 [node name="GridPlayer" type="RigidBody2D"]
 position = Vector2(16, 16)
 gravity_scale = 0.0
@@ -119,3 +121,12 @@ libraries = {
 position = Vector2(1.90735e-06, -9.53674e-07)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_n1e5s")
+
+[node name="InteractionRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_5etaa")
+
+[connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
+[connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]
