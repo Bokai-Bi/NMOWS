@@ -93,9 +93,11 @@ func _process(delta):
 	
 		
 func hide_player():
-	print("Hiding")
-	#preHideLocation = global_position
-	#global_position = hideLocation
+	get_node("CollisionShape2D").disabled = true
+	preHideLocation = global_position
+	global_position = hideLocation
+	print("Transporting into hiding position")
+	print(hideLocation)
 	hiding = not hiding
 	get_tree().call_group("killer", "set_hiding", hiding)
 	# disable movement and rendering
@@ -104,8 +106,10 @@ func hide_player():
 	popupText.text = "Press E to unhide"
 
 func unhide_player():
-	print("Unhiding")
-	#global_position = preHideLocation
+	get_node("CollisionShape2D").disabled = false
+	global_position = Vector2(preHideLocation.x, preHideLocation.y)
+	print("Transporting to Prehide:")
+	print(Vector2(preHideLocation.x, preHideLocation.y))
 	hiding = not hiding
 	get_tree().call_group("killer", "set_hiding", hiding)
 	# enable movement and rendering
@@ -133,3 +137,6 @@ func _on_interaction_range_body_exited(body):
 		in_hiding_range = false
 		popupText.visible = false
 		
+
+func _integrate_forces(state):
+	rotation = 0 # prevent player from rotating

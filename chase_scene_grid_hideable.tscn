@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=3 uid="uid://c5a5d6pbsgqr8"]
 
 [ext_resource type="Texture2D" uid="uid://ctpfs6hoi27ue" path="res://Solaria Demo Update 01.png" id="1_dqfef"]
-[ext_resource type="Script" path="res://GridPlayer.gd" id="2_jkcxo"]
+[ext_resource type="Script" path="res://Scripts/GridPlayer.gd" id="2_jkcxo"]
 [ext_resource type="Texture2D" uid="uid://dj8s4ubel5p64" path="res://Sprites/Chase/player_run_PLACEHOLDER.png" id="3_gjre5"]
-[ext_resource type="Script" path="res://GridKiller.gd" id="4_47qo7"]
+[ext_resource type="Script" path="res://Scripts/GridKiller.gd" id="4_47qo7"]
 [ext_resource type="Texture2D" uid="uid://dgk3pufwu5gfm" path="res://Sprites/Chase/killer_run.png" id="5_27e3i"]
 [ext_resource type="AudioStream" uid="uid://2oxklpkl7amk" path="res://Audio/Running_from_bald_george.mp3" id="6_8x6l8"]
 [ext_resource type="PackedScene" uid="uid://ie2o72pt712x" path="res://ObjectScenes/hideable_box.tscn" id="7_24go1"]

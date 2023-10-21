@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://botod5i770as7"]
 
-[ext_resource type="Script" path="res://GridPlayer.gd" id="1_k1buu"]
+[ext_resource type="Script" path="res://Scripts/GridPlayer.gd" id="1_k1buu"]
 [ext_resource type="Texture2D" uid="uid://dj8s4ubel5p64" path="res://Sprites/Chase/player_run_PLACEHOLDER.png" id="2_jao5y"]
 [ext_resource type="Texture2D" uid="uid://cvbkt2nt5hks4" path="res://Sprites/Chase/visionBlocker.png" id="3_n1e5s"]
 
@@ -98,7 +98,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5etaa"]
 
 [node name="GridPlayer" type="RigidBody2D"]
-position = Vector2(16, 16)
 gravity_scale = 0.0
 script = ExtResource("1_k1buu")
 
@@ -135,6 +134,7 @@ offset_top = -31.0
 offset_right = 96.0
 offset_bottom = -5.0
 text = "When the amongus is sus"
+horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 3)

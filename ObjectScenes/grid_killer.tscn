@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://f7q0pgcgmc4v"]
 
-[ext_resource type="Script" path="res://GridKiller.gd" id="1_vfjmc"]
+[ext_resource type="Script" path="res://Scripts/GridKiller.gd" id="1_vfjmc"]
 [ext_resource type="Texture2D" uid="uid://dgk3pufwu5gfm" path="res://Sprites/Chase/killer_run.png" id="2_wsuh7"]
 
 [sub_resource type="Animation" id="Animation_axq2i"]
