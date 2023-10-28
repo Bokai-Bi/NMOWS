@@ -25,14 +25,14 @@ GlobalData="*res://globalData.gd"
 glossary/default_case_sensitive=true
 variables={
 "failedRizzes": "0",
+"level1choice": "none",
+"level2choice": "none",
+"level3choice": "none",
 "successfulRizzes": "0"
 }
 layout/styles={
 "Default": {
 "export_overrides": {},
-"inherits": ""
-},
-"New Style": {
 "inherits": ""
 }
 }
