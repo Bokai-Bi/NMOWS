@@ -24,44 +24,48 @@ var speed = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_tree().process_frame
-	get_tree().call_group("killer", "set_player", self)
 	visionBlocker = get_node("VisionBlocker")
 	popupText = get_node("Label")
 	in_hiding_range = false
 	canMove = true
 	popupText.visible = false
+	await get_tree().process_frame
+	get_tree().call_group("killer", "set_player", self)
+	print("Ready2")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func movement_function():
 	if not canMove:
 		return
 		
-#	var direction = Vector2.ZERO
-#
-#	if dir == 0: 
-#		$AnimationPlayer.play("WalkRight")
-#		direction.x += pixelSize
-#	elif dir == 1:
-#		$AnimationPlayer.play("WalkLeft")
-#		direction.x -= pixelSize
-#	elif dir == 2: 
-#		$AnimationPlayer.play("WalkDown")
-#		direction.y += pixelSize
-#	elif dir == 3:
-#		$AnimationPlayer.play("WalkUp")
-#		direction.y -= pixelSize
+	var direction = Vector2.ZERO
 
-	#move_and_collide(direction)
+	if dir == 0: 
+		$AnimationPlayer.play("WalkRight")
+		direction.x += pixelSize
+	elif dir == 1:
+		$AnimationPlayer.play("WalkLeft")
+		direction.x -= pixelSize
+	elif dir == 2: 
+		$AnimationPlayer.play("WalkDown")
+		direction.y += pixelSize
+	elif dir == 3:
+		$AnimationPlayer.play("WalkUp")
+		direction.y -= pixelSize
 
+	move_and_collide(direction)
+
+func _input(event):
+	if event.is_action_pressed("interact"):
+		if in_hiding_range and not hiding:
+			hide_player()
+		elif in_hiding_range and hiding:
+			unhide_player()
+	
 
 func get_input():
 	velocity = Vector2()
-#	if event.is_action_pressed("interact"):
-#		if in_hiding_range and not hiding:
-#			hide_player()
-#		elif in_hiding_range and hiding:
-#			unhide_player()
+	
 	if Input.is_action_pressed("move_right"):
 		dir = 0
 		$AnimationPlayer.play("WalkRight")
@@ -83,25 +87,22 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
-#	frameCounter += 1
+	frameCounter += 1
 	get_input()
-	velocity = move_and_collide(velocity)
 	
-	# Check if the frame counter has reached 5 (or any desired frame interval).
-	if frameCounter >= numFrames:
-		frameCounter = 0  # Reset the frame counter.
-		movement_function()
+	if !hiding:
+		velocity = move_and_collide(velocity)
 		
-#	if hiding:
-#		var currsize = visionBlocker.scale
-#		currsize.x = max(currsize.x - visionBlockerSizeChangeSpeed, visionBlockerSizeHiding)
-#		currsize.y = max(currsize.y - visionBlockerSizeChangeSpeed, visionBlockerSizeHiding)
-#		visionBlocker.scale = currsize
-#	else:
-#		var currsize = visionBlocker.scale
-#		currsize.x = min(currsize.x + visionBlockerSizeChangeSpeed, visionBlockerSizeNormal)
-#		currsize.y = min(currsize.y + visionBlockerSizeChangeSpeed, visionBlockerSizeNormal)
-#		visionBlocker.scale = currsize
+	if hiding:
+		var currsize = visionBlocker.scale
+		currsize.x = max(currsize.x - visionBlockerSizeChangeSpeed, visionBlockerSizeHiding)
+		currsize.y = max(currsize.y - visionBlockerSizeChangeSpeed, visionBlockerSizeHiding)
+		visionBlocker.scale = currsize
+	else:
+		var currsize = visionBlocker.scale
+		currsize.x = min(currsize.x + visionBlockerSizeChangeSpeed, visionBlockerSizeNormal)
+		currsize.y = min(currsize.y + visionBlockerSizeChangeSpeed, visionBlockerSizeNormal)
+		visionBlocker.scale = currsize
 
 
 func hide_player():

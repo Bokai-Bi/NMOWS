@@ -13,17 +13,18 @@ func _ready():
 	$AnimationPlayer.play("Idle")
 	playerHiding = false
 	
-#func _process(delta):
-#	if player == null:
-#		return
-#	if playerHiding:
-#		return # change in the future
-#
-#	frameCounter += 1
-#	# Check if the frame counter has reached 5 (or any desired frame interval).
-#	if frameCounter >= numFrames:
-#		frameCounter = 0  # Reset the frame counter.
-#		movement_function()
+func _process(delta):
+	if player == null:
+		print("Null player")
+		return
+	if playerHiding:
+		return # change in the future
+
+	frameCounter += 1
+	# Check if the frame counter has reached 5 (or any desired frame interval).
+	if frameCounter >= numFrames:
+		frameCounter = 0  # Reset the frame counter.
+		movement_function()
 
 		
 
