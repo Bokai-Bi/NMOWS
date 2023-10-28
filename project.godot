@@ -27,6 +27,7 @@ variables={
 "failedRizzes": "0",
 "level1choice": "none",
 "level2choice": "none",
+"level3choice": "none",
 "successfulRizzes": "0"
 }
 layout/styles={

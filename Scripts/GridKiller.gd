@@ -3,9 +3,18 @@ extends RigidBody2D
 var player = null
 var frameCounter = 0  # Initialize a variable to keep track of the frame count.
 var pixelSize = 32
-var numFrames = 60
+var numFrames = 0
+
+var dirSwitchDelay = 1000
+var currDir = Vector2(0,0)
+var lastSwitch = 0
 
 var playerHiding
+
+var target_position = Vector2(0,0)
+
+var movement_speed: float = 2.0
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,49 +22,83 @@ func _ready():
 	$AnimationPlayer.play("Idle")
 	playerHiding = false
 	
-func _process(delta):
-	if player == null:
-		print("Null player")
+	navigation_agent.path_desired_distance = 4.0
+	navigation_agent.target_desired_distance = 4.0
+
+	# Make sure to not await during _ready.
+	call_deferred("actor_setup")
+
+func actor_setup():
+	# Wait for the first physics frame so the NavigationServer can sync.
+	await get_tree().physics_frame
+
+	# Now that the navigation map is no longer empty, set the movement target.
+	navigation_agent.target_position = target_position
+
+func _physics_process(delta):
+	if navigation_agent.is_navigation_finished():
 		return
-	if playerHiding:
-		return # change in the future
 
-	frameCounter += 1
-	# Check if the frame counter has reached 5 (or any desired frame interval).
-	if frameCounter >= numFrames:
-		frameCounter = 0  # Reset the frame counter.
-		movement_function()
+	var current_agent_position: Vector2 = global_position
+	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
-		
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func movement_function():
-	var move = Vector2.ZERO
-	var vec =  player.global_position - global_position
-	#print("POSITION", global_position)
-	#print("VEC ", vec)
+	var new_velocity: Vector2 = next_path_position - current_agent_position
 	
-	if(abs(vec.x) > abs(vec.y)):
-		if(vec.x < 0):
-			move.x -= pixelSize
-			$AnimationPlayer.play("WalkLeft")
-			#print("LEFT")
+	var move = changeDirAfterDelay(new_velocity)
+	
+	if(move.x < 0):
+		$AnimationPlayer.play("WalkLeft")
+	elif (move.x > 0):
+		$AnimationPlayer.play("WalkRight")
+	elif(move.y < 0):
+		$AnimationPlayer.play("WalkUp")
+	elif(move.y > 0):
+		$AnimationPlayer.play("WalkDown")
+
+	move = move.normalized() * movement_speed
+	move_and_collide(move)
+
+func changeDirAfterDelay(new_velocity):
+	if (Time.get_ticks_msec() - lastSwitch < dirSwitchDelay):
+		return currDir
+		
+	var move = Vector2(0,0)
+	if(abs(new_velocity.x) > abs(new_velocity.y)):
+		if(new_velocity.x < 0):
+			move.x = -1
 		else:
-			move.x += pixelSize
-			$AnimationPlayer.play("WalkRight")
-			#print("RIGHT")
+			move.x = 1
 			
 	else:
-		if(vec.y < 0):
-			move.y -= pixelSize
-			$AnimationPlayer.play("WalkUp")
-			#print("UP")
+		if(new_velocity.y < 0):
+			move.y = -1
 		else:
-			move.y += pixelSize
+			move.y = 1
 			$AnimationPlayer.play("WalkDown")
-			#print("DOWN")
-	#print("MOVE ", move)
-	move_and_collide(move)
+	lastSwitch = Time.get_ticks_msec()
+	currDir = move
+	return currDir
+	
+
+
+func _process(delta):
+	frameCounter += 1
+	# Check if the frame counter has reached 5 (or any desired frame interval).
+	#if frameCounter >= numFrames:
+	if true:
+		frameCounter = 0
+		#update player position
+		if player == null:
+			print("Null player")
+			return
+		if playerHiding:
+			return # change in the future
+		else:
+			target_position = player.global_position
+			navigation_agent.target_position = target_position
+			print("New target:")
+			print(target_position)
+
 	
 
 func set_player(p):

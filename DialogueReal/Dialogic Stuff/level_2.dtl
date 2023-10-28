@@ -22,7 +22,7 @@ Killer: That is.. quite a challenge!!! But nothing is challenging enough to defe
 Killer: Prepare yourself...!!!
 [end_timeline]
 label Unamused
-VAR {level2choice} = "impressed"
+VAR {level2choice} = "unamused"
 Killer: Well yes. I can certainly see your intelligence is intact.
 Killer: But... how do I say this... isn’t this kind of boring???
 Killer: I like my target STRONG! CHALLENGING!! MYSTERIOUS!!!
