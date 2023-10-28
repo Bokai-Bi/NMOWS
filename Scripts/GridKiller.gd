@@ -3,7 +3,11 @@ extends RigidBody2D
 var player = null
 var frameCounter = 0  # Initialize a variable to keep track of the frame count.
 var pixelSize = 32
-var numFrames = 300
+var numFrames = 0
+
+var dirSwitchDelay = 1000
+var currDir = Vector2(0,0)
+var lastSwitch = 0
 
 var playerHiding
 
@@ -39,38 +43,49 @@ func _physics_process(delta):
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
 	var new_velocity: Vector2 = next_path_position - current_agent_position
-	new_velocity = new_velocity.normalized()
-	new_velocity = new_velocity * movement_speed
 	
+	var move = changeDirAfterDelay(new_velocity)
+	
+	if(move.x < 0):
+		$AnimationPlayer.play("WalkLeft")
+	elif (move.x > 0):
+		$AnimationPlayer.play("WalkRight")
+	elif(move.y < 0):
+		$AnimationPlayer.play("WalkUp")
+	elif(move.y > 0):
+		$AnimationPlayer.play("WalkDown")
+
+	move = move.normalized() * movement_speed
+	move_and_collide(move)
+
+func changeDirAfterDelay(new_velocity):
+	if (Time.get_ticks_msec() - lastSwitch < dirSwitchDelay):
+		return currDir
+		
 	var move = Vector2(0,0)
 	if(abs(new_velocity.x) > abs(new_velocity.y)):
 		if(new_velocity.x < 0):
 			move.x = -1
-			$AnimationPlayer.play("WalkLeft")
-			#print("LEFT")
 		else:
 			move.x = 1
-			$AnimationPlayer.play("WalkRight")
-			#print("RIGHT")
 			
 	else:
 		if(new_velocity.y < 0):
 			move.y = -1
-			$AnimationPlayer.play("WalkUp")
-			#print("UP")
 		else:
 			move.y = 1
 			$AnimationPlayer.play("WalkDown")
-			#print("DOWN")
-	#print("MOVE ", move)
-	move = move.normalized() * new_velocity.length()
-	move_and_collide(move)
+	lastSwitch = Time.get_ticks_msec()
+	currDir = move
+	return currDir
+	
 
 
 func _process(delta):
 	frameCounter += 1
 	# Check if the frame counter has reached 5 (or any desired frame interval).
-	if frameCounter >= numFrames:
+	#if frameCounter >= numFrames:
+	if true:
 		frameCounter = 0
 		#update player position
 		if player == null:
