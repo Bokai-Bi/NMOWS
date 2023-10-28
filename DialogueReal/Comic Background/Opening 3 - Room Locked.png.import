@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5foh6m1xc66u"
-path="res://.godot/imported/killer_angry.png-27aea42f182004d5c681acb037845530.ctex"
+uid="uid://br6vbrfitnyqj"
+path="res://.godot/imported/Opening 3 - Room Locked.png-7da98eec0ded88e8f81a4aac0ad3b550.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Dialogue/Placeholder/killer_angry.png"
-dest_files=["res://.godot/imported/killer_angry.png-27aea42f182004d5c681acb037845530.ctex"]
+source_file="res://DialogueReal/Comic Background/Opening 3 - Room Locked.png"
+dest_files=["res://.godot/imported/Opening 3 - Room Locked.png-7da98eec0ded88e8f81a4aac0ad3b550.ctex"]
 
 [params]
 

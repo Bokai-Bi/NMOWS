@@ -1,0 +1,13 @@
+Join Killer 1
+Killer: Hey daddy >_<
+Killer: how are you
+- good
+	Killer: \:D
+	[signal arg="goodChoice"]
+	VAR {successfulRizzes} += 1
+	killer has been rizzed {successfulRizzes} times
+- bad
+	Killer (killer_angry): are u freaking serious -_-
+	[signal arg="badChoice"]
+	VAR {failedRizzes} += 1
+	killer has been rizzed {successfulRizzes} times

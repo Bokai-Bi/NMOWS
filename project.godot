@@ -27,6 +27,16 @@ variables={
 "failedRizzes": "0",
 "successfulRizzes": "0"
 }
+layout/styles={
+"Default": {
+"export_overrides": {},
+"inherits": ""
+},
+"New Style": {
+"inherits": ""
+}
+}
+layout/default_style="Default"
 
 [dotnet]
 

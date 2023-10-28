@@ -1,0 +1,8 @@
+[background arg="res://DialogueReal/Comic Background/Opening 1a - Phone Call.png" fade="0.0"]
+RING RING RING
+[background arg="res://DialogueReal/Comic Background/Opening 1b - Phone Call.png" fade="0.0"]
+"killer on phone": BRUH THERES CAKE IN ROOM 404. YOU GOTTA CHECK it OUT OR REGRET LIVING LMAO
+[background arg="res://DialogueReal/Comic Background/Opening 2 - Entering Room.png" fade="0.0"]
+you: Yay I can't wait to have some cake!
+[background arg="res://DialogueReal/Comic Background/Opening 3 - Room Locked.png" fade="0.0"]
+Killer: You are so naive, do you follow every stranger into a dark room? You’ve fallen into my trap and now we will play hide and seek!
