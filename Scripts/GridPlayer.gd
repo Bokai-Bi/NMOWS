@@ -29,31 +29,11 @@ func _ready():
 	in_hiding_range = false
 	canMove = true
 	popupText.visible = false
+	call_deferred("setPlayer")
+
+func setPlayer():
 	await get_tree().process_frame
 	get_tree().call_group("killer", "set_player", self)
-	print("Ready2")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func movement_function():
-	if not canMove:
-		return
-		
-	var direction = Vector2.ZERO
-
-	if dir == 0: 
-		$AnimationPlayer.play("WalkRight")
-		direction.x += pixelSize
-	elif dir == 1:
-		$AnimationPlayer.play("WalkLeft")
-		direction.x -= pixelSize
-	elif dir == 2: 
-		$AnimationPlayer.play("WalkDown")
-		direction.y += pixelSize
-	elif dir == 3:
-		$AnimationPlayer.play("WalkUp")
-		direction.y -= pixelSize
-
-	move_and_collide(direction)
 
 func _input(event):
 	if event.is_action_pressed("interact"):

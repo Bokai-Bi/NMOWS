@@ -137,7 +137,7 @@ text = "When the amongus is sus"
 horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 3)
+zoom = Vector2(1.25, 1.5)
 
 [connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
 [connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]
