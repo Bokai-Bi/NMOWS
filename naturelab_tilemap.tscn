@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dr7nq4gdnpyhq"]
+[gd_scene load_steps=6 format=3 uid="uid://cm8fnynuewrlp"]
 
 [ext_resource type="Texture2D" uid="uid://dc65vwfnucgwe" path="res://tileset_naturelab_iteration1.png" id="1_bc3dm"]
 [ext_resource type="PackedScene" uid="uid://f7q0pgcgmc4v" path="res://ObjectScenes/grid_killer.tscn" id="2_c77oy"]
