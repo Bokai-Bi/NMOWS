@@ -1,5 +1,7 @@
 [background arg="res://DialogueReal/Backgrounds/windowscene.PNG" fade="0.0"]
+Join you (worried) 2
 Once again, you narrowly escape the killer. You hope this door will be tough to break through.
+Leave you
 if {level1choice} == "provocative":
 	Join Killer (Default) 2
 	Killer: So you have some standards, hmmm?
@@ -7,11 +9,15 @@ if {level1choice} == "provocative":
 	Killer (killer_angry): Tell me... how would the proud little swan want to be defiled?
 	- No pain or you’ll have to pay the medical fees.
 		Leave Killer
-		you: Give me a swift death. No pain or you’ll have to pay the medical fees. Then I’ll maybe consider giving you another chance. If you show me your sincerity. IF.
+		Join you 2
+		you (provocative): Give me a swift death. No pain or you’ll have to pay the medical fees. Then I’ll maybe consider giving you another chance. If you show me your sincerity. IF.
+		Leave you
 		jump Impressed
 	- Do your worst.
 		Leave Killer
+		Join you (provocative) 2
 		you: Do your worst. I won’t even flinch.
+		Leave you
 		jump Unamused
 else:
 	Join Killer 2
@@ -19,11 +25,15 @@ else:
 	Killer (killer_angry): Lets play a game to spice things up a bit. What do you think am i going to do to you when I get to you?
 	- Hug me?
 		Leave Killer
-		you: Give me a big hug?
+		Join you 2
+		you (provocative): Give me a big hug?
+		Leave you
 		jump Impressed
 	- Kill me?
 		Leave Killer
-		you: Kill me?
+		Join you 2
+		you (fearful): Kill me?
+		Leave you
 		jump Unamused
 label Impressed
 VAR {level2choice} = "impressed"
