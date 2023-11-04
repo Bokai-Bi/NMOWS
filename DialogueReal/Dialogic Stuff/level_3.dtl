@@ -31,4 +31,5 @@ Join Killer 2
 Killer (killer_angry): That’s enough.
 Killer: All of this running and chasing... it serves no purpose.
 Killer: It ends now.
+Leave Killer
 VAR {nextScene} = "true"

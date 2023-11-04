@@ -10,4 +10,5 @@ You lock the door behind you. Safety... for now.
 	Join Killer (Default) 2
 	Killer: Oh, you’re doing exactly what I want. (also the cake is a lie)
 	VAR {level1choice} = "fearful"
+Leave Killer
 VAR {nextScene} = "true"
