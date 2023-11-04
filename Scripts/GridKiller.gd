@@ -13,7 +13,7 @@ var playerHiding
 
 var target_position = Vector2(0,0)
 
-var movement_speed: float = 2.0
+var movement_speed: float = 1
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 # Called when the node enters the scene tree for the first time.
