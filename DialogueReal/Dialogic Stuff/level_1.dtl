@@ -1,7 +1,9 @@
 You lock the door behind you. Safety... for now.
-- Pathetic. You’re gonna have to better than that.
+- Pathetic.
+	you: Pathetic. You’re gonna have to better than that.
 	Killer (killer_angry): Oh, don’t you worry, I WILL.
 	VAR {level1choice} = "provocative"
-- Lemme go. I’ll do anything you want (WHERE IS THE CAKE)
+- Lemme go.
+	you: Lemme go. I’ll do anything you want (WHERE IS THE CAKE)
 	Killer: Oh, you’re doing exactly what I want. (also the cake is a lie)
 	VAR {level1choice} = "fearful"
