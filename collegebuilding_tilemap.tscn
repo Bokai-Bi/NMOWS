@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://blkv18m45rqq3"]
+[gd_scene load_steps=4 format=3 uid="uid://rc052mglt64h"]
 
 [ext_resource type="Texture2D" uid="uid://b32gln0rmc5ef" path="res://College_Building_-_Iteration_1.png" id="1_5qrvn"]
 
@@ -64,7 +64,7 @@ texture = ExtResource("1_5qrvn")
 [sub_resource type="TileSet" id="TileSet_xgkut"]
 sources/0 = SubResource("TileSetAtlasSource_8qb3r")
 
-[node name="TileMap" type="TileMap"]
+[node name="TileMap2" type="TileMap"]
 tile_set = SubResource("TileSet_xgkut")
 format = 2
 layer_0/name = "floor"
