@@ -25,6 +25,7 @@ Killer: !!!!!!
 Killer: Is..!!! Is that so!!!!
 Killer: That is.. quite a challenge!!! But nothing is challenging enough to defeat the great HORSEFACE!!!!!!
 Killer: Prepare yourself...!!!
+VAR {nextScene} = "true"
 [end_timeline]
 label Unamused
 VAR {level2choice} = "unamused"
