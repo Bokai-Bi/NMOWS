@@ -1,5 +1,7 @@
 [background arg="res://DialogueReal/Backgrounds/windowscene.PNG" fade="0.0"]
+Join you (fearful) 2
 You aren't sure where to run to next. You can't hold up much longer.
+Leave you
 if {level2choice} == "impressed":
 	Join Killer 2
 	Killer (Default): You really are something special, huh?
@@ -7,11 +9,13 @@ if {level2choice} == "impressed":
 	Killer: Keh heh heh…
 	- Yes. But the fun ends when the chase ends, no?
 		Leave Killer
-		you: Yes. But the fun ends when the chase ends, no? I’m happy with what we have right now.
+		Join you 2
+		you (provocative): Yes. But the fun ends when the chase ends, no? I’m happy with what we have right now.
 		VAR {level3choice} = "good"
 	- Ugh. That sounds disgusting.
 		Leave Killer
-		you: Ugh. That sounds disgusting. You’re not the type to catch a grenade for me, are you? You only care about the chase.
+		Join you 2
+		you (dissapointed): Ugh. That sounds disgusting. You’re not the type to catch a grenade for me, are you? You only care about the chase.
 		VAR {level3choice} = "bad"
 else:
 	Join Killer 2
@@ -21,12 +25,15 @@ else:
 	Killer: You don’t want to die a boring death now, do you?
 	- Maybe the killer can surprise me?
 		Leave Killer
-		you: I don’t. Maybe the killer can surprise me? It’s your job, after all… Be a professional, now.
+		Join you 2
+		you (confused): I don’t. Maybe the killer can surprise me? It’s your job, after all… Be a professional, now.
 		VAR {level3choice} = "good"
 	- I don’t want to die.
 		Leave Killer
-		you: I don’t want to die. Get away from me!! (witchzard noises)
+		Join you 2
+		you (fearful): I don’t want to die. Get away from me!! (witchzard noises)
 		VAR {level3choice} = "bad"
+Leave you
 Join Killer 2
 Killer (killer_angry): That’s enough.
 Killer: All of this running and chasing... it serves no purpose.
