@@ -109,6 +109,11 @@ func set_hiding(hiding):
 	playerHiding = hiding
 
 
+func _on_area_2d_area_entered(body):
+	if body.name == "GridPlayer":
+		get_tree().change_scene_to_file("res://lose_screen.tscn")		
+	pass # Replace with function body.
+
 func _on_area_2d_body_entered(body):
 	if body.name == "GridPlayer":
 		get_tree().change_scene_to_file("res://lose_screen.tscn")		
