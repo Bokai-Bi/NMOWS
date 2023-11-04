@@ -8,3 +8,4 @@ You lock the door behind you. Safety... for now.
 	you: Lemme go. I’ll do anything you want (WHERE IS THE CAKE)
 	Killer: Oh, you’re doing exactly what I want. (also the cake is a lie)
 	VAR {level1choice} = "fearful"
+VAR {nextScene} = "true"
