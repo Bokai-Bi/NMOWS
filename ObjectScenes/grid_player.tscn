@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cvbkt2nt5hks4" path="res://Sprites/Chase/visionBlocker.png" id="3_n1e5s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_734vd"]
+size = Vector2(15.3846, 11.5385)
 
 [sub_resource type="Animation" id="Animation_axq2i"]
 resource_name = "Idle"
@@ -101,16 +102,16 @@ gravity_scale = 0.0
 script = ExtResource("1_k1buu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3, 3)
+position = Vector2(0, 6.75)
+scale = Vector2(0.65, 0.65)
 shape = SubResource("RectangleShape2D_734vd")
 debug_color = Color(0.882353, 0, 0.819608, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_jao5y")
 hframes = 4
 vframes = 5
-frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -125,7 +126,7 @@ texture = ExtResource("3_n1e5s")
 [node name="InteractionRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
-scale = Vector2(5, 5)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_5etaa")
 
 [node name="Label" type="Label" parent="."]
@@ -137,7 +138,7 @@ text = "When the amongus is sus"
 horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.25, 1.5)
+zoom = Vector2(5, 6)
 
 [connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
 [connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]

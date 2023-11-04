@@ -1,3 +1,4 @@
+[background arg="res://DialogueReal/Backgrounds/windowscene.PNG" fade="0.0"]
 Once again, you narrowly escape the killer. You hope this door will be tough to break through.
 if {level1choice} == "provocative":
 	Killer: So you have some standards, hmmm?
