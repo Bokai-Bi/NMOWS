@@ -7,12 +7,55 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "",
+"default_portrait": "happy",
 "description": "",
 "display_name": "You",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {},
-"scale": 1.0
+"portraits": {
+"confused": {
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-confused.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"dissapointed": {
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-disappointed.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"fearful": {
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-fearful.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"happy": {
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-happy.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"provocative": {
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-provocative.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"worried": {
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-worried.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 0.4
 }
