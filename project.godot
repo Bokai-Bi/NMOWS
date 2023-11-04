@@ -32,7 +32,9 @@ variables={
 }
 layout/styles={
 "Default": {
-"export_overrides": {},
+"export_overrides": {
+"box_modulate": "Color(0, 0, 0, 0)"
+},
 "inherits": ""
 }
 }
