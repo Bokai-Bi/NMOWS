@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NMOWS"
-run/main_scene="res://chase_scene_grid.tscn"
+run/main_scene="res://naturelab_tilemap.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -55,11 +55,6 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 text/autopauses={}
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 
 [dotnet]
 

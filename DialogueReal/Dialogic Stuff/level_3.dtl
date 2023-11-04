@@ -17,10 +17,11 @@ else:
 	Killer: You don’t want to die a boring death now, do you?
 	- Maybe the killer can surprise me?
 		you: I don’t. Maybe the killer can surprise me? It’s your job, after all… Be a professional, now.
-		VAR {level3choice} = "bad"
+		VAR {level3choice} = "good"
 	- I don’t want to die.
 		you: I don’t want to die. Get away from me!! (witchzard noises)
 		VAR {level3choice} = "bad"
 Killer: That’s enough.
 Killer: All of this running and chasing... it serves no purpose.
 Killer: It ends now.
+VAR {nextScene} = "true"
