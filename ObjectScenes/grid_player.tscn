@@ -119,6 +119,7 @@ libraries = {
 }
 
 [node name="VisionBlocker" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1.90735e-06, -9.53674e-07)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_n1e5s")
@@ -130,6 +131,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_5etaa")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -101.0
 offset_top = -31.0
 offset_right = 96.0

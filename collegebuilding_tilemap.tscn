@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=5 format=3 uid="uid://gbe7ekggvd5b"]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://rc052mglt64h"]
+>>>>>>> 418f46eddaf06534458f6ae532ff9f2e89d7b012
 
 [ext_resource type="Texture2D" uid="uid://b32gln0rmc5ef" path="res://College_Building_-_Iteration_1.png" id="1_5qrvn"]
 [ext_resource type="PackedScene" uid="uid://botod5i770as7" path="res://ObjectScenes/grid_player.tscn" id="2_tdkev"]
@@ -195,7 +199,7 @@ texture = ExtResource("1_5qrvn")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8qb3r")
 
-[node name="TileMap" type="TileMap"]
+[node name="TileMap2" type="TileMap"]
 tile_set = SubResource("TileSet_xgkut")
 format = 2
 layer_0/name = "floor"

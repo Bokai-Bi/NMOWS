@@ -15,21 +15,28 @@
 "offset": Vector2(0, 0),
 "portraits": {
 "Default": {
-"image": "res://Sprites/Dialogue/Placeholder/killer.png",
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"killer": {
-"image": "res://Sprites/Dialogue/Placeholder/killer.png",
+"image": "res://DialogueReal/Backgrounds/dialogueboxKiller-neutral.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
 "killer_angry": {
-"image": "res://Sprites/Dialogue/Placeholder/killer_angry.png",
+"image": "res://DialogueReal/Backgrounds/dialogueboxKiller-angy.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"killer_blushing": {
+"image": "res://DialogueReal/Backgrounds/dialogueboxKiller-blushing.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"killer_fearful": {
+"image": "res://DialogueReal/Backgrounds/dialogueboxKiller-fearful.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,

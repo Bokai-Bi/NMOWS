@@ -1,26 +1,35 @@
 [background arg="res://DialogueReal/Backgrounds/windowscene.PNG" fade="0.0"]
 You aren't sure where to run to next. You can't hold up much longer.
 if {level2choice} == "impressed":
-	Killer: You really are something special, huh?
+	Join Killer 2
+	Killer (Default): You really are something special, huh?
 	Killer: Now I want to catch you even more..
 	Killer: Keh heh heh…
 	- Yes. But the fun ends when the chase ends, no?
+		Leave Killer
 		you: Yes. But the fun ends when the chase ends, no? I’m happy with what we have right now.
 		VAR {level3choice} = "good"
 	- Ugh. That sounds disgusting.
+		Leave Killer
 		you: Ugh. That sounds disgusting. You’re not the type to catch a grenade for me, are you? You only care about the chase.
 		VAR {level3choice} = "bad"
 else:
-	Killer: What a pain…
+	Join Killer 2
+	Killer (Default): What a pain…
 	Killer: I’ll give you one more chance…
 	Killer: Make this night interesting, won’t you?
 	Killer: You don’t want to die a boring death now, do you?
 	- Maybe the killer can surprise me?
+		Leave Killer
 		you: I don’t. Maybe the killer can surprise me? It’s your job, after all… Be a professional, now.
-		VAR {level3choice} = "bad"
+		VAR {level3choice} = "good"
 	- I don’t want to die.
+		Leave Killer
 		you: I don’t want to die. Get away from me!! (witchzard noises)
 		VAR {level3choice} = "bad"
-Killer: That’s enough.
+Join Killer 2
+Killer (killer_angry): That’s enough.
 Killer: All of this running and chasing... it serves no purpose.
 Killer: It ends now.
+Leave Killer
+VAR {nextScene} = "true"
