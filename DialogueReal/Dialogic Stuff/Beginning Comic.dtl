@@ -1,3 +1,4 @@
+VAR {nextScene} = "false"
 [background arg="res://DialogueReal/Comic Background/Opening 1a - Phone Call.png" fade="0.0"]
 RING RING RING
 [background arg="res://DialogueReal/Comic Background/Opening 1b - Phone Call.png" fade="0.0"]
@@ -6,3 +7,4 @@ RING RING RING
 you: Yay I can't wait to have some cake!
 [background arg="res://DialogueReal/Comic Background/Opening 3 - Room Locked.png" fade="0.0"]
 Killer: You are so naive, do you follow every stranger into a dark room? You’ve fallen into my trap and now we will play hide and seek!
+VAR {nextScene} = "true"
