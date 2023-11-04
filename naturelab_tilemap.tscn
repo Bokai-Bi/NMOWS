@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dr7nq4gdnpyhq"]
+[gd_scene load_steps=14 format=3 uid="uid://dr7nq4gdnpyhq"]
 
 [ext_resource type="Texture2D" uid="uid://dc65vwfnucgwe" path="res://tileset_naturelab_iteration1.png" id="1_bc3dm"]
 [ext_resource type="PackedScene" uid="uid://f7q0pgcgmc4v" path="res://ObjectScenes/grid_killer.tscn" id="2_c77oy"]
@@ -9,17 +9,12 @@ vertices = PackedVector2Array(-8, -8, 8, -8, 8, -4.5, 8, 8, -8, 8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, -4.5, 8, 8, -8, 8)])
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_tc8m6"]
-vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qb85r"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_l2ngm"]
-vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_7bvg0"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
@@ -73,6 +68,7 @@ texture = ExtResource("1_bc3dm")
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_qb85r")
 3:2/0 = 0
 3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:2/0/physics_layer_0/angular_velocity = 0.0
@@ -88,7 +84,6 @@ texture = ExtResource("1_bc3dm")
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
-0:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tc8m6")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -101,7 +96,6 @@ texture = ExtResource("1_bc3dm")
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 8, 8, 8, 8, -8, -8, -8)
-1:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_7bvg0")
 2:1/0 = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
@@ -174,11 +168,6 @@ physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_xu8cy")
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_teull"]
-vertices = PackedVector2Array(1.95, -0.26, 1.96, 0.47, 0.35, 0.47, 0.355, -0.26)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(1.95, -0.26, 1.96, 0.47, 0.35, 0.47, 0.355, -0.26)])
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxrp8"]
 size = Vector2(20, 8.38)
 
@@ -210,12 +199,6 @@ scale = Vector2(0.4, 0.4)
 [node name="GridPlayer" parent="." instance=ExtResource("3_u782u")]
 position = Vector2(106, 73)
 scale = Vector2(0.4, 0.4)
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-71, 99)
-scale = Vector2(200, 200)
-navigation_polygon = SubResource("NavigationPolygon_teull")
-constrain_avoidance = true
 
 [node name="Node2D" type="Node2D" parent="."]
 
