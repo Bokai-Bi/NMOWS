@@ -1,41 +1,61 @@
 [background arg="res://DialogueReal/Backgrounds/windowscene.PNG" fade="0.0"]
+Join you (worried) 2
 Once again, you narrowly escape the killer. You hope this door will be tough to break through.
+Leave you
 if {level1choice} == "provocative":
+	Join Killer (Default) 2
 	Killer: So you have some standards, hmmm?
 	Killer: Very well. It will be all the more enjoyable when you fall short of your own standards.
-	Killer: Tell me... how would the proud little swan want to be defiled?
+	Killer (killer_angry): Tell me... how would the proud little swan want to be defiled?
 	- No pain or you’ll have to pay the medical fees.
-		you: Give me a swift death. No pain or you’ll have to pay the medical fees. Then I’ll maybe consider giving you another chance. If you show me your sincerity. IF.
+		Leave Killer
+		Join you 2
+		you (provocative): Give me a swift death. No pain or you’ll have to pay the medical fees. Then I’ll maybe consider giving you another chance. If you show me your sincerity. IF.
+		Leave you
 		jump Impressed
 	- Do your worst.
+		Leave Killer
+		Join you (provocative) 2
 		you: Do your worst. I won’t even flinch.
+		Leave you
 		jump Unamused
 else:
+	Join Killer 2
 	Killer: Everything is going as planned. This is boring, there’s barely any resistance from you.
-	Killer: Lets play a game to spice things up a bit. What do you think am i going to do to you when I get to you?
+	Killer (killer_angry): Lets play a game to spice things up a bit. What do you think am i going to do to you when I get to you?
 	- Hug me?
-		you: Give me a big hug?
+		Leave Killer
+		Join you 2
+		you (provocative): Give me a big hug?
+		Leave you
 		jump Impressed
 	- Kill me?
-		you: Kill me?
+		Leave Killer
+		Join you 2
+		you (fearful): Kill me?
+		Leave you
 		jump Unamused
 label Impressed
 VAR {level2choice} = "impressed"
-Killer: !!!!!!
+Join Killer 2
+Killer (killer_fearful): !!!!!!
 Killer: Is..!!! Is that so!!!!
 Killer: That is.. quite a challenge!!! But nothing is challenging enough to defeat the great HORSEFACE!!!!!!
 Killer: Prepare yourself...!!!
+Leave Killer
 VAR {nextScene} = "true"
 [end_timeline]
 label Unamused
 VAR {level2choice} = "unamused"
-Killer: Well yes. I can certainly see your intelligence is intact.
+Join Killer 2
+Killer (Default): Well yes. I can certainly see your intelligence is intact.
 Killer: But... how do I say this... isn’t this kind of boring???
-Killer: I like my target STRONG! CHALLENGING!! MYSTERIOUS!!!
+Killer (killer_angry): I like my target STRONG! CHALLENGING!! MYSTERIOUS!!!
 Killer: A treat to kill when I hear the blood-curdling screams..! Yes!! WRITHING! WRIGGLING!
 Killer: You’re the kind of person to just get, like, killed when i sink that knife in, are you?
 Killer: I’m literally so disappointed in myself for picking you as my target. Come to think of it, there was a bald guy with a beard and glasses that looked pretty hot... he even selled those tasty blue thingies. Shoulda picked him instead. Or that sexy triolingo owl. Mmmmmmm.
 Killer: Oh I’m sorry I forgot that you were still here.
 Killer: (rolls eyes) Lets just get this over with before I lose all my patience.
+Leave Killer
 VAR {nextScene} = "true"
 [end_timeline]

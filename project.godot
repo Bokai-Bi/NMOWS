@@ -34,7 +34,10 @@ variables={
 layout/styles={
 "Default": {
 "export_overrides": {
-"box_modulate": "Color(0, 0, 0, 0)"
+"box_modulate": "Color(0, 0, 0, 0)",
+"box_size": "Vector2(300, 120)",
+"name_label_alignment": "2",
+"text_alignment": "1"
 },
 "inherits": ""
 }

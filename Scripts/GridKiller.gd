@@ -5,7 +5,9 @@ var frameCounter = 0  # Initialize a variable to keep track of the frame count.
 var pixelSize = 32
 var numFrames = 0
 
-var dirSwitchDelay = 1000
+var health = 3
+
+var dirSwitchDelay = 500
 var currDir = Vector2(0,0)
 var lastSwitch = 0
 
@@ -13,7 +15,7 @@ var playerHiding
 
 var target_position = Vector2(0,0)
 
-var movement_speed: float = 2.0
+var movement_speed: float = 1
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 # Called when the node enters the scene tree for the first time.
@@ -22,8 +24,8 @@ func _ready():
 	$AnimationPlayer.play("Idle")
 	playerHiding = false
 	
-	navigation_agent.path_desired_distance = 4.0
-	navigation_agent.target_desired_distance = 4.0
+	navigation_agent.path_desired_distance = 2.0
+	navigation_agent.target_desired_distance = 8.0
 
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
@@ -109,7 +111,11 @@ func set_hiding(hiding):
 	playerHiding = hiding
 
 
+
 func _on_area_2d_body_entered(body):
 	if body.name == "GridPlayer":
+		health -= 1
+		
+	if body.name == "GridPlayer" && health <= 0:
 		get_tree().change_scene_to_file("res://lose_screen.tscn")		
 	pass # Replace with function body.
