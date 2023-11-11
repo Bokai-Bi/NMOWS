@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo4t84tk18bpj"]
+[gd_scene load_steps=7 format=3 uid="uid://bo4t84tk18bpj"]
 
 [ext_resource type="Script" path="res://Scripts/KeyBehavior.gd" id="1_hjttq"]
 [ext_resource type="Texture2D" uid="uid://cso5s4rh1m7rp" path="res://Sprites/Chase/keytmp.png" id="2_pjdaa"]
 [ext_resource type="Texture2D" uid="uid://dpc0bus1tuuns" path="res://icon.svg" id="3_5nl4l"]
+[ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="3_vibi8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1iiu2"]
 size = Vector2(22, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6og3"]
+size = Vector2(53, 52)
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,6 +25,7 @@ shape = SubResource("RectangleShape2D_1iiu2")
 
 [node name="Door" type="StaticBody2D" parent="."]
 position = Vector2(42, 0)
+script = ExtResource("3_vibi8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Door"]
 scale = Vector2(0.3, 0.3)
@@ -30,4 +35,11 @@ texture = ExtResource("3_5nl4l")
 scale = Vector2(0.3, 0.3)
 polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
 
+[node name="Area2D" type="Area2D" parent="Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_w6og3")
+
 [connection signal="body_entered" from="Key" to="Key" method="_on_body_entered"]
+[connection signal="body_entered" from="Door/Area2D" to="Door" method="_on_area_2d_body_entered"]

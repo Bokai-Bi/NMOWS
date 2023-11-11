@@ -1,5 +1,6 @@
-extends Node
+extends StaticBody2D
 
+var locked = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,13 +11,9 @@ func _ready():
 func _process(delta):
 	pass
 	
-
-func _on_body_entered(body):
+func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		var door = $"../Door"
-		door.locked = false
-		door.visible = true
-		$"../Key".visible = false
-	
-	
-	
+		if locked == false:
+			visible = false
+			process_mode = Node.PROCESS_MODE_DISABLED
+		
