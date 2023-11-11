@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr7nq4gdnpyhq"]
+[gd_scene load_steps=10 format=3 uid="uid://bjvgur3qs5hwo"]
 
 [ext_resource type="Texture2D" uid="uid://dc65vwfnucgwe" path="res://tileset_naturelab_iteration1.png" id="1_bc3dm"]
 [ext_resource type="PackedScene" uid="uid://f7q0pgcgmc4v" path="res://ObjectScenes/grid_killer.tscn" id="2_c77oy"]
 [ext_resource type="PackedScene" uid="uid://botod5i770as7" path="res://ObjectScenes/grid_player.tscn" id="3_u782u"]
+[ext_resource type="PackedScene" uid="uid://bku68vknynmhj" path="res://ObjectScenes/next_Scene.tscn" id="4_t7ysa"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rkpsr"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -206,3 +207,7 @@ gravity_scale = 0.0
 position = Vector2(150, 200)
 scale = Vector2(23.2792, 2)
 shape = SubResource("RectangleShape2D_hxrp8")
+
+[node name="next_Scene" parent="." instance=ExtResource("4_t7ysa")]
+position = Vector2(179, 96)
+scale = Vector2(0.05, 0.05)

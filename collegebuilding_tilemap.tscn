@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b01lffv5s5llb"]
+[gd_scene load_steps=5 format=3 uid="uid://dwupcly6qyoxy"]
 
 [ext_resource type="Texture2D" uid="uid://b32gln0rmc5ef" path="res://College_Building_-_Iteration_1.png" id="1_5qrvn"]
 [ext_resource type="PackedScene" uid="uid://botod5i770as7" path="res://ObjectScenes/grid_player.tscn" id="2_tdkev"]

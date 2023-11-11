@@ -119,6 +119,7 @@ libraries = {
 }
 
 [node name="VisionBlocker" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1.90735e-06, -9.53674e-07)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_n1e5s")
@@ -139,7 +140,7 @@ text = "When the amongus is sus"
 horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 3)
+zoom = Vector2(5, 6)
 
 [connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
 [connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]
