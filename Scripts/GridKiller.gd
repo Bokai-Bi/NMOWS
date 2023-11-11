@@ -5,7 +5,7 @@ var frameCounter = 0  # Initialize a variable to keep track of the frame count.
 var pixelSize = 32
 var numFrames = 0
 
-var dirSwitchDelay = 1000
+var dirSwitchDelay = 500
 var currDir = Vector2(0,0)
 var lastSwitch = 0
 
@@ -22,8 +22,8 @@ func _ready():
 	$AnimationPlayer.play("Idle")
 	playerHiding = false
 	
-	navigation_agent.path_desired_distance = 4.0
-	navigation_agent.target_desired_distance = 4.0
+	navigation_agent.path_desired_distance = 2.0
+	navigation_agent.target_desired_distance = 8.0
 
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")

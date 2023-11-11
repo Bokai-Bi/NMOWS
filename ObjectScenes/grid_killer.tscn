@@ -107,10 +107,10 @@ func _process(delta):
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcjn1"]
-size = Vector2(10.5, 13)
+size = Vector2(12.5, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpdad"]
-size = Vector2(4.33333, 3.66667)
+size = Vector2(1.66667, 1)
 
 [node name="GridKiller" type="RigidBody2D"]
 position = Vector2(176, 16)
