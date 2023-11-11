@@ -5,6 +5,8 @@ var frameCounter = 0  # Initialize a variable to keep track of the frame count.
 var pixelSize = 32
 var numFrames = 0
 
+var health = 3
+
 var dirSwitchDelay = 500
 var currDir = Vector2(0,0)
 var lastSwitch = 0
@@ -109,12 +111,11 @@ func set_hiding(hiding):
 	playerHiding = hiding
 
 
-func _on_area_2d_area_entered(body):
-	if body.name == "GridPlayer":
-		get_tree().change_scene_to_file("res://lose_screen.tscn")		
-	pass # Replace with function body.
 
 func _on_area_2d_body_entered(body):
 	if body.name == "GridPlayer":
+		health -= 1
+		
+	if body.name == "GridPlayer" && health <= 0:
 		get_tree().change_scene_to_file("res://lose_screen.tscn")		
 	pass # Replace with function body.
