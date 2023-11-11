@@ -124,6 +124,12 @@ position = Vector2(1.90735e-06, -9.53674e-07)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_n1e5s")
 
+[node name="VisionBlocker2" type="Sprite2D" parent="."]
+z_index = 4096
+position = Vector2(9.29832e-06, 1)
+scale = Vector2(0.194, 0.0915)
+texture = ExtResource("3_n1e5s")
+
 [node name="InteractionRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
@@ -140,7 +146,7 @@ text = "When the amongus is sus"
 horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 6)
+zoom = Vector2(3, 3.6)
 
 [connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
 [connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]

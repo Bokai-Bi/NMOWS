@@ -204,5 +204,5 @@ scale = Vector2(23.2792, 2)
 shape = SubResource("RectangleShape2D_hxrp8")
 
 [node name="next_Scene" parent="." instance=ExtResource("4_t7ysa")]
-position = Vector2(179, 96)
+position = Vector2(440, 283)
 scale = Vector2(0.05, 0.05)

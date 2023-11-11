@@ -59,6 +59,11 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 text/autopauses={}
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [dotnet]
 
 project/assembly_name="NMOWS"
