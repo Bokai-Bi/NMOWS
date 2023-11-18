@@ -36,6 +36,7 @@ layout/styles={
 "box_size": "Vector2(550, 150)",
 "name_label_alignment": "2",
 "name_label_font_size": "20.0",
+"normal_font": "\"res://DialogueReal/Other/Dialogue Font.ttf\"",
 "text_alignment": "1",
 "text_size": "20.0"
 },
