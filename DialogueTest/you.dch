@@ -5,14 +5,14 @@
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": ""
+"style": "Default"
 },
 "default_portrait": "happy",
 "description": "",
 "display_name": "You",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(-110, 5),
+"offset": Vector2(-110, 7),
 "portraits": {
 "confused": {
 "image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-confused.png",
