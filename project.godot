@@ -24,20 +24,20 @@ GlobalData="*res://globalData.gd"
 
 glossary/default_case_sensitive=true
 variables={
-"failedRizzes": "0",
 "level1choice": "none",
 "level2choice": "none",
 "level3choice": "none",
-"nextScene": "false",
-"successfulRizzes": "0"
+"nextScene": "false"
 }
 layout/styles={
 "Default": {
 "export_overrides": {
 "box_modulate": "Color(0, 0, 0, 0)",
-"box_size": "Vector2(300, 120)",
+"box_size": "Vector2(550, 150)",
 "name_label_alignment": "2",
-"text_alignment": "1"
+"name_label_font_size": "20.0",
+"text_alignment": "1",
+"text_size": "20.0"
 },
 "inherits": ""
 }
@@ -58,6 +58,9 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 text/autopauses={}
+animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
+animations/leave_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
+layout/end_behaviour=1
 
 [display]
 
