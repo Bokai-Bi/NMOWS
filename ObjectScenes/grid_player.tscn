@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://botod5i770as7"]
+[gd_scene load_steps=13 format=3 uid="uid://botod5i770as7"]
 
 [ext_resource type="Script" path="res://Scripts/GridPlayer.gd" id="1_k1buu"]
 [ext_resource type="Texture2D" uid="uid://dj8s4ubel5p64" path="res://Sprites/Chase/player_run_PLACEHOLDER.png" id="2_jao5y"]
-[ext_resource type="Texture2D" uid="uid://cvbkt2nt5hks4" path="res://Sprites/Chase/visionBlocker.png" id="3_n1e5s"]
+[ext_resource type="Texture2D" uid="uid://dm4yv48m3ybo3" path="res://Sprites/UI/vision blocker.png" id="3_tda5f"]
+[ext_resource type="Texture2D" uid="uid://c3o7fqi4v2eta" path="res://Sprites/UI/blood splatter.png" id="4_68rwe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_734vd"]
 size = Vector2(15.3846, 11.5385)
@@ -118,18 +119,6 @@ libraries = {
 "": SubResource("AnimationLibrary_dv04f")
 }
 
-[node name="VisionBlocker" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1.90735e-06, -9.53674e-07)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_n1e5s")
-
-[node name="VisionBlocker2" type="Sprite2D" parent="."]
-z_index = 4096
-position = Vector2(9.29832e-06, 1)
-scale = Vector2(0.194, 0.0915)
-texture = ExtResource("3_n1e5s")
-
 [node name="InteractionRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
@@ -147,6 +136,15 @@ horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3.6)
+
+[node name="VisionBlocker" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1)
+texture = ExtResource("3_tda5f")
+
+[node name="BloodSplatter" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(1.2, 1)
+texture = ExtResource("4_68rwe")
 
 [connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
 [connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]

@@ -98,8 +98,8 @@ func _process(delta):
 		else:
 			target_position = player.global_position
 			navigation_agent.target_position = target_position
-			print("New target:")
-			print(target_position)
+			#print("New target:")
+			#print(target_position)
 
 	
 
