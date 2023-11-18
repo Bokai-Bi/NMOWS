@@ -24,12 +24,10 @@ GlobalData="*res://globalData.gd"
 
 glossary/default_case_sensitive=true
 variables={
-"failedRizzes": "0",
 "level1choice": "none",
 "level2choice": "none",
 "level3choice": "none",
-"nextScene": "false",
-"successfulRizzes": "0"
+"nextScene": "false"
 }
 layout/styles={
 "Default": {
@@ -58,6 +56,8 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 text/autopauses={}
+animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
+animations/leave_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
 
 [display]
 

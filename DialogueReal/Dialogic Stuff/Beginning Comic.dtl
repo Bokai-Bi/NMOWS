@@ -1,8 +1,8 @@
 VAR {nextScene} = "false"
 [background arg="res://DialogueReal/Comic Background/Opening 1a - Phone Call.png" fade="0.0"]
+Join "killer on phone" 2
 RING RING RING
 [background arg="res://DialogueReal/Comic Background/Opening 1b - Phone Call.png" fade="0.0"]
-Join "killer on phone" 2
 "killer on phone" (Default): BRUH THERES CAKE IN ROOM 404. YOU GOTTA CHECK it OUT OR REGRET LIVING LMAO
 Leave "killer on phone"
 [background arg="res://DialogueReal/Comic Background/Opening 2 - Entering Room.png" fade="0.0"]
