@@ -72,8 +72,8 @@ func check_collision(dir):
 	var collider_transform = collider.transform
 	collider_transform.origin.x += dir.x * movement_speed
 	collider_transform.origin.y += dir.y * movement_speed
-	params.shape = collider_transform
-	params.shape = collider_transform.shape
+	#params.shape = collider_transform
+	#params.shape = collider_transform.shape
 
 	return get_world_2d().direct_space_state.intersect_shape(params)
 		
