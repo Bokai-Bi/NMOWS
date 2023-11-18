@@ -12,50 +12,50 @@
 "display_name": "You",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(-110, 7),
+"offset": Vector2(-50, 0),
 "portraits": {
 "confused": {
-"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-confused.png",
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-confused.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
 "dissapointed": {
-"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-disappointed.png",
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-disappointed.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
 "fearful": {
-"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-fearful.png",
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-fearful.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
 "happy": {
-"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-happy.png",
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-happy.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
 "provocative": {
-"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-provocative.png",
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-provocative.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
 "worried": {
-"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-left-worried.png",
+"image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-worried.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 }
 },
-"scale": 0.4
+"scale": 1.0
 }
