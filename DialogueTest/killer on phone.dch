@@ -12,7 +12,7 @@
 "display_name": "Phone",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 0),
+"offset": Vector2(-50, 0),
 "portraits": {
 "Default": {
 "image": "res://DialogueReal/Backgrounds/dialogueboxKiller-phone.png",
