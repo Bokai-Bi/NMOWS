@@ -6,6 +6,7 @@ var pixelSize = 32
 var numFrames = 0
 
 var health = 3
+var player_collided = false
 
 var dirSwitchDelay = 500
 var currDir = Vector2(0,0)
@@ -114,9 +115,26 @@ func set_hiding(hiding):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "GridPlayer":
+		player_collided = true
+		player_collision_timer()
 		health -= 1
 		player.display_blood(health)
 		
 	if body.name == "GridPlayer" && health <= 0:
 		get_tree().change_scene_to_file("res://lose_screen.tscn")		
+	pass # Replace with function body.
+	
+func _on_area_2d_body_exited(body):
+	if body.name == "GridPlayer":
+		player_collided = false
+	pass
+
+func player_collision_timer():
+	while (player_collided == true):
+		await get_tree().create_timer(1).timeout
+		if (player_collided == true):
+			health -= 1
+			player.display_blood(health)
+			if health <= 0:
+				get_tree().change_scene_to_file("res://lose_screen.tscn")		
 	pass # Replace with function body.
