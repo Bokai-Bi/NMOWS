@@ -6,10 +6,12 @@ var pixelSize = 32
 var numFrames = 60
 
 var hiding = false
-var visionBlockerSizeNormal = 0.3
-var visionBlockerSizeHiding = 0.15
-var visionBlockerSizeChangeSpeed = 0.0003
+var visionBlockerSizeNormal = 1.8	
+var visionBlockerSizeHiding = 1
+var visionBlockerSizeChangeSpeed = 0.003
 var visionBlocker
+var bloodSplatter
+var baseBloodVisibility = 0
 var popupText
 
 var in_hiding_range
@@ -25,6 +27,7 @@ var speed = 2.5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visionBlocker = get_node("VisionBlocker")
+	bloodSplatter = get_node("BloodSplatter")
 	popupText = get_node("Label")
 	in_hiding_range = false
 	canMove = true
@@ -73,14 +76,16 @@ func _physics_process(delta):
 	if !hiding:
 		velocity = move_and_collide(velocity)
 		
+	bloodSplatter.modulate.a = max(bloodSplatter.modulate.a - 0.01, baseBloodVisibility)
+		
 	if hiding:
 		var currsize = visionBlocker.scale
-		currsize.x = max(currsize.x - visionBlockerSizeChangeSpeed, visionBlockerSizeHiding)
+		currsize.x = max(currsize.x - visionBlockerSizeChangeSpeed*1.2, visionBlockerSizeHiding*1.2)
 		currsize.y = max(currsize.y - visionBlockerSizeChangeSpeed, visionBlockerSizeHiding)
 		visionBlocker.scale = currsize
 	else:
 		var currsize = visionBlocker.scale
-		currsize.x = min(currsize.x + visionBlockerSizeChangeSpeed, visionBlockerSizeNormal)
+		currsize.x = min(currsize.x + visionBlockerSizeChangeSpeed*1.2, visionBlockerSizeNormal*1.2)
 		currsize.y = min(currsize.y + visionBlockerSizeChangeSpeed, visionBlockerSizeNormal)
 		visionBlocker.scale = currsize
 
@@ -133,3 +138,7 @@ func _on_interaction_range_body_exited(body):
 
 func _integrate_forces(state):
 	rotation = 0 # prevent player from rotating
+
+func display_blood(health):
+	bloodSplatter.modulate.a = 1
+	baseBloodVisibility = (3 - health) * 0.15
