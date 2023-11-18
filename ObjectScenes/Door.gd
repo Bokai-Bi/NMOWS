@@ -12,7 +12,7 @@ func _process(delta):
 	pass
 	
 func _on_area_2d_body_entered(body):
-	if body.name == "Player":
+	if body.name == "GridPlayer":
 		if locked == false:
 			visible = false
 			process_mode = Node.PROCESS_MODE_DISABLED

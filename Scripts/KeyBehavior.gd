@@ -11,12 +11,14 @@ func _process(delta):
 	pass
 	
 
-func _on_body_entered(body):
-	if body.name == "Player":
+	
+	
+	
+
+
+func _on_area_2d_body_entered(body):
+	if body.name == "GridPlayer":
 		var door = $"../Door"
 		door.locked = false
 		door.visible = true
 		$"../Key".visible = false
-	
-	
-	
