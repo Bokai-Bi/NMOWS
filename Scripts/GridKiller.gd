@@ -138,10 +138,8 @@ func _on_area_2d_body_entered(body):
 		get_tree().change_scene_to_file("res://lose_screen.tscn")		
 	pass # Replace with function body.
 	
-func _on_area_2d_body_exited(body):
-	if body.name == "GridPlayer":
-		player_collided = false
-	pass
+#func _on_area_2d_body_exited(body):
+	
 
 func player_collision_timer():
 	while (player_collided == true):
@@ -152,3 +150,8 @@ func player_collision_timer():
 			if health <= 0:
 				get_tree().change_scene_to_file("res://lose_screen.tscn")		
 	pass # Replace with function body.
+
+
+func _on_interaction_range_body_exited(body):
+	if body.name == "GridPlayer":
+		player_collided = false
