@@ -24,6 +24,27 @@ var canMove
 var velocity = Vector2()
 var speed = 2.5
 
+var hasKey = false
+
+func keyAcquired():
+	popupText.visible = true
+	popupText.text = "You acquired a key!"
+	hasKey = true
+	await get_tree().create_timer(2.0).timeout
+	popupText.visible = false
+	
+func doorLocked():
+	if (hasKey == false):
+		popupText.visible = true
+		popupText.text = "You need a key"
+		await get_tree().create_timer(2.0).timeout
+		popupText.visible = false
+	if (hasKey == true):
+		popupText.visible = true
+		popupText.text = "This key doesn't fit"
+		await get_tree().create_timer(2.0).timeout
+		popupText.visible = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visionBlocker = get_node("VisionBlocker")
@@ -134,7 +155,6 @@ func _on_interaction_range_body_exited(body):
 		print("ExitingHideable")
 		in_hiding_range = false
 		popupText.visible = false
-		
 
 func _integrate_forces(state):
 	rotation = 0 # prevent player from rotating

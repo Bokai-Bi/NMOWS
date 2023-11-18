@@ -6,8 +6,9 @@ var pixelSize = 32
 var numFrames = 0
 
 var health = 3
+var player_collided = false
 
-var dirSwitchDelay = 500
+var dirSwitchDelay = 10
 var currDir = Vector2(0,0)
 var lastSwitch = 0
 
@@ -17,6 +18,7 @@ var target_position = Vector2(0,0)
 
 var movement_speed: float = 1
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var collider: CollisionShape2D = $CollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,7 +49,9 @@ func _physics_process(delta):
 	var new_velocity: Vector2 = next_path_position - current_agent_position
 	
 	var move = changeDirAfterDelay(new_velocity)
-	
+	var some = check_collision(move)
+	print(some)
+		
 	if(move.x < 0):
 		$AnimationPlayer.play("WalkLeft")
 	elif (move.x > 0):
@@ -57,13 +61,28 @@ func _physics_process(delta):
 	elif(move.y > 0):
 		$AnimationPlayer.play("WalkDown")
 
+	print(move.normalized())
 	move = move.normalized() * movement_speed
 	move_and_collide(move)
+	
+
+func check_collision(dir):
+	# Check if the given shape will intersect with any other shape
+	var params = PhysicsShapeQueryParameters2D.new()
+	var collider_transform = collider.transform
+	collider_transform.origin.x += dir.x * movement_speed
+	collider_transform.origin.y += dir.y * movement_speed
+	#params.shape = collider_transform
+	#params.shape = collider_transform.shape
+
+	return get_world_2d().direct_space_state.intersect_shape(params)
+		
 
 func changeDirAfterDelay(new_velocity):
 	if (Time.get_ticks_msec() - lastSwitch < dirSwitchDelay):
 		return currDir
 		
+	
 	var move = Vector2(0,0)
 	if(abs(new_velocity.x) > abs(new_velocity.y)):
 		if(new_velocity.x < 0):
@@ -98,10 +117,6 @@ func _process(delta):
 		else:
 			target_position = player.global_position
 			navigation_agent.target_position = target_position
-			#print("New target:")
-			#print(target_position)
-
-	
 
 func set_player(p):
 	player = p
@@ -114,9 +129,29 @@ func set_hiding(hiding):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "GridPlayer":
+		player_collided = true
+		player_collision_timer()
 		health -= 1
 		player.display_blood(health)
 		
 	if body.name == "GridPlayer" && health <= 0:
 		get_tree().change_scene_to_file("res://lose_screen.tscn")		
 	pass # Replace with function body.
+	
+#func _on_area_2d_body_exited(body):
+	
+
+func player_collision_timer():
+	while (player_collided == true):
+		await get_tree().create_timer(1).timeout
+		if (player_collided == true):
+			health -= 1
+			player.display_blood(health)
+			if health <= 0:
+				get_tree().change_scene_to_file("res://lose_screen.tscn")		
+	pass # Replace with function body.
+
+
+func _on_interaction_range_body_exited(body):
+	if body.name == "GridPlayer":
+		player_collided = false
