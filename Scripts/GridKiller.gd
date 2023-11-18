@@ -115,6 +115,7 @@ func set_hiding(hiding):
 func _on_area_2d_body_entered(body):
 	if body.name == "GridPlayer":
 		health -= 1
+		player.display_blood(health)
 		
 	if body.name == "GridPlayer" && health <= 0:
 		get_tree().change_scene_to_file("res://lose_screen.tscn")		
