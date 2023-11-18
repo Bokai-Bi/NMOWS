@@ -19,6 +19,10 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.name == "GridPlayer":
 		var door = $"../Door"
-		door.locked = false
-		door.visible = true
-		$"../Key".visible = false
+		var key = $"../Key"
+		if (key.visible == true):
+			door.locked = false
+			door.visible = true
+			body.keyAcquired()
+			key.visible = false
+		
