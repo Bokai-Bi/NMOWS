@@ -18,11 +18,12 @@ var target_position = Vector2(0,0)
 
 var invincibility = false
 
-var movement_speed: float = 1.55
+
 var killerBaseSpeed = 1.55
 var playerBaseSpeed = 1.5
 var killerSlowSpeed = 1 # speed after hitting player
 var playerFastSpeed = 2 # speed after getting hit
+var movement_speed: float = killerBaseSpeed
 
 var lastFoundDest
 var findDestDelay = 1000
@@ -116,7 +117,7 @@ func changeDirAfterDelay(new_velocity):
 	return currDir
 	
 
-
+var alreadyFound = false
 func _process(delta):
 	frameCounter += 1
 	# Check if the frame counter has reached 5 (or any desired frame interval).
@@ -127,18 +128,29 @@ func _process(delta):
 			print("Null player")
 			return
 		if playerHiding:
-			if frameCounter < 300:
+			
+			if frameCounter < 500:
 				return
-			print("Finding")
+			alreadyFound = false
 			target_position = player.global_position
 			target_position.x += random.randi_range(-200, 200)
 			target_position.y += random.randi_range(-200, 200)
 			navigation_agent.target_position = target_position
 			frameCounter = 0
 		else:
+			if not alreadyFound: 
+				tempDecreaseSpeed(2)
+				alreadyFound = true
 			target_position = player.global_position
 			navigation_agent.target_position = target_position
 			frameCounter = 0
+			
+
+func tempDecreaseSpeed(seconds):
+	movement_speed = killerSlowSpeed
+	await get_tree().create_timer(seconds).timeout
+	movement_speed = killerBaseSpeed
+	
 
 func set_player(p):
 	player = p

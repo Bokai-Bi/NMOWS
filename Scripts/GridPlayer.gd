@@ -24,26 +24,12 @@ var canMove
 
 var velocity = Vector2()
 var speed = 1
-
-var hasKey = false
-
-func keyAcquired():
-	popupText.visible = true
-	popupText.text = "You acquired a key!"
-	hasKey = true
-	await get_tree().create_timer(2.0).timeout
-	popupText.visible = false
 	
 func doorLocked():
-	if (hasKey == false):
-		popupText.visible = true
-		popupText.text = "You need a key"
-		await get_tree().create_timer(2.0).timeout
-		popupText.visible = false
-	if (hasKey == true):
-		popupText.visible = true
-		popupText.text = "This key doesn't fit"
-		await get_tree().create_timer(2.0).timeout
+	popupText.visible = true
+	popupText.text = "You need more keys"
+	await get_tree().create_timer(1.0).timeout
+	if popupText.text == "You need more keys":
 		popupText.visible = false
 
 # Called when the node enters the scene tree for the first time.
@@ -149,7 +135,10 @@ func _on_interaction_range_body_entered(body):
 		popupText.text = "Press E to hide"
 		hideObject = body
 		
-		
+
+func setPopupText(t, v):
+	popupText.text = t
+	popupText.visible = v
 
 
 func _on_interaction_range_body_exited(body):

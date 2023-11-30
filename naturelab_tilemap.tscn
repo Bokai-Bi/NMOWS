@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dr7nq4gdnpyhq"]
+[gd_scene load_steps=25 format=3 uid="uid://dr7nq4gdnpyhq"]
 
 [ext_resource type="Texture2D" uid="uid://dc65vwfnucgwe" path="res://tileset_naturelab_iteration1.png" id="1_bc3dm"]
 [ext_resource type="PackedScene" uid="uid://f7q0pgcgmc4v" path="res://ObjectScenes/grid_killer.tscn" id="2_c77oy"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bl8bw7fm2s2fk" path="res://Sprites/Chase/Nature Lab Animation/naturelab table_animation.png" id="7_rnnov"]
 [ext_resource type="Texture2D" uid="uid://ccqpxb7cdgk87" path="res://ObjectScenes/Nature Lab Animation/cabinet nature lab-export.png" id="8_jc2vm"]
 [ext_resource type="Texture2D" uid="uid://c3jhg3q6atd7s" path="res://ObjectScenes/Nature Lab Animation/Skeleton_closet_naturelab_animation.png" id="9_6gr5j"]
+[ext_resource type="Script" path="res://Scripts/KeyBehavior.gd" id="10_nlfw5"]
+[ext_resource type="Texture2D" uid="uid://bcyqbnqdsdu77" path="res://Sprites/Chase/Nature Lab Animation/cabinet nature lab-export.png" id="11_rtc35"]
+[ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="12_donh2"]
+[ext_resource type="Texture2D" uid="uid://dc71wj1a87f7v" path="res://Sprites/door_naturelab.png" id="13_wtx6g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rkpsr"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -110,14 +114,24 @@ texture = ExtResource("1_bc3dm")
 6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:2/0/physics_layer_0/angular_velocity = 0.0
 6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+7:1/next_alternative_id = 2
 7:1/0 = 0
 7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:1/0/physics_layer_0/angular_velocity = 0.0
 7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+7:1/1 = 1
+7:1/1/flip_h = true
+7:1/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:1/1/physics_layer_0/angular_velocity = 0.0
+7:2/next_alternative_id = 2
 7:2/0 = 0
 7:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:2/0/physics_layer_0/angular_velocity = 0.0
 7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+7:2/1 = 1
+7:2/1/flip_h = true
+7:2/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:2/1/physics_layer_0/angular_velocity = 0.0
 8:1/0 = 0
 8:1/0/z_index = 1
 8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -163,6 +177,21 @@ size = Vector2(20, 8.38)
 shader = ExtResource("6_t5q1b")
 shader_parameter/whiten = false
 
+[sub_resource type="Animation" id="Animation_l3mt6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="Animation" id="Animation_33b6y"]
 resource_name = "test"
 length = 2.0
@@ -179,26 +208,17 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_l3mt6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Icon:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gplkq"]
 _data = {
 "RESET": SubResource("Animation_l3mt6"),
 "test": SubResource("Animation_33b6y")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iiu2"]
+size = Vector2(33, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6og3"]
+size = Vector2(53, 52)
 
 [node name="TileMap" type="TileMap"]
 position = Vector2(-117, -93)
@@ -224,6 +244,7 @@ layer_2/tile_data = PackedInt32Array(917520, 196608, 2, 917534, 196608, 2, 91754
 
 [node name="GridKiller" parent="." instance=ExtResource("2_c77oy")]
 position = Vector2(518.401, 323.358)
+freeze = true
 
 [node name="GridPlayer" parent="." instance=ExtResource("3_u782u")]
 z_index = 1
@@ -895,3 +916,62 @@ polygon = PackedVector2Array(81.6418, -138.621, 81.8911, 49.7739, 0.0620117, 49.
 libraries = {
 "": SubResource("AnimationLibrary_gplkq")
 }
+
+[node name="Key-door" type="Node2D" parent="."]
+position = Vector2(249.201, 161.691)
+
+[node name="Key" type="Area2D" parent="Key-door"]
+position = Vector2(182.106, 85.7745)
+script = ExtResource("10_nlfw5")
+
+[node name="Key" type="Sprite2D" parent="Key-door/Key"]
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("11_rtc35")
+hframes = 3
+
+[node name="Area2D" type="Area2D" parent="Key-door/Key"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key-door/Key/Area2D"]
+position = Vector2(0.502457, 3.99998)
+shape = SubResource("RectangleShape2D_1iiu2")
+
+[node name="Key2" type="Area2D" parent="Key-door"]
+position = Vector2(-58, 151.074)
+script = ExtResource("10_nlfw5")
+
+[node name="Key" type="Sprite2D" parent="Key-door/Key2"]
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("11_rtc35")
+hframes = 3
+
+[node name="Area2D" type="Area2D" parent="Key-door/Key2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key-door/Key2/Area2D"]
+position = Vector2(0.502457, 3.99998)
+shape = SubResource("RectangleShape2D_1iiu2")
+
+[node name="Door" type="StaticBody2D" parent="Key-door"]
+position = Vector2(359.212, 170.555)
+script = ExtResource("12_donh2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Key-door/Door"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("13_wtx6g")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Key-door/Door"]
+scale = Vector2(0.3, 0.3)
+polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
+
+[node name="Area2D" type="Area2D" parent="Key-door/Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key-door/Door/Area2D"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_w6og3")
+
+[connection signal="body_entered" from="Key-door/Key" to="Key-door/Key" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Key-door/Key/Area2D" to="Key-door/Key" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_exited" from="Key-door/Key/Area2D" to="Key-door/Key" method="_on_area_2d_body_exited" flags=18]
+[connection signal="body_entered" from="Key-door/Key2" to="Key-door/Key2" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Key-door/Key2/Area2D" to="Key-door/Key2" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_exited" from="Key-door/Key2/Area2D" to="Key-door/Key2" method="_on_area_2d_body_exited" flags=18]
+[connection signal="body_entered" from="Key-door/Door/Area2D" to="Key-door/Door" method="_on_area_2d_body_entered" flags=18]

@@ -1,6 +1,7 @@
 extends StaticBody2D
 
-var locked = true
+var numKeyNeeded = 2
+var numKeyFound = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,10 +14,11 @@ func _process(delta):
 	
 func _on_area_2d_body_entered(body):
 	if body.name == "GridPlayer":
-		if locked == true:
+		if numKeyFound < numKeyNeeded:
 			body.doorLocked()
-		if locked == false:
+		elif numKeyFound == numKeyNeeded:
 			visible = false
-			body.hasKey = false
 			process_mode = Node.PROCESS_MODE_DISABLED
+		else:
+			print("Something went wrong, had more key than needed")
 		
