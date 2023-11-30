@@ -17,11 +17,12 @@ var playerHiding
 var target_position = Vector2(0,0)
 
 var invincibility = false
+var invincibilityTime = 1.5
 
 
 var killerBaseSpeed = 1.55
 var playerBaseSpeed = 1.5
-var killerSlowSpeed = 1 # speed after hitting player
+var killerSlowSpeed = 0.7 # speed after hitting player
 var playerFastSpeed = 2 # speed after getting hit
 var movement_speed: float = killerBaseSpeed
 
@@ -133,13 +134,13 @@ func _process(delta):
 				return
 			alreadyFound = false
 			target_position = player.global_position
-			target_position.x += random.randi_range(-200, 200)
-			target_position.y += random.randi_range(-200, 200)
+			target_position.x += random.randi_range(-300, 300)
+			target_position.y += random.randi_range(-300, 300)
 			navigation_agent.target_position = target_position
 			frameCounter = 0
 		else:
 			if not alreadyFound: 
-				tempDecreaseSpeed(2)
+				tempDecreaseSpeed(4)
 				alreadyFound = true
 			target_position = player.global_position
 			navigation_agent.target_position = target_position
@@ -180,7 +181,7 @@ func _on_area_2d_body_entered(body):
 
 func player_collision_timer():
 	while (player_collided == true):
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(invincibilityTime).timeout
 		invincibility = false
 		if (player_collided == true):
 			health -= 1

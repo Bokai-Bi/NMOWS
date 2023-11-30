@@ -20,7 +20,6 @@ func _input(event):
 	if event.is_action_pressed("interact") and playerInRange:
 		var done = await lookForItem()
 		if done:
-			var startTime = Time.get_ticks_msec()
 			$"../Door".numKeyFound += 1
 			thisFound = true
 			player.setPopupText("Key found!", true)
