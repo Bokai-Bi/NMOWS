@@ -110,7 +110,7 @@ func _process(delta):
 size = Vector2(12.5, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpdad"]
-size = Vector2(2.66667, 2.66667)
+size = Vector2(2.66667, 3.33333)
 
 [node name="GridKiller" type="RigidBody2D"]
 position = Vector2(176, 16)
@@ -137,8 +137,10 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_dcjn1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 7)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_tpdad")
+disabled = true
 debug_color = Color(0.745098, 0.345098, 0.792157, 0.419608)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

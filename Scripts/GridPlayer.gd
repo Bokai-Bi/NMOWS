@@ -13,6 +13,7 @@ var visionBlocker
 var bloodSplatter
 var baseBloodVisibility = 0
 var popupText
+var hideObject
 
 var in_hiding_range
 var preHideLocation
@@ -22,7 +23,7 @@ var hideLocation
 var canMove
 
 var velocity = Vector2()
-var speed = 2.5
+var speed = 1
 
 var hasKey = false
 
@@ -115,8 +116,9 @@ func hide_player():
 	get_node("CollisionShape2D").disabled = true
 	preHideLocation = global_position
 	global_position = hideLocation
-	print("Transporting into hiding position")
-	print(hideLocation)
+	hideObject.hide_animation()
+	#print("Transporting into hiding position")
+	#print(hideLocation)
 	hiding = not hiding
 	get_tree().call_group("killer", "set_hiding", hiding)
 	# disable movement and rendering
@@ -127,8 +129,8 @@ func hide_player():
 func unhide_player():
 	get_node("CollisionShape2D").disabled = false
 	global_position = Vector2(preHideLocation.x, preHideLocation.y)
-	print("Transporting to Prehide:")
-	print(Vector2(preHideLocation.x, preHideLocation.y))
+	#print("Transporting to Prehide:")
+	#print(Vector2(preHideLocation.x, preHideLocation.y))
 	hiding = not hiding
 	get_tree().call_group("killer", "set_hiding", hiding)
 	# enable movement and rendering
@@ -138,21 +140,22 @@ func unhide_player():
 	
 
 func _on_interaction_range_body_entered(body):
-	print("Entering")
+	#print("Entering")
 	if (body.name.substr(0, 8) == "hideable"):
-		print("EnteringHideable")
+		#print("EnteringHideable")
 		in_hiding_range = true
 		hideLocation = body.global_position
 		popupText.visible = true
 		popupText.text = "Press E to hide"
+		hideObject = body
 		
 		
 
 
 func _on_interaction_range_body_exited(body):
-	print("Exiting")
+	#print("Exiting")
 	if (body.name.substr(0, 8) == "hideable"):
-		print("ExitingHideable")
+		#print("ExitingHideable")
 		in_hiding_range = false
 		popupText.visible = false
 

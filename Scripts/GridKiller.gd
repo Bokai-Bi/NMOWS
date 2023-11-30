@@ -8,7 +8,7 @@ var numFrames = 0
 var health = 3
 var player_collided = false
 
-var dirSwitchDelay = 10
+var dirSwitchDelay = 100
 var currDir = Vector2(0,0)
 var lastSwitch = 0
 
@@ -16,7 +16,19 @@ var playerHiding
 
 var target_position = Vector2(0,0)
 
-var movement_speed: float = 1
+var invincibility = false
+
+var movement_speed: float = 1.55
+var killerBaseSpeed = 1.55
+var playerBaseSpeed = 1.5
+var killerSlowSpeed = 1 # speed after hitting player
+var playerFastSpeed = 2 # speed after getting hit
+
+var lastFoundDest
+var findDestDelay = 1000
+
+var random = RandomNumberGenerator.new()
+
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var collider: CollisionShape2D = $CollisionShape2D
 
@@ -26,7 +38,11 @@ func _ready():
 	$AnimationPlayer.play("Idle")
 	playerHiding = false
 	
-	navigation_agent.path_desired_distance = 2.0
+	random.randomize()
+	
+	lastFoundDest = Time.get_ticks_msec()
+	
+	navigation_agent.path_desired_distance = 8.0
 	navigation_agent.target_desired_distance = 8.0
 
 	# Make sure to not await during _ready.
@@ -49,8 +65,7 @@ func _physics_process(delta):
 	var new_velocity: Vector2 = next_path_position - current_agent_position
 	
 	var move = changeDirAfterDelay(new_velocity)
-	var some = check_collision(move)
-	print(some)
+	
 		
 	if(move.x < 0):
 		$AnimationPlayer.play("WalkLeft")
@@ -61,7 +76,7 @@ func _physics_process(delta):
 	elif(move.y > 0):
 		$AnimationPlayer.play("WalkDown")
 
-	print(move.normalized())
+	#print(move.normalized())
 	move = move.normalized() * movement_speed
 	move_and_collide(move)
 	
@@ -95,7 +110,7 @@ func changeDirAfterDelay(new_velocity):
 			move.y = -1
 		else:
 			move.y = 1
-			$AnimationPlayer.play("WalkDown")
+			#$AnimationPlayer.play("WalkDown")
 	lastSwitch = Time.get_ticks_msec()
 	currDir = move
 	return currDir
@@ -107,20 +122,27 @@ func _process(delta):
 	# Check if the frame counter has reached 5 (or any desired frame interval).
 	#if frameCounter >= numFrames:
 	if true:
-		frameCounter = 0
 		#update player position
 		if player == null:
 			print("Null player")
 			return
 		if playerHiding:
-			return # change in the future
+			if frameCounter < 300:
+				return
+			print("Finding")
+			target_position = player.global_position
+			target_position.x += random.randi_range(-200, 200)
+			target_position.y += random.randi_range(-200, 200)
+			navigation_agent.target_position = target_position
+			frameCounter = 0
 		else:
 			target_position = player.global_position
 			navigation_agent.target_position = target_position
+			frameCounter = 0
 
 func set_player(p):
 	player = p
-	print(player)
+	player.speed = playerBaseSpeed
 	
 func set_hiding(hiding):
 	playerHiding = hiding
@@ -128,11 +150,14 @@ func set_hiding(hiding):
 
 
 func _on_area_2d_body_entered(body):
-	if body.name == "GridPlayer":
+	if body.name == "GridPlayer" and not invincibility:
 		player_collided = true
 		player_collision_timer()
 		health -= 1
+		movement_speed = killerSlowSpeed
 		player.display_blood(health)
+		player.speed = playerFastSpeed
+		invincibility = true
 		
 	if body.name == "GridPlayer" && health <= 0:
 		get_tree().change_scene_to_file("res://lose_screen.tscn")		
@@ -143,12 +168,19 @@ func _on_area_2d_body_entered(body):
 
 func player_collision_timer():
 	while (player_collided == true):
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
+		invincibility = false
 		if (player_collided == true):
 			health -= 1
+			player.speed = playerFastSpeed
+			movement_speed = killerSlowSpeed
 			player.display_blood(health)
 			if health <= 0:
-				get_tree().change_scene_to_file("res://lose_screen.tscn")		
+				get_tree().change_scene_to_file("res://lose_screen.tscn")	
+			invincibility = true	
+		else:
+			player.speed = playerBaseSpeed
+			movement_speed = killerBaseSpeed
 	pass # Replace with function body.
 
 
