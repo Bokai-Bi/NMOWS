@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dc8yd26ggjgm8"]
+[gd_scene load_steps=25 format=3 uid="uid://dc8yd26ggjgm8"]
 
 [ext_resource type="Texture2D" uid="uid://cjyf5k7n3bqeg" path="res://lvl2tilemap_interation2.png" id="1_1l73k"]
 [ext_resource type="Texture2D" uid="uid://cokx7ra8nbcpg" path="res://lvl2_tilemap_iteration1.png" id="2_lmf2a"]
@@ -1926,11 +1926,7 @@ layer_5/z_index = 0
 layer_5/tile_data = PackedInt32Array()
 
 [node name="GridPlayer" parent="." instance=ExtResource("4_ngx63")]
-<<<<<<< HEAD
 position = Vector2(110, 61)
-=======
-position = Vector2(55, 61)
->>>>>>> b1499ae172a17dcf0a839cc890ead7b21ccbbb99
 
 [node name="GridKiller" parent="." instance=ExtResource("5_2b0qb")]
 position = Vector2(289, 195)
@@ -2026,5 +2022,5 @@ libraries = {
 }
 
 [node name="next_Scene_2" parent="." instance=ExtResource("11_3wcdn")]
-position = Vector2(544, 15)
+position = Vector2(530, 28)
 scale = Vector2(0.05, 0.05)
