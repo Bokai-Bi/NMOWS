@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be6v3tmi4hepv"
+path="res://.godot/imported/knife_swing.mp3-d0d76a915b2fac53efc05dd2c0d88b8d.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/knife_swing.mp3"
+dest_files=["res://.godot/imported/knife_swing.mp3-d0d76a915b2fac53efc05dd2c0d88b8d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
