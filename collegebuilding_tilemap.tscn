@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://rc052mglt64h"]
+[gd_scene load_steps=33 format=3 uid="uid://rc052mglt64h"]
 
 [ext_resource type="Texture2D" uid="uid://b32gln0rmc5ef" path="res://College_Building_-_Iteration_1.png" id="1_5qrvn"]
 [ext_resource type="Texture2D" uid="uid://d2ipbae6ekh1q" path="res://college_building_tilemap_v2.png" id="2_4wieq"]
