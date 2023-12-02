@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://botod5i770as7"]
+[gd_scene load_steps=16 format=3 uid="uid://botod5i770as7"]
 
 [ext_resource type="Script" path="res://Scripts/GridPlayer.gd" id="1_k1buu"]
 [ext_resource type="Texture2D" uid="uid://dj8s4ubel5p64" path="res://Sprites/Chase/player_run_PLACEHOLDER.png" id="2_jao5y"]
 [ext_resource type="Texture2D" uid="uid://dm4yv48m3ybo3" path="res://Sprites/UI/vision blocker.png" id="3_tda5f"]
 [ext_resource type="Texture2D" uid="uid://c3o7fqi4v2eta" path="res://Sprites/UI/blood splatter.png" id="4_68rwe"]
+[ext_resource type="Texture2D" uid="uid://bumixsxmugenu" path="res://spotlight border.png" id="4_q5yl7"]
 [ext_resource type="Texture2D" uid="uid://bc01pv1a61w5m" path="res://Arrow.png" id="5_xrwpc"]
 [ext_resource type="Script" path="res://ObjectScenes/KeyArrow.gd" id="6_5jy7p"]
 
@@ -147,6 +148,11 @@ limit_smoothed = true
 [node name="VisionBlocker" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1)
 texture = ExtResource("3_tda5f")
+
+[node name="SpotlightBorder" type="Sprite2D" parent="VisionBlocker"]
+position = Vector2(0, 1.5)
+scale = Vector2(0.362226, 0.358059)
+texture = ExtResource("4_q5yl7")
 
 [node name="BloodSplatter" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
