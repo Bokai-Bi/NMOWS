@@ -71,6 +71,7 @@ layout/end_behaviour=1
 [display]
 
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 
