@@ -5,7 +5,12 @@ var dir = 0
 var pixelSize = 32
 var numFrames = 60
 
+#modded
+var paused = false
+
 var hiding = false
+
+
 var visionBlockerSizeNormal = 1.8	
 var visionBlockerSizeHiding = 1
 var visionBlockerSizeChangeSpeed = 0.003
@@ -53,7 +58,16 @@ func _input(event):
 		elif in_hiding_range and hiding:
 			unhide_player()
 	
-
+func pause_input():
+	if Input.is_action_pressed("escape"):
+		if paused == false:
+			paused = true
+			print(paused)
+		elif paused == true:
+			paused = false
+			print(paused)
+	
+	
 func get_input():
 	velocity = Vector2()
 	
@@ -73,6 +87,15 @@ func get_input():
 		dir = 3
 		$AnimationPlayer.play("WalkUp")
 		velocity.y -= 1
+		
+	elif Input.is_action_pressed("escape"):
+		print("pausing")
+		if paused == false:
+			paused = true
+			print("paused")
+		elif paused == true:
+			paused = false
+			print("paused")
 	else:
 		dir = 4
 	velocity = velocity.normalized() * speed
@@ -80,6 +103,7 @@ func get_input():
 func _physics_process(delta):
 	frameCounter += 1
 	get_input()
+
 	
 	if !hiding:
 		velocity = move_and_collide(velocity)
