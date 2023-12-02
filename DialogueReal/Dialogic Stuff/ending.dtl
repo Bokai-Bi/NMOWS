@@ -1,21 +1,21 @@
 You are cornered. There is no escaping now.
 if {level3choice} == "good":
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_1_x1.png" fade="0.0"]
-	[wait time="1.0"]
+	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_2_x1.png" fade="0.0"]
-	[wait time="1.0"]
+	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_3_x1.png" fade="0.0"]
-	[wait time="1.0"]
+	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_4_x1.png" fade="0.0"]
-	[wait time="1.0"]
+	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_5_x1.png" fade="0.0"]
-	[wait time="1.0"]
+	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_6_x1.png" fade="0.0"]
-	[wait time="1.0"]
+	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_7_x3.png" fade="0.0"]
-	[wait time="1.0"]
+	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_8_x1.png" fade="0.0"]
-	[wait time="1.0"]
+	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_9_x16.png" fade="0.0"]
 	Join Killer 2
 	Killer (Default): Finally... you have nowhere else to run...
@@ -28,6 +28,10 @@ if {level3choice} == "good":
 	Killer: A HORSE (YEEEEEEEEE-HAW!)
 	Killer: Please... go out with me!!!
 	Killer: And we can gallop on the highlands of the Himalayans... And eat up all the grass on Brown's green!!!
+	Leave Killer
+	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_10_x1.png" fade="0.0"]
+	[wait time="2.0"]
+	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_11_x1.png" fade="0.0"]
 else:
 	Join Killer 2
 	Killer (Default): I’m tired...
@@ -43,4 +47,4 @@ else:
 	Killer: I guess in the end humans are just machines for work.
 	Killer: You can keep the horse head. I’m going back to write my thesis.
 	Killer: I hope you had an amusing night. Goodbye.
-Leave Killer
+	Leave Killer
