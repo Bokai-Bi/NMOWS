@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://addons/dialogic/Editor/TimelineEditor/TextEditor/syntax_highlighter.gd" id="1_wj4ha"]
 [ext_resource type="Script" path="res://addons/dialogic/Editor/TimelineEditor/TextEditor/CodeCompletionHelper.gd" id="3_mmga0"]
 
-[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_mrogt"]
+[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_rhsq8"]
 script = ExtResource("1_wj4ha")
 
 [node name="MultilineText" type="CodeEdit"]
@@ -15,7 +15,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/normal = ExtResource("1_dkxlh")
 wrap_mode = 1
-syntax_highlighter = SubResource("SyntaxHighlighter_mrogt")
+syntax_highlighter = SubResource("SyntaxHighlighter_rhsq8")
 scroll_fit_content_height = true
 symbol_lookup_on_click = true
 delimiter_strings = Array[String]([])
