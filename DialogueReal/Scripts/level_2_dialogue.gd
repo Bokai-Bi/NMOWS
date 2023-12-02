@@ -10,6 +10,6 @@ func _ready():
 func _process(delta):
 	if Dialogic.VAR.nextScene == true:
 		Dialogic.VAR.nextScene = false
-		Dialogic.VAR.nextLevel = 2
+		Dialogic.VAR.nextLevel = 3
 		get_tree().change_scene_to_file("res://transition_scene.tscn")
 	pass
