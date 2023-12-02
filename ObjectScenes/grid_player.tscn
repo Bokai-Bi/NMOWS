@@ -136,6 +136,11 @@ horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3.6)
+limit_left = 0
+limit_top = 0
+limit_right = 643
+limit_bottom = 386
+limit_smoothed = true
 
 [node name="VisionBlocker" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1)

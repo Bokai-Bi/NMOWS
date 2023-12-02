@@ -416,7 +416,7 @@ size = Vector2(33, 24)
 size = Vector2(53, 52)
 
 [node name="TileMap" type="TileMap"]
-position = Vector2(-117, -93)
+position = Vector2(-2.1684e-19, 2.1684e-19)
 rotation = 0.00123885
 tile_set = SubResource("TileSet_1505n")
 format = 2
@@ -452,20 +452,16 @@ layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(917520, 196608, 2, 917542, 196608, 2, 196642, 196608, 2, 983043, 196608, 2, 1179661, 524288, 5, 983049, 131072, 2, 983048, 65536, 2, 917539, 65536, 2, 917540, 131072, 2, 262167, 65536, 2, 262168, 131072, 2, 65554, 262144, 1, 131090, 262144, 2, 917522, 262144, 1, 983058, 262144, 2, 983064, 589824, 4, 1114139, 262144, 1, 1179675, 262144, 2, 1245192, 262144, 1, 1310728, 262144, 2, 1245187, 262144, 1, 1310723, 262144, 2, 1245188, 524288, 1, 1310724, 524288, 2, 917523, 524288, 1, 983059, 524288, 2, 1114142, 524288, 1, 458768, 524288, 1, 524304, 524288, 2, 65550, 524288, 1, 131086, 524288, 2, 65538, 524288, 1, 131074, 524288, 2, 65553, 524288, 1, 131089, 524288, 2, 65567, 524288, 1, 131103, 524288, 2, 65573, 524288, 1, 131109, 524288, 2, 65572, 262144, 1, 131108, 262144, 2, 262157, 262144, 1, 327693, 262144, 2, 327685, 262144, 1, 393221, 262144, 2, 65544, 262144, 1, 131080, 262144, 2, 65539, 196608, 1, 65549, 196608, 1, 65566, 196608, 1, 852001, 65536, 0, 852002, 131072, 0, 32, 65536, 0, 33, 131072, 0, 15, 65536, 0, 16, 131072, 0, 917505, 65536, 0, 917506, 131072, 0, 1179678, 524288, 2, 983046, 589824, 2, 1245197, 524288, 6, 917525, 589824, 5, 983061, 589824, 6, 851988, 65536, 4, 851985, 0, 4, 851997, 393216, 5, 851996, 131072, 4, 851994, 65536, 0, 851995, 131072, 0, 851993, 65536, 5, 1441803, 196608, 5, 1179664, 196608, 8, 1179670, 262144, 8, 1179669, 262144, 8, 983041, 196608, 1, 917528, 196608, 1, 851998, 458752, 5, 19, 262144, 5, 20, 327680, 5, 11, 393216, 5, 12, 458752, 5, 1, 131072, 4, 10, 65536, 5, 9, 0, 4, 21, 131072, 4, 0, 65536, 5, 4, 65536, 0, 5, 131072, 0, 327705, 524288, 3, 393241, 524288, 4, 327706, 589824, 3, 393242, 589824, 4, 983077, 524288, 3, 1048613, 524288, 4, 983078, 589824, 3, 1048614, 589824, 4, 1048582, 524288, 3, 1114118, 524288, 4, 1048583, 589824, 3, 1114119, 589824, 4, 917537, 589824, 2, 262171, 524288, 5, 327707, 524288, 6, 917534, 589824, 2, 852003, 65536, 5, 35, 65536, 5, 917511, 65536, 5, 1114123, 65536, 5, 852004, 0, 4, 852005, 131072, 4, 917530, 262144, 5, 917531, 327680, 5, 851990, 65536, 5, 851989, 131072, 4, 917510, 0, 4, 917507, 131072, 4, 917512, 65536, 0, 917513, 131072, 0, 34, 0, 4, 29, 131072, 4, 28, 65536, 4, 38, 393216, 5, 39, 458752, 5, 852006, 65536, 0, 852007, 131072, 0, 917514, 131072, 4, 196629, 393216, 5, 196630, 458752, 5, 196631, 262144, 5, 196632, 327680, 5, 196633, 65536, 5, 131098, 589824, 5, 196634, 589824, 6, 196635, 65536, 5, 851984, 65536, 5)
 
 [node name="GridKiller" parent="." instance=ExtResource("2_c77oy")]
-visible = false
 position = Vector2(518.401, 323.358)
 freeze = true
 
 [node name="GridPlayer" parent="." instance=ExtResource("3_u782u")]
-visible = false
 z_index = 1
 position = Vector2(39, 75)
 
 [node name="Node2D" type="Node2D" parent="."]
-visible = false
 
 [node name="Leftwall" type="RigidBody2D" parent="."]
-visible = false
 scale = Vector2(1, 1.96)
 gravity_scale = 0.0
 
@@ -475,7 +471,6 @@ scale = Vector2(1, 25)
 shape = SubResource("RectangleShape2D_hxrp8")
 
 [node name="Rightwall" type="RigidBody2D" parent="."]
-visible = false
 position = Vector2(321, 3)
 scale = Vector2(1, 1.88)
 gravity_scale = 0.0
@@ -486,7 +481,6 @@ scale = Vector2(1, 25)
 shape = SubResource("RectangleShape2D_hxrp8")
 
 [node name="Downwall" type="RigidBody2D" parent="."]
-visible = false
 position = Vector2(83, 193)
 scale = Vector2(1.52, 1)
 gravity_scale = 0.0
@@ -504,6 +498,7 @@ rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
 [node name="hideable_Box" type="StaticBody2D" parent="Tables/hideable_box"]
+position = Vector2(-2342.26, -1817.09)
 script = ExtResource("5_a2j7v")
 
 [node name="Icon" type="Sprite2D" parent="Tables/hideable_box/hideable_Box"]
@@ -526,7 +521,7 @@ libraries = {
 }
 
 [node name="hideable_box2" type="Node2D" parent="Tables"]
-position = Vector2(107, -4.5)
+position = Vector2(224, 91)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -553,7 +548,7 @@ libraries = {
 }
 
 [node name="hideable_box3" type="Node2D" parent="Tables"]
-position = Vector2(169, -4.5)
+position = Vector2(286, 90)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -580,7 +575,7 @@ libraries = {
 }
 
 [node name="hideable_box4" type="Node2D" parent="Tables"]
-position = Vector2(-56, 237)
+position = Vector2(63, 330)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -607,7 +602,7 @@ libraries = {
 }
 
 [node name="hideable_box5" type="Node2D" parent="Tables"]
-position = Vector2(11, 237)
+position = Vector2(129, 329)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -634,7 +629,7 @@ libraries = {
 }
 
 [node name="hideable_box6" type="Node2D" parent="Tables"]
-position = Vector2(314, 205)
+position = Vector2(432, 299)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -661,7 +656,7 @@ libraries = {
 }
 
 [node name="hideable_box7" type="Node2D" parent="Tables"]
-position = Vector2(378, 205)
+position = Vector2(496, 299)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -688,7 +683,7 @@ libraries = {
 }
 
 [node name="hideable_box8" type="Node2D" parent="Tables"]
-position = Vector2(379, -2.99998)
+position = Vector2(495, 89)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -715,7 +710,7 @@ libraries = {
 }
 
 [node name="hideable_box9" type="Node2D" parent="Tables"]
-position = Vector2(-38, 14)
+position = Vector2(80, 107)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -744,11 +739,12 @@ libraries = {
 [node name="Cabinets" type="Node" parent="."]
 
 [node name="hideable_box" type="Node2D" parent="Cabinets"]
-position = Vector2(171, -53)
+position = Vector2(225, 39)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
 [node name="hideable_Box" type="StaticBody2D" parent="Cabinets/hideable_box"]
+position = Vector2(-1280.02, -18.4095)
 script = ExtResource("5_a2j7v")
 
 [node name="Icon" type="Sprite2D" parent="Cabinets/hideable_box/hideable_Box"]
@@ -771,7 +767,7 @@ libraries = {
 }
 
 [node name="hideable_box5" type="Node2D" parent="Cabinets"]
-position = Vector2(267, -5)
+position = Vector2(385, 88)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -798,7 +794,7 @@ libraries = {
 }
 
 [node name="hideable_box6" type="Node2D" parent="Cabinets"]
-position = Vector2(380, -53)
+position = Vector2(496, 40)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -825,7 +821,7 @@ libraries = {
 }
 
 [node name="hideable_box7" type="Node2D" parent="Cabinets"]
-position = Vector2(476, -53)
+position = Vector2(593, 40)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -852,7 +848,7 @@ libraries = {
 }
 
 [node name="hideable_box8" type="Node2D" parent="Cabinets"]
-position = Vector2(460, 156)
+position = Vector2(577, 250)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -879,7 +875,7 @@ libraries = {
 }
 
 [node name="hideable_box9" type="Node2D" parent="Cabinets"]
-position = Vector2(267, 156)
+position = Vector2(384, 248)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -906,7 +902,7 @@ libraries = {
 }
 
 [node name="hideable_box10" type="Node2D" parent="Cabinets"]
-position = Vector2(188, 156)
+position = Vector2(305, 247)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -933,7 +929,7 @@ libraries = {
 }
 
 [node name="hideable_box11" type="Node2D" parent="Cabinets"]
-position = Vector2(28, 171)
+position = Vector2(145, 264)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -960,7 +956,7 @@ libraries = {
 }
 
 [node name="hideable_box12" type="Node2D" parent="Cabinets"]
-position = Vector2(-84, 171)
+position = Vector2(34, 263)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -987,7 +983,7 @@ libraries = {
 }
 
 [node name="hideable_box2" type="Node2D" parent="Cabinets"]
-position = Vector2(108, -53)
+position = Vector2(225, 39)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -1014,7 +1010,7 @@ libraries = {
 }
 
 [node name="hideable_box3" type="Node2D" parent="Cabinets"]
-position = Vector2(12, -53)
+position = Vector2(129, 40)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -1041,7 +1037,7 @@ libraries = {
 }
 
 [node name="hideable_box4" type="Node2D" parent="Cabinets"]
-position = Vector2(-69, -53)
+position = Vector2(48, 41)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -1070,7 +1066,7 @@ libraries = {
 [node name="Skeletons" type="Node" parent="."]
 
 [node name="hideable_box" type="Node2D" parent="Skeletons"]
-position = Vector2(355, 146)
+position = Vector2(472, 242)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -1097,7 +1093,7 @@ libraries = {
 }
 
 [node name="hideable_box2" type="Node2D" parent="Skeletons"]
-position = Vector2(51, -30)
+position = Vector2(168, 65)
 rotation = -3.14035
 scale = Vector2(0.05, 0.05)
 
@@ -1175,7 +1171,7 @@ position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_w6og3")
 
 [node name="next_Scene3" parent="." instance=ExtResource("15_tlq7q")]
-position = Vector2(608.356, 287.247)
+position = Vector2(607.441, 355.248)
 scale = Vector2(0.05, 0.05)
 
 [connection signal="body_entered" from="Key-door/Key" to="Key-door/Key" method="_on_body_entered" flags=18]
