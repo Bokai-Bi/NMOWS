@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dc8yd26ggjgm8"]
+[gd_scene load_steps=26 format=3 uid="uid://dc8yd26ggjgm8"]
 
 [ext_resource type="Texture2D" uid="uid://cjyf5k7n3bqeg" path="res://lvl2tilemap_interation2.png" id="1_1l73k"]
 [ext_resource type="Texture2D" uid="uid://cokx7ra8nbcpg" path="res://lvl2_tilemap_iteration1.png" id="2_lmf2a"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dnhv25padb61r" path="res://Sprites/Chase/Dorm Room Animations/fridgeanimationFINAL.png" id="9_oxguh"]
 [ext_resource type="Texture2D" uid="uid://cp3j1kmbiqgo4" path="res://Sprites/Chase/Dorm Room Animations/trashcans(1)-export-export.png" id="10_gi76n"]
 [ext_resource type="PackedScene" uid="uid://bx5ldnrrii1da" path="res://ObjectScenes/next_Scene_2.tscn" id="11_3wcdn"]
+[ext_resource type="AudioStream" uid="uid://c6brrkany4pkj" path="res://Audio/Gameplay Music.wav" id="12_xxpha"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uu45w"]
 texture = ExtResource("1_1l73k")
@@ -2024,3 +2025,7 @@ libraries = {
 [node name="next_Scene_2" parent="." instance=ExtResource("11_3wcdn")]
 position = Vector2(530, 28)
 scale = Vector2(0.05, 0.05)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_xxpha")
+autoplay = true
