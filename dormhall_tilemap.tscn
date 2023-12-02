@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dc8yd26ggjgm8"]
+[gd_scene load_steps=24 format=3 uid="uid://dc8yd26ggjgm8"]
 
 [ext_resource type="Texture2D" uid="uid://cjyf5k7n3bqeg" path="res://lvl2tilemap_interation2.png" id="1_1l73k"]
 [ext_resource type="Texture2D" uid="uid://cokx7ra8nbcpg" path="res://lvl2_tilemap_iteration1.png" id="2_lmf2a"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bc02bccfge14w" path="res://Sprites/Chase/Dorm Room Animations/College_Dorm_Table_1-animation.png" id="8_etuse"]
 [ext_resource type="Texture2D" uid="uid://dnhv25padb61r" path="res://Sprites/Chase/Dorm Room Animations/fridgeanimationFINAL.png" id="9_oxguh"]
 [ext_resource type="Texture2D" uid="uid://cp3j1kmbiqgo4" path="res://Sprites/Chase/Dorm Room Animations/trashcans(1)-export-export.png" id="10_gi76n"]
+[ext_resource type="PackedScene" uid="uid://bx5ldnrrii1da" path="res://ObjectScenes/next_Scene_2.tscn" id="11_3wcdn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uu45w"]
 texture = ExtResource("1_1l73k")
@@ -1909,7 +1910,6 @@ layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(327685, 393221, 1, 327686, 458757, 1, 393221, 393221, 2, 393222, 458757, 2, 458757, 393221, 3, 458758, 458757, 3, 524289, 131077, 5, 589825, 131077, 6, 327688, 262149, 3, 327689, 327685, 3, 327690, 327685, 3, 393226, 327685, 3, 393224, 262149, 4, 393225, 262149, 2, 458762, 327685, 4, 196620, 589829, 5, 262156, 589829, 6, 327692, 524293, 5, 393228, 655365, 5, 458764, 655365, 5, 458765, 655365, 4, 196621, 655365, 3, 262157, 655365, 4, 327693, 655365, 3, 393229, 655365, 4, 524300, 655365, 5, 524301, 655365, 3, 589836, 524293, 6, 589837, 524293, 6, 262178, 262149, 3, 262179, 327685, 3, 393251, 262149, 3, 393252, 327685, 3, 327714, 262149, 4, 327715, 327685, 4, 458787, 262149, 4, 458788, 327685, 4, 720934, 131077, 5, 786470, 131077, 6, 1310735, 131077, 6, 1245199, 131077, 5, 1048614, 393221, 7, 1114150, 393221, 8, 1048613, 327685, 7, 1114149, 327685, 8, 1048606, 65541, 7, 1048607, 131077, 7, 1048608, 196613, 7, 1114142, 65541, 8, 1179678, 65541, 9, 1245217, 196613, 9, 1245218, 262149, 9, 1048609, 262149, 3, 1048610, 327685, 3, 1114145, 262149, 4, 1114146, 327685, 4, 1048596, 262149, 5, 1114132, 262149, 6, 1048597, 327685, 5, 262180, 458757, 7, 262181, 524293, 7, 327716, 458757, 8, 327717, 524293, 8, 393250, 524293, 9, 131092, 589829, 7, 131093, 655365, 7, 196628, 589829, 8, 196629, 655365, 8, 262164, 589829, 9, 262165, 655365, 9, 65557, 655365, 6, 65558, 720901, 6, 131094, 720901, 7, 65559, 786437, 6, 65560, 851973, 6, 131095, 786437, 7, 131096, 851973, 7)
 
 [node name="GridPlayer" parent="." instance=ExtResource("4_ngx63")]
-visible = false
 position = Vector2(110, 61)
 
 [node name="GridKiller" parent="." instance=ExtResource("5_2b0qb")]
@@ -2003,3 +2003,7 @@ polygon = PackedVector2Array(60.8827, -64.046, 60.8827, 68.7099, -30.4414, 68.71
 libraries = {
 "": SubResource("AnimationLibrary_gplkq")
 }
+
+[node name="next_Scene_2" parent="." instance=ExtResource("11_3wcdn")]
+position = Vector2(544, 15)
+scale = Vector2(0.05, 0.05)

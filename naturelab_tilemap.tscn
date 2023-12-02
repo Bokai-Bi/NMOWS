@@ -1,11 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://dr7nq4gdnpyhq"]
+[gd_scene load_steps=25 format=3 uid="uid://dr7nq4gdnpyhq"]
 
 [ext_resource type="Texture2D" uid="uid://dc65vwfnucgwe" path="res://tileset_naturelab_iteration1.png" id="1_bc3dm"]
 [ext_resource type="PackedScene" uid="uid://f7q0pgcgmc4v" path="res://ObjectScenes/grid_killer.tscn" id="2_c77oy"]
 [ext_resource type="PackedScene" uid="uid://botod5i770as7" path="res://ObjectScenes/grid_player.tscn" id="3_u782u"]
-[ext_resource type="Script" path="res://Scripts/next_Scene.gd" id="4_v0ig7"]
 [ext_resource type="Script" path="res://ObjectScenes/hideable_box.gd" id="5_a2j7v"]
-[ext_resource type="Texture2D" uid="uid://dem7dsdrk0lau" path="res://Sprites/Chase/junimo_obstacle.png" id="5_cx21s"]
 [ext_resource type="Shader" path="res://hideable_box.gdshader" id="6_t5q1b"]
 [ext_resource type="Texture2D" uid="uid://bl8bw7fm2s2fk" path="res://Sprites/Chase/Nature Lab Animation/naturelab table_animation.png" id="7_rnnov"]
 [ext_resource type="Texture2D" uid="uid://ccqpxb7cdgk87" path="res://ObjectScenes/Nature Lab Animation/cabinet nature lab-export.png" id="8_jc2vm"]
@@ -14,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bcyqbnqdsdu77" path="res://Sprites/Chase/Nature Lab Animation/cabinet nature lab-export.png" id="11_rtc35"]
 [ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="12_donh2"]
 [ext_resource type="Texture2D" uid="uid://dc71wj1a87f7v" path="res://Sprites/door_naturelab.png" id="13_wtx6g"]
+[ext_resource type="PackedScene" uid="uid://dp3s7482q6brl" path="res://ObjectScenes/next_Scene_3.tscn" id="15_tlq7q"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rkpsr"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -174,9 +173,6 @@ sources/0 = SubResource("TileSetAtlasSource_xu8cy")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxrp8"]
 size = Vector2(20, 8.38)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y63js"]
-size = Vector2(640, 616)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l26xk"]
 shader = ExtResource("6_t5q1b")
 shader_parameter/whiten = false
@@ -289,21 +285,6 @@ gravity_scale = 0.0
 position = Vector2(150, 200)
 scale = Vector2(23.2792, 2)
 shape = SubResource("RectangleShape2D_hxrp8")
-
-[node name="next_Scene" type="Node2D" parent="."]
-position = Vector2(606, 367)
-scale = Vector2(0.05, 0.05)
-
-[node name="Area2D" type="Area2D" parent="next_Scene"]
-script = ExtResource("4_v0ig7")
-
-[node name="JunimoObstacle" type="Sprite2D" parent="next_Scene/Area2D"]
-visible = false
-position = Vector2(6, -2)
-texture = ExtResource("5_cx21s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="next_Scene/Area2D"]
-shape = SubResource("RectangleShape2D_y63js")
 
 [node name="Tables" type="Node" parent="."]
 
@@ -983,7 +964,10 @@ polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -6
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_w6og3")
 
-[connection signal="body_entered" from="next_Scene/Area2D" to="next_Scene/Area2D" method="_on_body_entered" flags=18]
+[node name="next_Scene3" parent="." instance=ExtResource("15_tlq7q")]
+position = Vector2(608.356, 287.247)
+scale = Vector2(0.05, 0.05)
+
 [connection signal="body_entered" from="Key-door/Key" to="Key-door/Key" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Key-door/Key/Area2D" to="Key-door/Key" method="_on_area_2d_body_entered" flags=18]
 [connection signal="body_exited" from="Key-door/Key/Area2D" to="Key-door/Key" method="_on_area_2d_body_exited" flags=18]
