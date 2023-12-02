@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bts44pthdgohn"]
+[gd_scene load_steps=2 format=3 uid="uid://bts44pthdgohn"]
+
+[ext_resource type="Texture2D" uid="uid://b023wdvmvubnv" path="res://LoseScreen_Final.png" id="1_6p75s"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,8 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00163, 1.00402)
 
-[node name="Label" type="Label" parent="CenterContainer"]
-layout_mode = 2
-text = "YOU LOSE"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="LoseScreenFinal" type="Sprite2D" parent="CenterContainer"]
+position = Vector2(577.559, 324.695)
+scale = Vector2(0.600584, 0.597598)
+texture = ExtResource("1_6p75s")
