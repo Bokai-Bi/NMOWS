@@ -29,6 +29,9 @@ var canMove
 
 var velocity = Vector2()
 var speed = 1
+
+##sound stuff
+var hit_knife := AudioStreamPlayer.new()
 	
 func doorLocked():
 	popupText.visible = true
@@ -46,6 +49,7 @@ func _ready():
 	canMove = true
 	popupText.visible = false
 	call_deferred("setPlayer")
+	add_child(hit_knife)
 
 func setPlayer():
 	await get_tree().process_frame
@@ -176,5 +180,8 @@ func _integrate_forces(state):
 	rotation = 0 # prevent player from rotating
 
 func display_blood(health):
+	var sfx = load("res://Audio/Sound Effects/Slash Sound.mp3")
+	hit_knife.stream = sfx
+	hit_knife.play()
 	bloodSplatter.modulate.a = 1
 	baseBloodVisibility = (3 - health) * 0.15
