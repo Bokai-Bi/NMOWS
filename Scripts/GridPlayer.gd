@@ -32,6 +32,7 @@ var speed = 1
 
 ##sound stuff
 var hit_knife := AudioStreamPlayer.new()
+var steps := AudioStreamPlayer.new()
 	
 func doorLocked():
 	popupText.visible = true
@@ -50,6 +51,7 @@ func _ready():
 	popupText.visible = false
 	call_deferred("setPlayer")
 	add_child(hit_knife)
+	add_child(steps)
 
 func setPlayer():
 	await get_tree().process_frame
@@ -72,6 +74,11 @@ func pause_input():
 			print(paused)
 	
 	
+func walk_sound():
+	var sfx = load("res://Audio/Sound Effects/faster-footsteps-cut.mp3")
+	steps.stream = sfx
+	steps.play()
+	
 func get_input():
 	velocity = Vector2()
 	
@@ -79,18 +86,22 @@ func get_input():
 		dir = 0
 		$AnimationPlayer.play("WalkRight")
 		velocity.x += 1
+		walk_sound()
 	elif Input.is_action_pressed("move_left"):
 		dir = 1
 		$AnimationPlayer.play("WalkLeft")
 		velocity.x -= 1
+		walk_sound()
 	elif Input.is_action_pressed("move_down"):
 		dir = 2
 		$AnimationPlayer.play("WalkDown")
 		velocity.y += 1
+		walk_sound()
 	elif Input.is_action_pressed("move_up"):
 		dir = 3
 		$AnimationPlayer.play("WalkUp")
 		velocity.y -= 1
+		walk_sound()
 		
 	elif Input.is_action_pressed("escape"):
 		print("pausing")

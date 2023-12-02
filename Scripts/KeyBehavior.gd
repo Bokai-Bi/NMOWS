@@ -10,6 +10,12 @@ var findTimer = 3.0
 
 var diditOnce = false
 
+var collected := AudioStreamPlayer.new()
+
+func _ready():
+	add_child(collected)
+
+
 func _input(event):
 	if currExec or thisFound:
 		if (thisFound and playerInRange and event.is_action_pressed("interact")):
@@ -25,6 +31,9 @@ func _input(event):
 			$"../Door".numKeyFound += 1
 			thisFound = true
 			player.setPopupText("Key found!", true)
+			var sfx = load("res://Audio/Sound Effects/Fun Button Sound (Collecting keys_).mp3")
+			collected.stream = sfx
+			collected.play()
 			await get_tree().create_timer(1.5).timeout
 			player.setPopupText("Key found!", false)
 		else:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fhpnbig0w5ko"
+path="res://.godot/imported/faster-footsteps-cut.mp3-725c0ab91ed15f444dd20866bd753258.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/faster-footsteps-cut.mp3"
+dest_files=["res://.godot/imported/faster-footsteps-cut.mp3-725c0ab91ed15f444dd20866bd753258.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
