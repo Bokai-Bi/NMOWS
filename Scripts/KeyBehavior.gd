@@ -27,6 +27,8 @@ func _input(event):
 			player.setPopupText("Key found!", false)
 		else:
 			player.setPopupText("Search interrupted", false)
+	elif playerInRange:
+		player.setPopupText("Press E to search", true)
 	
 	currExec = false
 	
