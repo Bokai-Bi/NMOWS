@@ -27,6 +27,7 @@ variables={
 "level1choice": "none",
 "level2choice": "none",
 "level3choice": "none",
+"nextLevel": "0",
 "nextScene": "false"
 }
 layout/styles={
