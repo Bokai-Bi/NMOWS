@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	if Dialogic.VAR.nextScene == true:
 		Dialogic.VAR.nextScene = false
-		get_tree().change_scene_to_file("res://DialogueReal/Scenes/level_1_dialogue_scene.tscn")
+		get_tree().change_scene_to_file("res://collegebuilding_tilemap.tscn")
 	pass
 	
 

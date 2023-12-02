@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://doqeiu0sghe8w"]
+[gd_scene load_steps=13 format=3 uid="uid://doqeiu0sghe8w"]
 
-[ext_resource type="Texture2D" uid="uid://ctpfs6hoi27ue" path="res://Solaria Demo Update 01.png" id="1_fxl2t"]
 [ext_resource type="PackedScene" uid="uid://4bpavl1abthb" path="res://Tilemap.tscn" id="1_k68m5"]
 [ext_resource type="PackedScene" uid="uid://botod5i770as7" path="res://ObjectScenes/grid_player.tscn" id="2_3sq3m"]
 [ext_resource type="PackedScene" uid="uid://f7q0pgcgmc4v" path="res://ObjectScenes/grid_killer.tscn" id="3_1wrf0"]
@@ -9,11 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bo4t84tk18bpj" path="res://ObjectScenes/Key_Door_Pair.tscn" id="6_kgtxt"]
 [ext_resource type="Script" path="res://Scripts/KeyBehavior.gd" id="7_cds1x"]
 [ext_resource type="Texture2D" uid="uid://cso5s4rh1m7rp" path="res://Sprites/Chase/keytmp.png" id="8_5giyf"]
-[ext_resource type="Texture2D" uid="uid://dpc0bus1tuuns" path="res://icon.svg" id="9_euxj6"]
 [ext_resource type="PackedScene" uid="uid://bku68vknynmhj" path="res://ObjectScenes/next_Scene.tscn" id="11_wvuvc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ob1of"]
-texture = ExtResource("1_fxl2t")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -437,7 +434,6 @@ position = Vector2(-40, -224)
 
 [node name="Sprite2D" type="Sprite2D" parent="Key 1/Door"]
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_euxj6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Key 1/Door"]
 scale = Vector2(0.3, 0.3)
@@ -462,7 +458,6 @@ position = Vector2(42, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Key 2/Door"]
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_euxj6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Key 2/Door"]
 scale = Vector2(0.3, 0.3)
