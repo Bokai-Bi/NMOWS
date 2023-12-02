@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ds3kw67hfebbn"
+path="res://.godot/imported/knife_impact.mp3-3870999ce8b447e14fe4124e06a313d8.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/knife_impact.mp3"
+dest_files=["res://.godot/imported/knife_impact.mp3-3870999ce8b447e14fe4124e06a313d8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

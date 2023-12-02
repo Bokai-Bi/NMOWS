@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cosvg1y0u6gf6"
+path="res://.godot/imported/People Talking Background.mp3-b1d50379b4d5f20817fd12a0f6780ac3.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/People Talking Background.mp3"
+dest_files=["res://.godot/imported/People Talking Background.mp3-b1d50379b4d5f20817fd12a0f6780ac3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

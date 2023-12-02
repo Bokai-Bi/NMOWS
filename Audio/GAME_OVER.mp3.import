@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/GAME_OVER.mp3-a63e9a81829f6a9e634b85d4a230dfa
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
