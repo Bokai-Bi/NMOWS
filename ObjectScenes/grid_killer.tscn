@@ -110,7 +110,7 @@ func _process(delta):
 size = Vector2(12.5, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpdad"]
-size = Vector2(2.66667, 3.33333)
+size = Vector2(7.33333, 8)
 
 [node name="GridKiller" type="RigidBody2D"]
 position = Vector2(176, 16)
@@ -137,7 +137,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_dcjn1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 7)
+position = Vector2(-1, 0)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_tpdad")
 disabled = true

@@ -1,9 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc8yd26ggjgm8"]
+[gd_scene load_steps=23 format=3 uid="uid://dc8yd26ggjgm8"]
 
 [ext_resource type="Texture2D" uid="uid://cjyf5k7n3bqeg" path="res://lvl2tilemap_interation2.png" id="1_1l73k"]
 [ext_resource type="Texture2D" uid="uid://cokx7ra8nbcpg" path="res://lvl2_tilemap_iteration1.png" id="2_lmf2a"]
 [ext_resource type="Texture2D" uid="uid://d2bvwkynq4wi5" path="res://lvl2tilemap_final_final.png" id="3_xhjtt"]
 [ext_resource type="PackedScene" uid="uid://botod5i770as7" path="res://ObjectScenes/grid_player.tscn" id="4_ngx63"]
+[ext_resource type="PackedScene" uid="uid://f7q0pgcgmc4v" path="res://ObjectScenes/grid_killer.tscn" id="5_2b0qb"]
+[ext_resource type="Script" path="res://ObjectScenes/hideable_box.gd" id="6_7l68m"]
+[ext_resource type="Shader" path="res://hideable_box.gdshader" id="7_8n7pf"]
+[ext_resource type="Texture2D" uid="uid://bc02bccfge14w" path="res://Sprites/Chase/Dorm Room Animations/College_Dorm_Table_1-animation.png" id="8_etuse"]
+[ext_resource type="Texture2D" uid="uid://dnhv25padb61r" path="res://Sprites/Chase/Dorm Room Animations/fridgeanimationFINAL.png" id="9_oxguh"]
+[ext_resource type="Texture2D" uid="uid://cp3j1kmbiqgo4" path="res://Sprites/Chase/Dorm Room Animations/trashcans(1)-export-export.png" id="10_gi76n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uu45w"]
 texture = ExtResource("1_1l73k")
@@ -1810,6 +1816,64 @@ sources/2 = SubResource("TileSetAtlasSource_kr46m")
 sources/3 = SubResource("TileSetAtlasSource_fnt0x")
 sources/5 = SubResource("TileSetAtlasSource_lauar")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l26xk"]
+shader = ExtResource("7_8n7pf")
+shader_parameter/whiten = false
+
+[sub_resource type="Animation" id="Animation_l3mt6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_33b6y"]
+resource_name = "test"
+length = 1.81
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_dtmmr"]
+resource_name = "test_3frame"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gplkq"]
+_data = {
+"RESET": SubResource("Animation_l3mt6"),
+"test": SubResource("Animation_33b6y"),
+"test_3frame": SubResource("Animation_dtmmr")
+}
+
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_drifl")
 format = 2
@@ -1847,3 +1911,95 @@ layer_4/tile_data = PackedInt32Array(327685, 393221, 1, 327686, 458757, 1, 39322
 [node name="GridPlayer" parent="." instance=ExtResource("4_ngx63")]
 visible = false
 position = Vector2(110, 61)
+
+[node name="GridKiller" parent="." instance=ExtResource("5_2b0qb")]
+
+[node name="hideable objects" type="Node" parent="."]
+
+[node name="tables" type="Node" parent="hideable objects"]
+
+[node name="hideable_box" type="Node2D" parent="hideable objects/tables"]
+position = Vector2(345, 128)
+rotation = 3.14159
+scale = Vector2(0.048, 0.048)
+
+[node name="hideable_Box" type="StaticBody2D" parent="hideable objects/tables/hideable_box"]
+script = ExtResource("6_7l68m")
+
+[node name="Icon" type="Sprite2D" parent="hideable objects/tables/hideable_box/hideable_Box"]
+material = SubResource("ShaderMaterial_l26xk")
+scale = Vector2(3.42188, 3.60938)
+texture = ExtResource("8_etuse")
+flip_h = true
+flip_v = true
+hframes = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/tables/hideable_box/hideable_Box"]
+position = Vector2(-4.76837e-07, 2)
+scale = Vector2(3.42188, 3.60938)
+polygon = PackedVector2Array(85.2357, -69.8181, 85.2357, 68.7098, -109.589, 68.7098, -109.589, -69.8181)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/tables/hideable_box/hideable_Box"]
+libraries = {
+"": SubResource("AnimationLibrary_gplkq")
+}
+
+[node name="fridges" type="Node" parent="hideable objects"]
+
+[node name="hideable_box2" type="Node2D" parent="hideable objects/fridges"]
+position = Vector2(167, 175)
+rotation = -3.14159
+scale = Vector2(0.048, 0.048)
+
+[node name="hideable_Box" type="StaticBody2D" parent="hideable objects/fridges/hideable_box2"]
+script = ExtResource("6_7l68m")
+play3Frame = true
+
+[node name="Icon" type="Sprite2D" parent="hideable objects/fridges/hideable_box2/hideable_Box"]
+material = SubResource("ShaderMaterial_l26xk")
+position = Vector2(62.4993, 125)
+scale = Vector2(3.42188, 3.60938)
+texture = ExtResource("9_oxguh")
+flip_h = true
+flip_v = true
+hframes = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/fridges/hideable_box2/hideable_Box"]
+position = Vector2(-4.76837e-07, 2)
+scale = Vector2(3.42188, 3.60938)
+polygon = PackedVector2Array(85.2356, -75.5899, 85.2357, 149.518, -54.7946, 149.518, -54.7946, -75.5899)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/fridges/hideable_box2/hideable_Box"]
+libraries = {
+"": SubResource("AnimationLibrary_gplkq")
+}
+
+[node name="trash cans" type="Node" parent="hideable objects"]
+
+[node name="hideable_box3" type="Node2D" parent="hideable objects/trash cans"]
+position = Vector2(241, 175)
+rotation = -3.14159
+scale = Vector2(0.048, 0.048)
+
+[node name="hideable_Box" type="StaticBody2D" parent="hideable objects/trash cans/hideable_box3"]
+script = ExtResource("6_7l68m")
+play3Frame = true
+
+[node name="Icon" type="Sprite2D" parent="hideable objects/trash cans/hideable_box3/hideable_Box"]
+material = SubResource("ShaderMaterial_l26xk")
+position = Vector2(62.4993, 125)
+scale = Vector2(3.42188, 3.60938)
+texture = ExtResource("10_gi76n")
+flip_h = true
+flip_v = true
+hframes = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/trash cans/hideable_box3/hideable_Box"]
+position = Vector2(-4.76837e-07, 2)
+scale = Vector2(3.42188, 3.60938)
+polygon = PackedVector2Array(60.8827, -64.046, 60.8827, 68.7099, -30.4414, 68.71, -30.4414, -64.046)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/trash cans/hideable_box3/hideable_Box"]
+libraries = {
+"": SubResource("AnimationLibrary_gplkq")
+}
