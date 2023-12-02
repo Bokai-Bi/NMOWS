@@ -811,7 +811,6 @@ size = Vector2(24, 26)
 size = Vector2(53, 52)
 
 [node name="TileMap2" type="TileMap"]
-position = Vector2(-7, -32)
 tile_set = SubResource("TileSet_xgkut")
 format = 2
 layer_0/name = "floor"
@@ -868,6 +867,7 @@ position = Vector2(616, 132)
 scale = Vector2(0.047, 0.047)
 
 [node name="hideable_Box" type="StaticBody2D" parent="hideable objects/pianos/hideable_box"]
+position = Vector2(148.938, 702.129)
 script = ExtResource("6_6wmpy")
 
 [node name="Icon" type="Sprite2D" parent="hideable objects/pianos/hideable_box/hideable_Box"]
@@ -891,7 +891,7 @@ libraries = {
 }
 
 [node name="hideable_box2" type="Node2D" parent="hideable objects/pianos"]
-position = Vector2(264, 9)
+position = Vector2(271, 40)
 scale = Vector2(0.047, 0.047)
 
 [node name="hideable_Box" type="StaticBody2D" parent="hideable objects/pianos/hideable_box2"]
@@ -920,7 +920,7 @@ libraries = {
 [node name="lockers" type="Node" parent="hideable objects"]
 
 [node name="hideable_box3" type="Node2D" parent="hideable objects/lockers"]
-position = Vector2(400, 196)
+position = Vector2(391, 228)
 scale = Vector2(0.047, 0.046)
 
 [node name="hideable_Box" type="StaticBody2D" parent="hideable objects/lockers/hideable_box3"]
@@ -946,7 +946,7 @@ libraries = {
 }
 
 [node name="hideable_box4" type="Node2D" parent="hideable objects/lockers"]
-position = Vector2(448, 4)
+position = Vector2(455, 36)
 scale = Vector2(0.047, 0.046)
 
 [node name="hideable_Box" type="StaticBody2D" parent="hideable objects/lockers/hideable_box4"]
@@ -972,7 +972,7 @@ libraries = {
 }
 
 [node name="hideable_box5" type="Node2D" parent="hideable objects/lockers"]
-position = Vector2(32, 212)
+position = Vector2(39, 245)
 scale = Vector2(0.047, 0.046)
 
 [node name="hideable_Box" type="StaticBody2D" parent="hideable objects/lockers/hideable_box5"]
@@ -1015,7 +1015,7 @@ position = Vector2(-0.75, -4)
 shape = SubResource("RectangleShape2D_1iiu2")
 
 [node name="Key2" type="Area2D" parent="Keydoor"]
-position = Vector2(283.36, -148.5)
+position = Vector2(283, -148)
 script = ExtResource("10_fh6fb")
 
 [node name="Key" type="Sprite2D" parent="Keydoor/Key2"]
@@ -1046,7 +1046,7 @@ position = Vector2(-0.75, -4)
 shape = SubResource("RectangleShape2D_1iiu2")
 
 [node name="Door" type="StaticBody2D" parent="Keydoor"]
-position = Vector2(-90.815, -172)
+position = Vector2(-90, -174)
 script = ExtResource("13_xn81t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Keydoor/Door"]
@@ -1066,7 +1066,7 @@ position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_w6og3")
 
 [node name="next_Scene_1" parent="." instance=ExtResource("15_jqr5o")]
-position = Vector2(130, 23)
+position = Vector2(129, 23)
 scale = Vector2(0.05, 0.05)
 
 [connection signal="body_entered" from="Keydoor/Key" to="Keydoor/Key" method="_on_body_entered" flags=18]
