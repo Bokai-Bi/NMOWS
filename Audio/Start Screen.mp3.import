@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwjlshnukg454"
+path="res://.godot/imported/Start Screen.mp3-0095cfa9f8ef41582b48d1526bc23af3.mp3str"
+
+[deps]
+
+source_file="res://Audio/Start Screen.mp3"
+dest_files=["res://.godot/imported/Start Screen.mp3-0095cfa9f8ef41582b48d1526bc23af3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
