@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NMOWS"
-run/main_scene="res://naturelab_tilemap.tscn"
+run/main_scene="res://collegebuilding_tilemap.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -39,10 +39,10 @@ layout/styles={
 "italic_font": "\"res://DialogueReal/Other/Minecraft.ttf\"",
 "name_label_alignment": "2",
 "name_label_font": "\"res://DialogueReal/Other/Minecraft.ttf\"",
-"name_label_font_size": "20.0",
+"name_label_font_size": "24.0",
 "normal_font": "\"res://DialogueReal/Other/Minecraft.ttf\"",
 "text_alignment": "1",
-"text_size": "32.0"
+"text_size": "24.0"
 },
 "inherits": ""
 }
