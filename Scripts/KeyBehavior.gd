@@ -8,6 +8,8 @@ var currExec = false
 
 var findTimer = 3.0
 
+var diditOnce = false
+
 func _input(event):
 	if currExec or thisFound:
 		if (thisFound and playerInRange and event.is_action_pressed("interact")):
@@ -27,6 +29,12 @@ func _input(event):
 			player.setPopupText("Key found!", false)
 		else:
 			player.setPopupText("Search interrupted", false)
+	elif playerInRange:
+		player.setPopupText("Press E to search", true)
+		diditOnce = true
+	elif diditOnce:
+		if player.popupText.text == "Press E to search":
+			player.setPopupText("Press E to search", false)
 	
 	currExec = false
 	
