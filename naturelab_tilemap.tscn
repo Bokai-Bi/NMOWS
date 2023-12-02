@@ -1133,9 +1133,9 @@ scale = Vector2(0.17, 0.17)
 texture = ExtResource("11_rtc35")
 hframes = 3
 
-[node name="Area2D" type="Area2D" parent="Key-door/Key"]
+[node name="KeyArea2D" type="Area2D" parent="Key-door/Key"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Key-door/Key/Area2D"]
+[node name="KeyCollisionShape2D" type="CollisionShape2D" parent="Key-door/Key/KeyArea2D"]
 position = Vector2(0.502457, 3.99998)
 shape = SubResource("RectangleShape2D_1iiu2")
 
@@ -1148,9 +1148,9 @@ scale = Vector2(0.17, 0.17)
 texture = ExtResource("11_rtc35")
 hframes = 3
 
-[node name="Area2D" type="Area2D" parent="Key-door/Key2"]
+[node name="KeyArea2D" type="Area2D" parent="Key-door/Key2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Key-door/Key2/Area2D"]
+[node name="KeyCollisionShape2D" type="CollisionShape2D" parent="Key-door/Key2/KeyArea2D"]
 position = Vector2(0.502457, 3.99998)
 shape = SubResource("RectangleShape2D_1iiu2")
 
@@ -1177,9 +1177,9 @@ position = Vector2(608.356, 287.247)
 scale = Vector2(0.05, 0.05)
 
 [connection signal="body_entered" from="Key-door/Key" to="Key-door/Key" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Key-door/Key/Area2D" to="Key-door/Key" method="_on_area_2d_body_entered" flags=18]
-[connection signal="body_exited" from="Key-door/Key/Area2D" to="Key-door/Key" method="_on_area_2d_body_exited" flags=18]
+[connection signal="body_entered" from="Key-door/Key/KeyArea2D" to="Key-door/Key" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_exited" from="Key-door/Key/KeyArea2D" to="Key-door/Key" method="_on_area_2d_body_exited" flags=18]
 [connection signal="body_entered" from="Key-door/Key2" to="Key-door/Key2" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Key-door/Key2/Area2D" to="Key-door/Key2" method="_on_area_2d_body_entered" flags=18]
-[connection signal="body_exited" from="Key-door/Key2/Area2D" to="Key-door/Key2" method="_on_area_2d_body_exited" flags=18]
+[connection signal="body_entered" from="Key-door/Key2/KeyArea2D" to="Key-door/Key2" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_exited" from="Key-door/Key2/KeyArea2D" to="Key-door/Key2" method="_on_area_2d_body_exited" flags=18]
 [connection signal="body_entered" from="Key-door/Door/Area2D" to="Key-door/Door" method="_on_area_2d_body_entered" flags=18]

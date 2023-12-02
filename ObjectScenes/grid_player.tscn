@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dj8s4ubel5p64" path="res://Sprites/Chase/player_run_PLACEHOLDER.png" id="2_jao5y"]
 [ext_resource type="Texture2D" uid="uid://dm4yv48m3ybo3" path="res://Sprites/UI/vision blocker.png" id="3_tda5f"]
 [ext_resource type="Texture2D" uid="uid://c3o7fqi4v2eta" path="res://Sprites/UI/blood splatter.png" id="4_68rwe"]
-[ext_resource type="Texture2D" uid="uid://u0o8qgccs5df" path="res://addons/dialogic/Example Assets/next-indicator/next-indicator.png" id="5_2810g"]
+[ext_resource type="Texture2D" uid="uid://bc01pv1a61w5m" path="res://Arrow.png" id="5_xrwpc"]
 [ext_resource type="Script" path="res://ObjectScenes/KeyArrow.gd" id="6_5jy7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_734vd"]
@@ -149,9 +149,8 @@ scale = Vector2(1.2, 1)
 texture = ExtResource("4_68rwe")
 
 [node name="Arrow" type="Sprite2D" parent="."]
-position = Vector2(0, -2.38419e-07)
-scale = Vector2(0.1, 0.154651)
-texture = ExtResource("5_2810g")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_xrwpc")
 script = ExtResource("6_5jy7p")
 
 [connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]

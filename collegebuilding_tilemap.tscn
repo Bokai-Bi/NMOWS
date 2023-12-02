@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dacpwnlp032kv" path="res://Sprites/Chase/College Building Animations/sink.png" id="12_wevvl"]
 [ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="13_xn81t"]
 [ext_resource type="Texture2D" uid="uid://chvta5x526mge" path="res://Sprites/Chase/College Building Animations/door.png" id="14_w8wt3"]
-[ext_resource type="PackedScene" path="res://ObjectScenes/next_Scene_1.tscn" id="15_jqr5o"]
+[ext_resource type="PackedScene" uid="uid://dt6gs1oilnb30" path="res://ObjectScenes/next_Scene_1.tscn" id="15_jqr5o"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_a7n5o"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

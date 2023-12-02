@@ -11,7 +11,7 @@ func _ready():
 # Recursive function to find all keys in the scene
 func _find_keys(node):
 	for child in node.get_children():
-		if child.name == "Key":
+		if child.name == "KeyArea2D":
 			keys.append(child)
 		_find_keys(child)
 
@@ -35,4 +35,4 @@ func _find_closest_key():
 # Rotate the sprite towards a position
 func _rotate_towards(position):
 	var direction = position - global_position
-	rotation = atan2(direction.y, direction.x)
+	rotation = atan2(direction.y, direction.x) + 90
