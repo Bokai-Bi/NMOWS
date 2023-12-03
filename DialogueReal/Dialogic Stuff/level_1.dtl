@@ -18,8 +18,7 @@ you: (I need to make this count.)
 	Killer (killer_blushing): F-fool, I’m not chasing you to hear you sing half-hearted praises… You think that's enough to make me stop?
 - Who are you?
 	you (fearful): Who are you? What are you doing?\
-\
-(Please, I can't die single!)
+	(Please, I can't die single!)
 	Leave you
 	Join Killer (killer_angry) 2
 	Killer: "Who, what, why"? What  PREDICTABLE questions.
@@ -30,4 +29,5 @@ you: (I need to make this count.)
 	Join you (fearful) 2
 	you (fearful): !!
 	you: (Seems like I'm going to need to take a different approach!)
+	Leave you
 VAR {nextScene} = "true"
