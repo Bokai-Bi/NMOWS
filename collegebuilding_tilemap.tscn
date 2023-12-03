@@ -869,6 +869,7 @@ position = Vector2(623, 335)
 [node name="pianos" type="Node" parent="hideable objects"]
 
 [node name="hideable_box" type="Node2D" parent="hideable objects/pianos"]
+z_index = -1
 position = Vector2(616, 132)
 scale = Vector2(0.047, 0.047)
 
@@ -897,6 +898,7 @@ libraries = {
 }
 
 [node name="hideable_box2" type="Node2D" parent="hideable objects/pianos"]
+z_index = -1
 position = Vector2(271, 40)
 scale = Vector2(0.047, 0.047)
 
@@ -933,6 +935,7 @@ scale = Vector2(0.047, 0.046)
 script = ExtResource("6_6wmpy")
 
 [node name="Icon" type="Sprite2D" parent="hideable objects/lockers/hideable_box3/hideable_Box"]
+z_index = -1
 material = SubResource("ShaderMaterial_l26xk")
 rotation = 3.14159
 scale = Vector2(3.42188, 3.60938)
@@ -968,6 +971,7 @@ flip_v = true
 hframes = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/lockers/hideable_box4/hideable_Box"]
+z_index = -1
 position = Vector2(-4.76837e-07, 2)
 scale = Vector2(3.42188, 3.60938)
 polygon = PackedVector2Array(55.9602, 71.7213, -43.5247, 71.7213, -43.5247, -121.013, 55.9602, -121.013)
@@ -985,6 +989,7 @@ scale = Vector2(0.047, 0.046)
 script = ExtResource("6_6wmpy")
 
 [node name="Icon" type="Sprite2D" parent="hideable objects/lockers/hideable_box5/hideable_Box"]
+z_index = -1
 material = SubResource("ShaderMaterial_l26xk")
 rotation = 3.14159
 scale = Vector2(3.42188, 3.60938)

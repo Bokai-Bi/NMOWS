@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://botod5i770as7"]
 
 [ext_resource type="Script" path="res://Scripts/GridPlayer.gd" id="1_k1buu"]
-[ext_resource type="Texture2D" uid="uid://dj8s4ubel5p64" path="res://Sprites/Chase/player_run_PLACEHOLDER.png" id="2_jao5y"]
+[ext_resource type="Texture2D" uid="uid://b2irlmioj7bg3" path="res://Sprites/Chase/player_run.png" id="2_ic840"]
 [ext_resource type="FontFile" uid="uid://cotqlt6yhixp1" path="res://DialogueReal/Other/Minecraft.ttf" id="3_nhp3f"]
 [ext_resource type="Texture2D" uid="uid://dm4yv48m3ybo3" path="res://Sprites/UI/vision blocker.png" id="3_tda5f"]
 [ext_resource type="Texture2D" uid="uid://c3o7fqi4v2eta" path="res://Sprites/UI/blood splatter.png" id="4_68rwe"]
@@ -114,7 +114,7 @@ debug_color = Color(0.882353, 0, 0.819608, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_jao5y")
+texture = ExtResource("2_ic840")
 hframes = 4
 vframes = 5
 

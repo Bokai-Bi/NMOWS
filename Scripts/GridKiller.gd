@@ -5,7 +5,7 @@ var frameCounter = 0  # Initialize a variable to keep track of the frame count.
 var pixelSize = 32
 var numFrames = 0
 
-var health = 3
+var health = 7
 var player_collided = false
 
 var dirSwitchDelay = 100
@@ -132,7 +132,7 @@ func _process(delta):
 			return
 		if playerHiding:
 			
-			if frameCounter < 60:
+			if frameCounter < 500 and !alreadyFound:
 				return
 			alreadyFound = false
 			target_position = player.global_position

@@ -96,7 +96,7 @@ func get_input():
 			velocity.x += 1
 			walk_sound()
 			
-			print("pressed right")
+			#print("pressed right")
 			
 		elif Input.is_action_pressed("move_left"):
 			dir = 1
