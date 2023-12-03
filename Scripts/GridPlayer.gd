@@ -94,25 +94,25 @@ func get_input():
 			dir = 0
 			$AnimationPlayer.play("WalkRight")
 			velocity.x += 1
-			walk_sound()
+			##walk_sound()
 			
-			print("pressed right")
+			#print("pressed right")
 			
 		elif Input.is_action_pressed("move_left"):
 			dir = 1
 			$AnimationPlayer.play("WalkLeft")
 			velocity.x -= 1
-			walk_sound()
+			##walk_sound()
 		elif Input.is_action_pressed("move_down"):
 			dir = 2
 			$AnimationPlayer.play("WalkDown")
 			velocity.y += 1
-			walk_sound()
+			##walk_sound()
 		elif Input.is_action_pressed("move_up"):
 			dir = 3
 			$AnimationPlayer.play("WalkUp")
 			velocity.y -= 1
-			walk_sound()
+			##walk_sound()
 			
 		else:
 			dir = 4

@@ -31,7 +31,10 @@ if {level3choice} == "good":
 	Leave Killer
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_10_x1.png" fade="0.0"]
 	[wait time="2.0"]
+	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_11_x1.png" fade="0.0"]
+	[background arg="res://Credits Page Update.png" fade="0.0"]
+	[background fade="0.0"]
 else:
 	Join Killer 2
 	Killer (Default): I’m tired...
@@ -48,3 +51,7 @@ else:
 	Killer: You can keep the horse head. I’m going back to write my thesis.
 	Killer: I hope you had an amusing night. Goodbye.
 	Leave Killer
+	[wait time="2.0"]
+	[background arg="res://Credits Page Update.png" fade="0.0"]
+
+Leave Killer
