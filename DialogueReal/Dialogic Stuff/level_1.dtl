@@ -1,6 +1,9 @@
 [background arg="res://DialogueReal/Backgrounds/windowscene.PNG" fade="0.0"]
 Join you (worried) 2
-You lock the door behind you. Safety... for now.
+you: Huff huff...
+you: (I'm safe for now but... No... I can't die. Not before I find my one true love.)
+(I need to make this count.)
+(What should I say?)
 - Pathetic.
 	you (provocative): Pathetic. You’re gonna have to better than that.
 	Leave you
