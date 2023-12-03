@@ -7,7 +7,7 @@ var numFrames = 60
 
 #modded
 var paused = false
-
+var paused_times = 0
 var hiding = false
 
 
@@ -65,13 +65,21 @@ func _input(event):
 			unhide_player()
 	
 func pause_input():
+
 	if Input.is_action_pressed("escape"):
-		if paused == false:
-			paused = true
-			print(paused)
-		elif paused == true:
-			paused = false
-			print(paused)
+			if paused == false:
+				paused = true
+				canMove = false
+
+				get_tree().call_group("killer", "set_paused", paused)
+				paused_times = paused_times + 1
+			elif paused == true:
+				paused = false
+				canMove = true
+
+				get_tree().call_group("killer", "set_paused", paused)		
+				paused_times = paused_times + 1
+
 	
 	
 func walk_sound():
@@ -81,42 +89,44 @@ func walk_sound():
 	
 func get_input():
 	velocity = Vector2()
-	
-	if Input.is_action_pressed("move_right"):
-		dir = 0
-		$AnimationPlayer.play("WalkRight")
-		velocity.x += 1
-		walk_sound()
-	elif Input.is_action_pressed("move_left"):
-		dir = 1
-		$AnimationPlayer.play("WalkLeft")
-		velocity.x -= 1
-		walk_sound()
-	elif Input.is_action_pressed("move_down"):
-		dir = 2
-		$AnimationPlayer.play("WalkDown")
-		velocity.y += 1
-		walk_sound()
-	elif Input.is_action_pressed("move_up"):
-		dir = 3
-		$AnimationPlayer.play("WalkUp")
-		velocity.y -= 1
-		walk_sound()
-		
-	elif Input.is_action_pressed("escape"):
-		print("pausing")
-		if paused == false:
-			paused = true
-			print("paused")
-		elif paused == true:
-			paused = false
-			print("paused")
-	else:
-		dir = 4
-	velocity = velocity.normalized() * speed
+	if canMove:
+		if Input.is_action_pressed("move_right"):
+			dir = 0
+			$AnimationPlayer.play("WalkRight")
+			velocity.x += 1
+			walk_sound()
+			
+			print("pressed right")
+			
+		elif Input.is_action_pressed("move_left"):
+			dir = 1
+			$AnimationPlayer.play("WalkLeft")
+			velocity.x -= 1
+			walk_sound()
+		elif Input.is_action_pressed("move_down"):
+			dir = 2
+			$AnimationPlayer.play("WalkDown")
+			velocity.y += 1
+			walk_sound()
+		elif Input.is_action_pressed("move_up"):
+			dir = 3
+			$AnimationPlayer.play("WalkUp")
+			velocity.y -= 1
+			walk_sound()
+			
+		else:
+			dir = 4
+		velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
 	frameCounter += 1
+
+	if paused_times < 1: 
+		pause_input()
+	else:
+		paused_times = 0
+		
+		
 	get_input()
 
 	

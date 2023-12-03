@@ -13,6 +13,7 @@ var currDir = Vector2(0,0)
 var lastSwitch = 0
 
 var playerHiding
+var playerPaused
 
 var target_position = Vector2(0,0)
 
@@ -39,6 +40,7 @@ func _ready():
 	add_to_group("killer")
 	$AnimationPlayer.play("Idle")
 	playerHiding = false
+	playerPaused = false
 	
 	random.randomize()
 	
@@ -68,19 +70,19 @@ func _physics_process(delta):
 	
 	var move = changeDirAfterDelay(new_velocity)
 	
+	if(!playerPaused):
+		if(move.x < 0):
+			$AnimationPlayer.play("WalkLeft")
+		elif (move.x > 0):
+			$AnimationPlayer.play("WalkRight")
+		elif(move.y < 0):
+			$AnimationPlayer.play("WalkUp")
+		elif(move.y > 0):
+			$AnimationPlayer.play("WalkDown")
 		
-	if(move.x < 0):
-		$AnimationPlayer.play("WalkLeft")
-	elif (move.x > 0):
-		$AnimationPlayer.play("WalkRight")
-	elif(move.y < 0):
-		$AnimationPlayer.play("WalkUp")
-	elif(move.y > 0):
-		$AnimationPlayer.play("WalkDown")
-
 	#print(move.normalized())
-	move = move.normalized() * movement_speed
-	move_and_collide(move)
+		move = move.normalized() * movement_speed
+		move_and_collide(move)
 	
 
 func check_collision(dir):
@@ -159,6 +161,10 @@ func set_player(p):
 	
 func set_hiding(hiding):
 	playerHiding = hiding
+	
+func set_paused(paused):
+	playerPaused = paused
+	print(playerPaused)
 
 
 
