@@ -107,7 +107,7 @@ gravity_scale = 0.0
 script = ExtResource("1_k1buu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.75)
+position = Vector2(0, 6.75001)
 scale = Vector2(0.65, 0.65)
 shape = SubResource("RectangleShape2D_734vd")
 debug_color = Color(0.882353, 0, 0.819608, 0.419608)
@@ -148,6 +148,7 @@ limit_bottom = 386
 limit_smoothed = true
 
 [node name="VisionBlocker" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(1.2, 1)
 texture = ExtResource("3_tda5f")
 

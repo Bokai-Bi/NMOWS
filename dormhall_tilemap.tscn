@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dc8yd26ggjgm8"]
+[gd_scene load_steps=31 format=3 uid="uid://dc8yd26ggjgm8"]
 
 [ext_resource type="Texture2D" uid="uid://cjyf5k7n3bqeg" path="res://lvl2tilemap_interation2.png" id="1_1l73k"]
 [ext_resource type="Texture2D" uid="uid://cokx7ra8nbcpg" path="res://lvl2_tilemap_iteration1.png" id="2_lmf2a"]
@@ -7,11 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://f7q0pgcgmc4v" path="res://ObjectScenes/grid_killer.tscn" id="5_2b0qb"]
 [ext_resource type="Script" path="res://ObjectScenes/hideable_box.gd" id="6_7l68m"]
 [ext_resource type="Shader" path="res://hideable_box.gdshader" id="7_8n7pf"]
-[ext_resource type="Texture2D" uid="uid://bc02bccfge14w" path="res://Sprites/Chase/Dorm Room Animations/College_Dorm_Table_1-animation.png" id="8_etuse"]
-[ext_resource type="Texture2D" uid="uid://dnhv25padb61r" path="res://Sprites/Chase/Dorm Room Animations/fridgeanimationFINAL.png" id="9_oxguh"]
+[ext_resource type="Texture2D" uid="uid://bp5ecewp3txcg" path="res://Sprites/Chase/Dorm Room Animations/dormhall table animation.png" id="8_fnht8"]
+[ext_resource type="Texture2D" uid="uid://exvqpg887271" path="res://Sprites/Chase/Dorm Room Animations/fridgeFINALANI.png" id="9_axwhj"]
 [ext_resource type="Texture2D" uid="uid://cp3j1kmbiqgo4" path="res://Sprites/Chase/Dorm Room Animations/trashcans(1)-export-export.png" id="10_gi76n"]
 [ext_resource type="PackedScene" uid="uid://bx5ldnrrii1da" path="res://ObjectScenes/next_Scene_2.tscn" id="11_3wcdn"]
 [ext_resource type="AudioStream" uid="uid://c6brrkany4pkj" path="res://Audio/Gameplay Music.wav" id="12_xxpha"]
+[ext_resource type="Script" path="res://Scripts/KeyBehavior.gd" id="13_6ksyq"]
+[ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="14_srj4o"]
+[ext_resource type="Texture2D" uid="uid://dc71wj1a87f7v" path="res://Sprites/door_naturelab.png" id="15_8ajlv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uu45w"]
 texture = ExtResource("1_1l73k")
@@ -1884,6 +1887,12 @@ _data = {
 "test_3frame": SubResource("Animation_dtmmr")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iiu2"]
+size = Vector2(815.104, 692.709)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6og3"]
+size = Vector2(53, 52)
+
 [node name="TileMap" type="TileMap"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 tile_set = SubResource("TileSet_drifl")
@@ -1917,7 +1926,7 @@ layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
-layer_4/tile_data = PackedInt32Array(327685, 393221, 1, 327686, 458757, 1, 393221, 393221, 2, 393222, 458757, 2, 458757, 393221, 3, 458758, 458757, 3, 524289, 131077, 5, 589825, 131077, 6, 327688, 262149, 3, 327689, 327685, 3, 327690, 327685, 3, 393226, 327685, 3, 393224, 262149, 4, 393225, 262149, 2, 458762, 327685, 4, 196620, 589829, 5, 262156, 589829, 6, 327692, 524293, 5, 393228, 655365, 5, 458764, 655365, 5, 458765, 655365, 4, 196621, 655365, 3, 262157, 655365, 4, 327693, 655365, 3, 393229, 655365, 4, 524300, 655365, 5, 524301, 655365, 3, 589836, 524293, 6, 589837, 524293, 6, 262178, 262149, 3, 262179, 327685, 3, 393251, 262149, 3, 393252, 327685, 3, 327714, 262149, 4, 327715, 327685, 4, 458787, 262149, 4, 458788, 327685, 4, 720934, 131077, 5, 786470, 131077, 6, 1310735, 131077, 6, 1245199, 131077, 5, 1048614, 393221, 7, 1114150, 393221, 8, 1048613, 327685, 7, 1114149, 327685, 8, 1048606, 65541, 7, 1048607, 131077, 7, 1048608, 196613, 7, 1114142, 65541, 8, 1179678, 65541, 9, 1245217, 196613, 9, 1245218, 262149, 9, 1048609, 262149, 3, 1048610, 327685, 3, 1114145, 262149, 4, 1114146, 327685, 4, 1048596, 262149, 5, 1114132, 262149, 6, 1048597, 327685, 5, 262180, 458757, 7, 262181, 524293, 7, 327716, 458757, 8, 327717, 524293, 8, 393250, 524293, 9, 131092, 589829, 7, 131093, 655365, 7, 196628, 589829, 8, 196629, 655365, 8, 262164, 589829, 9, 262165, 655365, 9, 65557, 655365, 6, 65558, 720901, 6, 131094, 720901, 7, 65559, 786437, 6, 65560, 851973, 6, 131095, 786437, 7, 131096, 851973, 7)
+layer_4/tile_data = PackedInt32Array(327685, 393221, 1, 327686, 458757, 1, 393221, 393221, 2, 393222, 458757, 2, 458757, 393221, 3, 458758, 458757, 3, 524289, 131077, 5, 589825, 131077, 6, 327688, 262149, 3, 327689, 327685, 3, 327690, 327685, 3, 393226, 327685, 3, 393224, 262149, 4, 393225, 262149, 2, 458762, 327685, 4, 196620, 589829, 5, 262156, 589829, 6, 327692, 524293, 5, 393228, 655365, 5, 458764, 655365, 5, 458765, 655365, 4, 196621, 655365, 3, 262157, 655365, 4, 327693, 655365, 3, 393229, 655365, 4, 524300, 655365, 5, 524301, 655365, 3, 589836, 524293, 6, 589837, 524293, 6, 393251, 262149, 3, 393252, 327685, 3, 458787, 262149, 4, 458788, 327685, 4, 720934, 131077, 5, 786470, 131077, 6, 1310735, 131077, 6, 1245199, 131077, 5, 1048614, 393221, 7, 1114150, 393221, 8, 1048613, 327685, 7, 1114149, 327685, 8, 1048606, 65541, 7, 1048607, 131077, 7, 1048608, 196613, 7, 1114142, 65541, 8, 1179678, 65541, 9, 1245217, 196613, 9, 1245218, 262149, 9, 1048609, 262149, 3, 1048610, 327685, 3, 1114145, 262149, 4, 1114146, 327685, 4, 1048596, 262149, 5, 1114132, 262149, 6, 1048597, 327685, 5, 262180, 458757, 7, 262181, 524293, 7, 327716, 458757, 8, 327717, 524293, 8, 393250, 524293, 9, 131092, 589829, 7, 131093, 655365, 7, 196628, 589829, 8, 196629, 655365, 8, 262164, 589829, 9, 262165, 655365, 9, 65557, 655365, 6, 65558, 720901, 6, 131094, 720901, 7, 65559, 786437, 6, 65560, 851973, 6, 131095, 786437, 7, 131096, 851973, 7)
 layer_5/name = ""
 layer_5/enabled = true
 layer_5/modulate = Color(1, 1, 1, 1)
@@ -1937,9 +1946,9 @@ position = Vector2(289, 195)
 [node name="tables" type="Node" parent="hideable objects"]
 
 [node name="hideable_box" type="Node2D" parent="hideable objects/tables"]
-position = Vector2(451, 54)
+position = Vector2(558, 78)
 rotation = 3.14159
-scale = Vector2(0.048, 0.048)
+scale = Vector2(0.06, 0.06)
 
 [node name="hideable_Box" type="StaticBody2D" parent="hideable objects/tables/hideable_box"]
 script = ExtResource("6_7l68m")
@@ -1947,7 +1956,7 @@ script = ExtResource("6_7l68m")
 [node name="Icon" type="Sprite2D" parent="hideable objects/tables/hideable_box/hideable_Box"]
 material = SubResource("ShaderMaterial_l26xk")
 scale = Vector2(3.42188, 3.60938)
-texture = ExtResource("8_etuse")
+texture = ExtResource("8_fnht8")
 flip_h = true
 flip_v = true
 hframes = 3
@@ -1955,9 +1964,86 @@ hframes = 3
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/tables/hideable_box/hideable_Box"]
 position = Vector2(-4.76837e-07, 2)
 scale = Vector2(3.42188, 3.60938)
-polygon = PackedVector2Array(85.2357, -69.8181, 85.2357, 68.7098, -109.589, 68.7098, -109.589, -69.8181)
+polygon = PackedVector2Array(73.0591, -55.9652, 73.0586, 68.71, -92.5422, 68.7096, -92.5417, -55.9656)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/tables/hideable_box/hideable_Box"]
+libraries = {
+"": SubResource("AnimationLibrary_gplkq")
+}
+
+[node name="hideable_box3" type="Node2D" parent="hideable objects/tables"]
+position = Vector2(542, 270)
+rotation = 3.14159
+scale = Vector2(0.06, 0.06)
+
+[node name="hideable_Box" type="StaticBody2D" parent="hideable objects/tables/hideable_box3"]
+script = ExtResource("6_7l68m")
+
+[node name="Icon" type="Sprite2D" parent="hideable objects/tables/hideable_box3/hideable_Box"]
+material = SubResource("ShaderMaterial_l26xk")
+scale = Vector2(3.42188, 3.60938)
+texture = ExtResource("8_fnht8")
+flip_h = true
+flip_v = true
+hframes = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/tables/hideable_box3/hideable_Box"]
+position = Vector2(-4.76837e-07, 2)
+scale = Vector2(3.42188, 3.60938)
+polygon = PackedVector2Array(73.0591, -55.9652, 73.0586, 68.71, -92.5422, 68.7096, -92.5417, -55.9656)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/tables/hideable_box3/hideable_Box"]
+libraries = {
+"": SubResource("AnimationLibrary_gplkq")
+}
+
+[node name="hideable_box4" type="Node2D" parent="hideable objects/tables"]
+position = Vector2(142, 94)
+rotation = 3.14159
+scale = Vector2(0.06, 0.06)
+
+[node name="hideable_Box" type="StaticBody2D" parent="hideable objects/tables/hideable_box4"]
+script = ExtResource("6_7l68m")
+
+[node name="Icon" type="Sprite2D" parent="hideable objects/tables/hideable_box4/hideable_Box"]
+material = SubResource("ShaderMaterial_l26xk")
+scale = Vector2(3.42188, 3.60938)
+texture = ExtResource("8_fnht8")
+flip_h = true
+flip_v = true
+hframes = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/tables/hideable_box4/hideable_Box"]
+position = Vector2(-4.76837e-07, 2)
+scale = Vector2(3.42188, 3.60938)
+polygon = PackedVector2Array(73.0591, -55.9652, 73.0586, 68.71, -92.5422, 68.7096, -92.5417, -55.9656)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/tables/hideable_box4/hideable_Box"]
+libraries = {
+"": SubResource("AnimationLibrary_gplkq")
+}
+
+[node name="hideable_box2" type="Node2D" parent="hideable objects/tables"]
+position = Vector2(574, 110)
+rotation = 3.14159
+scale = Vector2(0.06, 0.06)
+
+[node name="hideable_Box" type="StaticBody2D" parent="hideable objects/tables/hideable_box2"]
+script = ExtResource("6_7l68m")
+
+[node name="Icon" type="Sprite2D" parent="hideable objects/tables/hideable_box2/hideable_Box"]
+material = SubResource("ShaderMaterial_l26xk")
+scale = Vector2(3.42188, 3.60938)
+texture = ExtResource("8_fnht8")
+flip_h = true
+flip_v = true
+hframes = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/tables/hideable_box2/hideable_Box"]
+scale = Vector2(3.42188, 3.60938)
+polygon = PackedVector2Array(68.1887, -51.3475, 68.1885, 68.71, -87.6714, 68.7097, -87.6711, -50.7938)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/tables/hideable_box2/hideable_Box"]
 libraries = {
 "": SubResource("AnimationLibrary_gplkq")
 }
@@ -1965,7 +2051,7 @@ libraries = {
 [node name="fridges" type="Node" parent="hideable objects"]
 
 [node name="hideable_box2" type="Node2D" parent="hideable objects/fridges"]
-position = Vector2(167, 175)
+position = Vector2(94, 107)
 rotation = -3.14159
 scale = Vector2(0.048, 0.048)
 
@@ -1977,7 +2063,7 @@ play3Frame = true
 material = SubResource("ShaderMaterial_l26xk")
 position = Vector2(62.4993, 125)
 scale = Vector2(3.42188, 3.60938)
-texture = ExtResource("9_oxguh")
+texture = ExtResource("9_axwhj")
 flip_h = true
 flip_v = true
 hframes = 5
@@ -1992,10 +2078,38 @@ libraries = {
 "": SubResource("AnimationLibrary_gplkq")
 }
 
+[node name="hideable_box3" type="Node2D" parent="hideable objects/fridges"]
+position = Vector2(126, 218)
+rotation = -3.14159
+scale = Vector2(0.048, 0.048)
+
+[node name="hideable_Box" type="StaticBody2D" parent="hideable objects/fridges/hideable_box3"]
+script = ExtResource("6_7l68m")
+play3Frame = true
+
+[node name="Icon" type="Sprite2D" parent="hideable objects/fridges/hideable_box3/hideable_Box"]
+material = SubResource("ShaderMaterial_l26xk")
+position = Vector2(62.4993, 125)
+scale = Vector2(3.42188, 3.60938)
+texture = ExtResource("9_axwhj")
+flip_h = true
+flip_v = true
+hframes = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/fridges/hideable_box3/hideable_Box"]
+position = Vector2(-4.76837e-07, 2)
+scale = Vector2(3.42188, 3.60938)
+polygon = PackedVector2Array(85.2356, -75.5899, 85.2357, 149.518, -54.7946, 149.518, -54.7946, -75.5899)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/fridges/hideable_box3/hideable_Box"]
+libraries = {
+"": SubResource("AnimationLibrary_gplkq")
+}
+
 [node name="trash cans" type="Node" parent="hideable objects"]
 
 [node name="hideable_box3" type="Node2D" parent="hideable objects/trash cans"]
-position = Vector2(241, 175)
+position = Vector2(249, 316)
 rotation = -3.14159
 scale = Vector2(0.048, 0.048)
 
@@ -2022,11 +2136,156 @@ libraries = {
 "": SubResource("AnimationLibrary_gplkq")
 }
 
+[node name="hideable_box6" type="Node2D" parent="hideable objects/trash cans"]
+position = Vector2(26, 140)
+rotation = -3.14159
+scale = Vector2(0.048, 0.048)
+
+[node name="hideable_Box" type="StaticBody2D" parent="hideable objects/trash cans/hideable_box6"]
+script = ExtResource("6_7l68m")
+play3Frame = true
+
+[node name="Icon" type="Sprite2D" parent="hideable objects/trash cans/hideable_box6/hideable_Box"]
+material = SubResource("ShaderMaterial_l26xk")
+position = Vector2(62.4993, 125)
+scale = Vector2(3.42188, 3.60938)
+texture = ExtResource("10_gi76n")
+flip_h = true
+flip_v = true
+hframes = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/trash cans/hideable_box6/hideable_Box"]
+position = Vector2(-41.6667, 0.000244141)
+scale = Vector2(3.42188, 3.60938)
+polygon = PackedVector2Array(60.8827, -64.046, 60.8827, 68.7099, -30.4414, 68.71, -30.4414, -64.046)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/trash cans/hideable_box6/hideable_Box"]
+libraries = {
+"": SubResource("AnimationLibrary_gplkq")
+}
+
+[node name="hideable_box5" type="Node2D" parent="hideable objects/trash cans"]
+position = Vector2(617, 188)
+rotation = -3.14159
+scale = Vector2(0.048, 0.048)
+
+[node name="hideable_Box" type="StaticBody2D" parent="hideable objects/trash cans/hideable_box5"]
+script = ExtResource("6_7l68m")
+play3Frame = true
+
+[node name="Icon" type="Sprite2D" parent="hideable objects/trash cans/hideable_box5/hideable_Box"]
+material = SubResource("ShaderMaterial_l26xk")
+position = Vector2(62.4993, 125)
+scale = Vector2(3.42188, 3.60938)
+texture = ExtResource("10_gi76n")
+flip_h = true
+flip_v = true
+hframes = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/trash cans/hideable_box5/hideable_Box"]
+position = Vector2(-4.76837e-07, 2)
+scale = Vector2(3.42188, 3.60938)
+polygon = PackedVector2Array(60.8827, -64.046, 60.8827, 68.7099, -30.4414, 68.71, -30.4414, -64.046)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/trash cans/hideable_box5/hideable_Box"]
+libraries = {
+"": SubResource("AnimationLibrary_gplkq")
+}
+
+[node name="hideable_box4" type="Node2D" parent="hideable objects/trash cans"]
+position = Vector2(458, 235)
+rotation = -3.14159
+scale = Vector2(0.048, 0.048)
+
+[node name="hideable_Box" type="StaticBody2D" parent="hideable objects/trash cans/hideable_box4"]
+script = ExtResource("6_7l68m")
+play3Frame = true
+
+[node name="Icon" type="Sprite2D" parent="hideable objects/trash cans/hideable_box4/hideable_Box"]
+material = SubResource("ShaderMaterial_l26xk")
+position = Vector2(62.4993, 125)
+scale = Vector2(3.42188, 3.60938)
+texture = ExtResource("10_gi76n")
+flip_h = true
+flip_v = true
+hframes = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/trash cans/hideable_box4/hideable_Box"]
+position = Vector2(-4.76837e-07, 2)
+scale = Vector2(3.42188, 3.60938)
+polygon = PackedVector2Array(60.8827, -64.046, 60.8827, 68.7099, -30.4414, 68.71, -30.4414, -64.046)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hideable objects/trash cans/hideable_box4/hideable_Box"]
+libraries = {
+"": SubResource("AnimationLibrary_gplkq")
+}
+
 [node name="next_Scene_2" parent="." instance=ExtResource("11_3wcdn")]
-position = Vector2(530, 28)
+position = Vector2(64.0001, 336)
 scale = Vector2(0.05, 0.05)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_xxpha")
 autoplay = true
-stream_paused = true
+
+[node name="KeyDoor" type="Node2D" parent="."]
+position = Vector2(14, 266)
+
+[node name="Key" type="Area2D" parent="KeyDoor"]
+position = Vector2(617, -139)
+scale = Vector2(0.048, 0.048)
+script = ExtResource("13_6ksyq")
+
+[node name="Key" type="Sprite2D" parent="KeyDoor/Key"]
+scale = Vector2(3.609, 3.609)
+texture = ExtResource("10_gi76n")
+hframes = 5
+
+[node name="KeyArea2D" type="Area2D" parent="KeyDoor/Key"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDoor/Key/KeyArea2D"]
+position = Vector2(28.6455, 13.0205)
+shape = SubResource("RectangleShape2D_1iiu2")
+
+[node name="Key2" type="Area2D" parent="KeyDoor"]
+position = Vector2(185, 15)
+scale = Vector2(0.048, 0.048)
+script = ExtResource("13_6ksyq")
+
+[node name="Key" type="Sprite2D" parent="KeyDoor/Key2"]
+scale = Vector2(3.609, 3.609)
+texture = ExtResource("10_gi76n")
+hframes = 5
+
+[node name="KeyArea2D" type="Area2D" parent="KeyDoor/Key2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDoor/Key2/KeyArea2D"]
+position = Vector2(-71.6145, 109.375)
+shape = SubResource("RectangleShape2D_1iiu2")
+
+[node name="Door" type="StaticBody2D" parent="KeyDoor"]
+position = Vector2(17, 22)
+script = ExtResource("14_srj4o")
+
+[node name="Sprite2D" type="Sprite2D" parent="KeyDoor/Door"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("15_8ajlv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KeyDoor/Door"]
+position = Vector2(-3, 3)
+scale = Vector2(0.3, 0.3)
+polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
+
+[node name="Area2D" type="Area2D" parent="KeyDoor/Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDoor/Door/Area2D"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_w6og3")
+
+[connection signal="body_entered" from="KeyDoor/Key" to="KeyDoor/Key" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="KeyDoor/Key/KeyArea2D" to="KeyDoor/Key" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_exited" from="KeyDoor/Key/KeyArea2D" to="KeyDoor/Key" method="_on_area_2d_body_exited" flags=18]
+[connection signal="body_entered" from="KeyDoor/Key2" to="KeyDoor/Key2" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="KeyDoor/Key2/KeyArea2D" to="KeyDoor/Key2" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_exited" from="KeyDoor/Key2/KeyArea2D" to="KeyDoor/Key2" method="_on_area_2d_body_exited" flags=18]
+[connection signal="body_entered" from="KeyDoor/Door/Area2D" to="KeyDoor/Door" method="_on_area_2d_body_entered" flags=18]

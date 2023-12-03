@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="13_xn81t"]
 [ext_resource type="Texture2D" uid="uid://chvta5x526mge" path="res://Sprites/Chase/College Building Animations/door.png" id="14_w8wt3"]
 [ext_resource type="PackedScene" uid="uid://dt6gs1oilnb30" path="res://ObjectScenes/next_Scene_1.tscn" id="15_jqr5o"]
-[ext_resource type="AudioStream" uid="uid://yj7eeo6x6etv" path="res://Audio/Gameplay Music.wav" id="17_vf00h"]
+[ext_resource type="AudioStream" uid="uid://c6brrkany4pkj" path="res://Audio/Gameplay Music.wav" id="17_vf00h"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_a7n5o"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -1014,9 +1014,9 @@ script = ExtResource("10_fh6fb")
 scale = Vector2(0.022, 0.022)
 texture = ExtResource("11_e3bpo")
 
-[node name="Area2D" type="Area2D" parent="Keydoor/Key"]
+[node name="KeyArea2D" type="Area2D" parent="Keydoor/Key"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Keydoor/Key/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keydoor/Key/KeyArea2D"]
 position = Vector2(-0.75, -4)
 shape = SubResource("RectangleShape2D_1iiu2")
 
@@ -1028,10 +1028,10 @@ script = ExtResource("10_fh6fb")
 scale = Vector2(0.022, 0.022)
 texture = ExtResource("11_e3bpo")
 
-[node name="Area2D" type="Area2D" parent="Keydoor/Key2"]
+[node name="KeyArea2D" type="Area2D" parent="Keydoor/Key2"]
 position = Vector2(0.640015, 6.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Keydoor/Key2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Keydoor/Key2/KeyArea2D"]
 position = Vector2(-1, -4)
 shape = SubResource("RectangleShape2D_1iiu2")
 
@@ -1080,11 +1080,11 @@ stream = ExtResource("17_vf00h")
 autoplay = true
 
 [connection signal="body_entered" from="Keydoor/Key" to="Keydoor/Key" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Keydoor/Key/Area2D" to="Keydoor/Key" method="_on_area_2d_body_entered" flags=18]
-[connection signal="body_exited" from="Keydoor/Key/Area2D" to="Keydoor/Key" method="_on_area_2d_body_exited" flags=18]
+[connection signal="body_entered" from="Keydoor/Key/KeyArea2D" to="Keydoor/Key" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_exited" from="Keydoor/Key/KeyArea2D" to="Keydoor/Key" method="_on_area_2d_body_exited" flags=18]
 [connection signal="body_entered" from="Keydoor/Key2" to="Keydoor/Key2" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Keydoor/Key2/Area2D" to="Keydoor/Key2" method="_on_area_2d_body_entered" flags=18]
-[connection signal="body_exited" from="Keydoor/Key2/Area2D" to="Keydoor/Key2" method="_on_area_2d_body_exited" flags=18]
+[connection signal="body_entered" from="Keydoor/Key2/KeyArea2D" to="Keydoor/Key2" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_exited" from="Keydoor/Key2/KeyArea2D" to="Keydoor/Key2" method="_on_area_2d_body_exited" flags=18]
 [connection signal="body_entered" from="Keydoor/unused-keysink" to="Keydoor/unused-keysink" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Keydoor/unused-keysink/Area2D" to="Keydoor/unused-keysink" method="_on_area_2d_body_entered" flags=18]
 [connection signal="body_exited" from="Keydoor/unused-keysink/Area2D" to="Keydoor/unused-keysink" method="_on_area_2d_body_exited" flags=18]

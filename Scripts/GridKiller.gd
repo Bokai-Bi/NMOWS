@@ -18,12 +18,12 @@ var playerPaused
 var target_position = Vector2(0,0)
 
 var invincibility = false
-var invincibilityTime = 1.5
+var invincibilityTime = 2.5
 
 
-var killerBaseSpeed = 1.55
+var killerBaseSpeed = 1.52
 var playerBaseSpeed = 1.5
-var killerSlowSpeed = 0.7 # speed after hitting player
+var killerSlowSpeed = 0.4 # speed after hitting player
 var playerFastSpeed = 2 # speed after getting hit
 var movement_speed: float = killerBaseSpeed
 
@@ -132,7 +132,7 @@ func _process(delta):
 			return
 		if playerHiding:
 			
-			if frameCounter < 500:
+			if frameCounter < 60:
 				return
 			alreadyFound = false
 			target_position = player.global_position

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="3_vibi8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1iiu2"]
-size = Vector2(24, 26)
+size = Vector2(815.104, 692.709)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6og3"]
 size = Vector2(53, 52)
