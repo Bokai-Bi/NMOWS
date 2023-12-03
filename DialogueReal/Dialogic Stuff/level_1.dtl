@@ -1,20 +1,37 @@
 [background arg="res://DialogueReal/Backgrounds/windowscene.PNG" fade="0.0"]
 Join you (worried) 2
 you: Huff huff...
-you: (I'm safe for now but... No... I can't die. Not before I find my one true love.)
-you: (I need to make this count.)
-you: (What should I say?)
-- Pathetic.
-	you (provocative): Pathetic. You’re gonna have to better than that.
+: (I'm safe for now but... No... I can't die. Not before I find my one true love.)
+: (I need to make this count.)
+: (What should I say?)
+- I like your hair.
+	you (provocative): I like your hair. It's a nice... ketchup color. Matches your whole killer thing.
 	Leave you
-	Join Killer (Default) 2
-	Killer (killer_angry): Oh, don’t you worry, I WILL.
-	VAR {level1choice} = "provocative"
-- Lemme go.
-	you (fearful): Lemme go. I’ll do anything you want (WHERE IS THE CAKE)
+	Join Killer (killer_angry) 2
+	Killer (killer_angry): H-huh?
+	Leave Killer
+	Join you (provocative) 2
+	 (provocative): (That's right.\
+If I'm going to die, might as well go all out.)
 	Leave you
-	Join Killer (Default) 2
-	Killer: Oh, you’re doing exactly what I want. (also the cake is a lie)
-	VAR {level1choice} = "fearful"
+	Join Killer (killer_blushing) 2
+	Killer (killer_blushing): F-fool, I’m not chasing you to hear you sing half-hearted praises… You think that's enough to make me stop?
+- Who are you?
+	you (fearful): Who are you? What are you doing?\
+\
+(Please, I can't die single!)
+	Leave you
+	Join Killer (killer_angry) 2
+	Killer: "Who, what, why"? What  PREDICTABLE questions.
+	: None of that will help you in your current situation now. Where's the same energy you had at the party?
+	Killer: None of that will help you in your current situation now. Where's the same energy you had at the party?
+	Killer: (click...)\
+\
+I'm coming in~
+	Leave Killer
+	Join you (fearful) 2
+	you (fearful): !!\
+\
+(Seems like I'm going to need to take a different approach!)
 Leave Killer
 VAR {nextScene} = "true"
