@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dukk36lwccfep"]
+
+[ext_resource type="Texture2D" uid="uid://de26nny838wgu" path="res://TITLE SCREEN.png" id="1_tkwrv"]
+[ext_resource type="Script" path="res://StartButton.gd" id="2_8uaoj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TitleScreen" type="Sprite2D" parent="."]
+position = Vector2(575.267, 326.125)
+scale = Vector2(0.601064, 0.601064)
+texture = ExtResource("1_tkwrv")
+
+[node name="Start" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 884.0
+offset_top = 281.0
+offset_right = 1125.0
+offset_bottom = 376.0
+script = ExtResource("2_8uaoj")
+
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
