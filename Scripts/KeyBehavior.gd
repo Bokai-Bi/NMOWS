@@ -6,7 +6,7 @@ var player
 var thisFound = false
 var currExec = false
 
-var findTimer = 3.0
+var findTimer = 2.5
 
 var diditOnce = false
 
