@@ -20,6 +20,20 @@ you: Heyyy baby, want to hear about the time my potion accidentally turned my ca
 Leave you
 Join narrator 2
 narrator: very...
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 4c.png" fade="0.0"]
+Leave narrator
+Join you (provocative) 2
+you: Did you know if you kiss me you're guaranteed to win the Halloween raffle tonight?
+Leave you
+Join narrator 2
+narrator: very...
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 4d.png" fade="0.0"]
+Leave narrator
+Join you (happy) 2
+Horses can't breathe through their mouth! Isn't that cool?!!
+Leave you
+Join narrator 1
+narrator: ...single.
 Join "killer on phone" 2
 [background arg="res://DialogueReal/Comic Background/Opening 1a - Phone Call.png" fade="0.0"]
 RING RING RING
