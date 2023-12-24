@@ -1,12 +1,12 @@
-VAR {nextScene} = "false"
-Join narrator 2
+set {nextScene} = "false"
+join  1
 narrator: Every Halloween night...
 narrator: The ghosts, goblins, and ghouls party at Waterman Street’s spookiest party of the year, Spook Fest. Of those attending ...
-Leave narrator
-Join you (happy) 2
+leave 
+join you (happy) 2
 you: WHO WANTS TO BE MY DATE TONIGHT!!??
-Leave you
-Join narrator 2
+leave you
+join narrator 2
 narrator: ...was a very passionate witch.
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 3.png" fade="0.0"]
 ...
@@ -14,38 +14,38 @@ Who invited them?
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 4a.png" fade="0.0"]
 narrator: This witch is...
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 4b.png" fade="0.0"]
-Leave narrator
-Join you (provocative) 2
+leave narrator
+join you (provocative) 2
 you: Heyyy baby, want to hear about the time my potion accidentally turned my cat into a dog?
-Leave you
-Join narrator 2
+leave you
+join narrator 2
 narrator: very...
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 4c.png" fade="0.0"]
-Leave narrator
-Join you (provocative) 2
+leave narrator
+join you (provocative) 2
 you: Did you know if you kiss me you're guaranteed to win the Halloween raffle tonight?
-Leave you
-Join narrator 2
+leave you
+join narrator 2
 narrator: very...
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 4d.png" fade="0.0"]
-Leave narrator
-Join you (happy) 2
+leave narrator
+join you (happy) 2
 Horses can't breathe through their mouth! Isn't that cool?!!
-Leave you
-Join narrator 1
+leave you
+join narrator 1
 narrator: ...single.
-Join "killer on phone" 2
+join "killer on phone" 2
 [background arg="res://DialogueReal/Comic Background/Opening 1a - Phone Call.png" fade="0.0"]
 RING RING RING
 [background arg="res://DialogueReal/Comic Background/Opening 1b - Phone Call.png" fade="0.0"]
 "killer on phone" (Default): BRUH THERES CAKE IN ROOM 404. YOU GOTTA CHECK it OUT OR REGRET LIVING LMAO
-Leave "killer on phone"
+leave "killer on phone"
 [background arg="res://DialogueReal/Comic Background/Opening 2 - Entering Room.png" fade="0.0"]
-Join you 2
+join you 2
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 2.png" fade="0.0"]
 you (happy): Yay I can't wait to have some cake!
 [background arg="res://DialogueReal/Comic Background/Opening 3 - Room Locked.png" fade="0.0"]
-Update you (fearful)
+update you (fearful)
 Killer: You are so naive, do you follow every stranger into a dark room? You’ve fallen into my trap and now we will play hide and seek!
-Leave you
-VAR {nextScene} = "true"
+leave you
+set {nextScene} = "true"
