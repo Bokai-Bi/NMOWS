@@ -806,7 +806,6 @@ texture = ExtResource("2_lmf2a")
 14:14/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_858jk"]
-load_path = "res://.godot/imported/lvl2_tilemap_iteration111.png-deda8f79700d2c4eb112b6e991ae1dc9.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fnt0x"]
 texture = SubResource("CompressedTexture2D_858jk")
@@ -2276,9 +2275,9 @@ position = Vector2(-3, 3)
 scale = Vector2(0.3, 0.3)
 polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
 
-[node name="Area2D" type="Area2D" parent="KeyDoor/Door"]
+[node name="DoorArea2D" type="Area2D" parent="KeyDoor/Door"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDoor/Door/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDoor/Door/DoorArea2D"]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_w6og3")
 
@@ -2288,4 +2287,4 @@ shape = SubResource("RectangleShape2D_w6og3")
 [connection signal="body_entered" from="KeyDoor/Key2" to="KeyDoor/Key2" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="KeyDoor/Key2/KeyArea2D" to="KeyDoor/Key2" method="_on_area_2d_body_entered" flags=18]
 [connection signal="body_exited" from="KeyDoor/Key2/KeyArea2D" to="KeyDoor/Key2" method="_on_area_2d_body_exited" flags=18]
-[connection signal="body_entered" from="KeyDoor/Door/Area2D" to="KeyDoor/Door" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_entered" from="KeyDoor/Door/DoorArea2D" to="KeyDoor/Door" method="_on_area_2d_body_entered" flags=18]

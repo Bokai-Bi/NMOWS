@@ -129,15 +129,15 @@ libraries = {
 scale = Vector2(1.6, 1.7)
 shape = SubResource("RectangleShape2D_5etaa")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="RichTextLabel" parent="."]
 z_index = 2
 offset_left = -101.0
 offset_top = -31.0
 offset_right = 96.0
 offset_bottom = -5.0
-theme_override_fonts/font = ExtResource("3_nhp3f")
+theme_override_fonts/normal_font = ExtResource("3_nhp3f")
 text = "When the amongus is sus"
-horizontal_alignment = 1
+fit_content = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3.6)

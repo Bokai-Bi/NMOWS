@@ -37,6 +37,7 @@ var steps := AudioStreamPlayer.new()
 func doorLocked():
 	popupText.visible = true
 	popupText.text = "You need more keys"
+	popupText.modulate = Color.WHITE
 	await get_tree().create_timer(1.0).timeout
 	if popupText.text == "You need more keys":
 		popupText.visible = false
@@ -160,6 +161,7 @@ func hide_player():
 	canMove = false
 	get_node("Sprite2D").visible = false
 	popupText.text = "Press E to unhide"
+	popupText.modulate = Color.WHITE
 
 func unhide_player():
 	get_node("CollisionShape2D").disabled = false
@@ -172,6 +174,7 @@ func unhide_player():
 	canMove = true
 	get_node("Sprite2D").visible = true
 	popupText.text = "Press E to hide"
+	popupText.modulate = Color.WHITE
 	
 
 func _on_interaction_range_body_entered(body):
@@ -182,12 +185,14 @@ func _on_interaction_range_body_entered(body):
 		hideLocation = body.global_position
 		popupText.visible = true
 		popupText.text = "Press E to hide"
+		popupText.modulate = Color.WHITE
 		hideObject = body
 		
 
-func setPopupText(t, v):
+func setPopupText(t, v, c):
 	popupText.text = t
 	popupText.visible = v
+	popupText.modulate = c
 
 
 func _on_interaction_range_body_exited(body):

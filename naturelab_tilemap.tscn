@@ -1165,9 +1165,9 @@ texture = ExtResource("13_wtx6g")
 scale = Vector2(0.3, 0.3)
 polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
 
-[node name="Area2D" type="Area2D" parent="Key-door/Door"]
+[node name="DoorArea2D" type="Area2D" parent="Key-door/Door"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Key-door/Door/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key-door/Door/DoorArea2D"]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_w6og3")
 
@@ -1185,4 +1185,4 @@ autoplay = true
 [connection signal="body_entered" from="Key-door/Key2" to="Key-door/Key2" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Key-door/Key2/KeyArea2D" to="Key-door/Key2" method="_on_area_2d_body_entered" flags=18]
 [connection signal="body_exited" from="Key-door/Key2/KeyArea2D" to="Key-door/Key2" method="_on_area_2d_body_exited" flags=18]
-[connection signal="body_entered" from="Key-door/Door/Area2D" to="Key-door/Door" method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_entered" from="Key-door/Door/DoorArea2D" to="Key-door/Door" method="_on_area_2d_body_entered" flags=18]
