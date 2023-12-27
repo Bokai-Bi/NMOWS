@@ -11,5 +11,5 @@ func _process(delta):
 	pass
 
 func _on_pressed():
-	get_tree().change_scene_to_file("res://DialogueReal/Scenes/beginning_comic_scene.tscn")
+	get_tree().change_scene_to_file("res://Credits.tscn")
 	pass

@@ -35,18 +35,56 @@ leave you
 join narrator 2
 narrator: ...single.
 leave narrator
-join "killer on phone" 2
-[background arg="res://DialogueReal/Comic Background/Opening 1a - Phone Call.png" fade="0.0"]
-RING RING RING
-[background arg="res://DialogueReal/Comic Background/Opening 1b - Phone Call.png" fade="0.0"]
-"killer on phone" (Default): BRUH THERES CAKE IN ROOM 404. YOU GOTTA CHECK it OUT OR REGRET LIVING LMAO
-leave "killer on phone"
-[background arg="res://DialogueReal/Comic Background/Opening 2 - Entering Room.png" fade="0.0"]
-join you 2
-[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 2.png" fade="0.0"]
-you (happy): Yay I can't wait to have some cake!
-[background arg="res://DialogueReal/Comic Background/Opening 3 - Room Locked.png" fade="0.0"]
-update you (fearful)
-Killer: You are so naive, do you follow every stranger into a dark room? You’ve fallen into my trap and now we will play hide and seek!
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 6.png" fade="0.0"]
+join you (dissapointed) 2
+you (dissapointed): (sigh)
+you (dissapointed): What am I doing wrong? I followed everything "How To Get A Sexy Boyfriend" told me to do...
+you (dissapointed): The party's going to end in 30 minutes. I can't spend another year single.
 leave you
+join "killer on phone" 2
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 7.png" fade="0.0"]
+RING RING RING
+"killer on phone" (Default): Congratulations! You won the Brown RISD Halloween raffle! Please proceed to Room 404 for some BABY CAKE! Make sure to come alone. It's your prize, after all... 
+leave "killer on phone"
+join you 2
+you (confused): Well, at least I'll have cake if not a boyfriend.
+leave you
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 4a.png" fade="0.0"]
+join you (worried) 2
+you: (It's so empty in this hall... it's a little creepy, haha.)
+leave you
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 8.png" fade="0.0"]
+join  2
+Come this way... the cake is just a few steps ahead.
+leave --All--
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 4a.png" fade="0.0"]
+join  1
+Hehohohohoo. (Suspiciously evil horse nickering.) 
+leave 
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 9.png" fade="0.0"]
+join Killer (Default) 2
+Killer: Finally, I have you exactly where I want you.
+leave Killer
+join you 2
+?!
+leave you
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 10.png" fade="0.0"]
+join you (fearful) 2
+you: (Is that a knife? It doesn't look like he's going to use that to cut the cake...)
+leave you
+join Killer (Default) 2
+Killer: What's wrong? Frozen in fear?
+leave Killer
+join you (fearful) 2
+you: (No! I can't die! I haven't gotten a boyfriend yet!)
+leave you
+join Killer 2
+Killer: Let's play a game, shall we? 
+leave Killer
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/comic 11.png" fade="0.0"]
+join you (fearful) 2
+you: I don't know what's happening, but I have to run!
+leave you
+[background arg="res://How To Play Screen.png" fade="0.0"]
+[wait_input]
 set {nextScene} = "true"
