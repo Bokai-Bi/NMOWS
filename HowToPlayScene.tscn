@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv1amlrscdx6m"]
+
+[ext_resource type="Texture2D" uid="uid://bdoat6ma32mb0" path="res://How To Play Screen.png" id="1_tmxln"]
+[ext_resource type="Texture2D" uid="uid://pfrhymnlih5u" path="res://Sprites/UI/Exit Button.png" id="2_0rbhl"]
+[ext_resource type="Script" path="res://ReturnButton.gd" id="2_364a5"]
+
+[node name="HowToPlayScene" type="Node2D"]
+
+[node name="HowToPlayScreen" type="Sprite2D" parent="."]
+position = Vector2(576.015, 323.929)
+scale = Vector2(0.597901, 0.600131)
+texture = ExtResource("1_tmxln")
+
+[node name="ExitButton" type="Sprite2D" parent="."]
+position = Vector2(576, 616)
+scale = Vector2(0.397516, 0.349811)
+texture = ExtResource("2_0rbhl")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 496.0
+offset_top = 584.0
+offset_right = 656.0
+offset_bottom = 639.0
+script = ExtResource("2_364a5")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

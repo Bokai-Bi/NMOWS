@@ -8,7 +8,7 @@ func _ready():
 	animationPlayer = $AnimationPlayer
 	
 func hide_animation():
-	if play3Frame:
-		animationPlayer.play("test_3frame")
-	else:
-		animationPlayer.play("test")
+	print("hehemeow...")
+	animationPlayer.play("test")
+	
+

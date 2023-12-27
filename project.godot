@@ -43,6 +43,7 @@ layout/styles={
 "name_label_font_size": "24.0",
 "normal_font": "\"res://DialogueReal/Other/Minecraft.ttf\"",
 "text_alignment": "1",
+"text_color": "Color(0.247059, 0.0509804, 0.0509804, 1)",
 "text_size": "24.0"
 },
 "inherits": ""

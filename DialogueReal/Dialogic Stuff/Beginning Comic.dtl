@@ -32,8 +32,9 @@ leave narrator
 join you (happy) 2
 Horses can't breathe through their mouth! Isn't that cool?!!
 leave you
-join narrator 1
+join narrator 2
 narrator: ...single.
+leave narrator
 join "killer on phone" 2
 [background arg="res://DialogueReal/Comic Background/Opening 1a - Phone Call.png" fade="0.0"]
 RING RING RING

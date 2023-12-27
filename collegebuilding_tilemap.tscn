@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://rc052mglt64h"]
+[gd_scene load_steps=38 format=3 uid="uid://rc052mglt64h"]
 
 [ext_resource type="Texture2D" uid="uid://b1nsmncx2qk03" path="res://College_Building_-_Iteration_1.png" id="1_5qrvn"]
 [ext_resource type="Texture2D" uid="uid://tb8ecf70i7q4" path="res://college_building_tilemap_v2.png" id="2_4wieq"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scripts/KeyBehavior.gd" id="10_fh6fb"]
 [ext_resource type="Texture2D" uid="uid://ds67cgpo4eice" path="res://Sprites/Chase/College Building Animations/trash.png" id="11_e3bpo"]
 [ext_resource type="Texture2D" uid="uid://dacpwnlp032kv" path="res://Sprites/Chase/College Building Animations/sink.png" id="12_wevvl"]
+[ext_resource type="Script" path="res://KeyArea2D.gd" id="13_2ikvy"]
 [ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="13_xn81t"]
 [ext_resource type="Texture2D" uid="uid://chvta5x526mge" path="res://Sprites/Chase/College Building Animations/door.png" id="14_w8wt3"]
 [ext_resource type="PackedScene" uid="uid://dt6gs1oilnb30" path="res://ObjectScenes/next_Scene_1.tscn" id="15_jqr5o"]
@@ -791,7 +792,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_33b6y"]
 resource_name = "test"
-length = 1.12
+length = 6.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -799,10 +801,10 @@ tracks/0/path = NodePath("Icon:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.7, 2, 2.9, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [2, 0]
+"values": [2, 3, 0, 3, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gplkq"]
@@ -1020,6 +1022,7 @@ scale = Vector2(0.022, 0.022)
 texture = ExtResource("11_e3bpo")
 
 [node name="KeyArea2D" type="Area2D" parent="Keydoor/Key"]
+script = ExtResource("13_2ikvy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Keydoor/Key/KeyArea2D"]
 position = Vector2(-0.75, -4)
@@ -1035,6 +1038,7 @@ texture = ExtResource("11_e3bpo")
 
 [node name="KeyArea2D" type="Area2D" parent="Keydoor/Key2"]
 position = Vector2(0.640015, 6.5)
+script = ExtResource("13_2ikvy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Keydoor/Key2/KeyArea2D"]
 position = Vector2(-1, -4)

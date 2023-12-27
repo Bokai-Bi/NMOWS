@@ -26,10 +26,11 @@ func _find_closest_key():
 	var closest_key = null
 	var min_distance = INF
 	for key in keys:
-		var distance = global_position.distance_to(key.global_position)
-		if distance < min_distance:
-			min_distance = distance
-			closest_key = key
+		if not key.get: ##lets hope
+			var distance = global_position.distance_to(key.global_position)
+			if distance < min_distance:
+				min_distance = distance
+				closest_key = key
 	return closest_key
 
 # Rotate the sprite towards a position

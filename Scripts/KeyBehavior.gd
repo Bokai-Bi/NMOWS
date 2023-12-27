@@ -12,6 +12,9 @@ var diditOnce = false
 
 var collected := AudioStreamPlayer.new()
 
+@onready
+var body = $KeyArea2D
+
 func _ready():
 	add_child(collected)
 
@@ -67,6 +70,7 @@ func lookForItem():
 	await get_tree().create_timer(findTimer/4).timeout
 	if not playerInRange:
 		return false
+	body.got()
 	return true
 
 func _on_area_2d_body_entered(body):
