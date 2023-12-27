@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ly4od416462d"]
+
+[ext_resource type="Script" path="res://DialogueReal/Scripts/beginning_comic_dialogue.gd" id="1_inc1q"]
+[ext_resource type="AudioStream" uid="uid://bwjlshnukg454" path="res://Audio/Start Screen.mp3" id="2_juhy1"]
+
+[node name="beginning_comic_scene" type="Node2D"]
+
+[node name="Dialogue Manager" type="Node2D" parent="."]
+script = ExtResource("1_inc1q")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_juhy1")
+autoplay = true
