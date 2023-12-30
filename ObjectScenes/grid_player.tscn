@@ -5,10 +5,10 @@
 [ext_resource type="FontFile" uid="uid://cotqlt6yhixp1" path="res://DialogueReal/Other/Minecraft.ttf" id="3_nhp3f"]
 [ext_resource type="Texture2D" uid="uid://dcyk8bbm4r0e0" path="res://Sprites/UI/vision blocker.png" id="3_tda5f"]
 [ext_resource type="Texture2D" uid="uid://c3o7fqi4v2eta" path="res://Sprites/UI/blood splatter.png" id="4_68rwe"]
+[ext_resource type="Texture2D" uid="uid://be6mg57q8q25s" path="res://Sprites/UI/scaled_key.png" id="4_p2smy"]
 [ext_resource type="Texture2D" uid="uid://bumixsxmugenu" path="res://spotlight border.png" id="4_q5yl7"]
 [ext_resource type="Texture2D" uid="uid://bc01pv1a61w5m" path="res://Arrow.png" id="5_xrwpc"]
 [ext_resource type="Script" path="res://ObjectScenes/KeyArrow.gd" id="6_5jy7p"]
-[ext_resource type="Texture2D" uid="uid://cso5s4rh1m7rp" path="res://Sprites/Chase/keytmp.png" id="9_ls2u2"]
 [ext_resource type="Script" path="res://ObjectScenes/key1.gd" id="10_au1og"]
 [ext_resource type="Script" path="res://ObjectScenes/key2.gd" id="11_2lvdl"]
 
@@ -153,15 +153,15 @@ limit_smoothed = true
 [node name="key1" type="Sprite2D" parent="Camera2D"]
 z_index = 2
 position = Vector2(75, -50)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_ls2u2")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_p2smy")
 script = ExtResource("10_au1og")
 
 [node name="key2" type="Sprite2D" parent="Camera2D"]
 z_index = 2
 position = Vector2(50, -50)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_ls2u2")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_p2smy")
 script = ExtResource("11_2lvdl")
 
 [node name="VisionBlocker" type="Sprite2D" parent="."]
