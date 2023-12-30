@@ -4,7 +4,7 @@ Once again, you narrowly escape the killer. You hope this door will be tough to 
 leave you
 if {level1choice} == "provocative":
 	join Killer (Default) 2
-	Killer: Stop foal-ing around... I can see you getting tired. Don't you think it's time to rein it in?
+	Killer (killer_angry): Stop foal-ing around... I can see you getting tired. Don't you think it's time to rein it in?
 	- Never!
 		leave Killer
 		join you 2
@@ -22,18 +22,17 @@ if {level1choice} == "provocative":
 		jump Unamused
 else:
 	join Killer 2
-	Killer: Everything is going as planned. This is boring, there’s barely any resistance from you.
-	Killer (killer_angry): Lets play a game to spice things up a bit. What do you think am i going to do to you when I get to you?
-	- Hug me?
+	Killer (killer_angry): Now it's time for me to start asking the questions. What do you think I am going to do when I get to you?
+	- Kiss me?
 		leave Killer
 		join you 2
-		you (provocative): Give me a big hug?
+		you (provocative): K-Ki-Kiss me? >~<
 		leave you
 		jump Impressed
 	- Kill me?
 		leave Killer
 		join you 2
-		you (fearful): Kill me?
+		you (fearful): K-Ki-Kill me? (I mean, it's obvious, isn't it?)
 		leave you
 		jump Unamused
 label Impressed
