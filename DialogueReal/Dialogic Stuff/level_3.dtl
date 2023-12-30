@@ -4,39 +4,44 @@ You aren't sure where to run to next. You can't hold up much longer.
 leave you
 if {level2choice} == "impressed":
 	join Killer 2
-	Killer (Default): You really are something special, huh?
-	Killer: Now I want to catch you even more..
-	Killer: Keh heh heh…
-	- Yes. But the fun ends when the chase ends, no?
+	Killer (Default): To get this far – you really are something special.
+	Killer (killer_blushing): My heart is racing... I don't know why, but I want to catch you more than ever before...
+	- Are you sure you're only here to kill me?
 		leave Killer
 		join you 2
-		you (provocative): Yes. But the fun ends when the chase ends, no? I’m happy with what we have right now.
+		you (provocative): Are you sure you're only here to kill me? After all, once that happens, the night will  be over.
+		you: You're having fun, aren't you? I know I am. Come on, let's see what you're really about...
 		set {level3choice} = "good"
-	- Ugh. That sounds disgusting.
+	- In your wildest dreams, DONKEY.
 		leave Killer
 		join you 2
-		you (dissapointed): Ugh. That sounds disgusting. You’re not the type to catch a grenade for me, are you? You only care about the chase.
+		you (dissapointed): In your wildest dreams, DONKEY. You already know you can't catch me.
+		you: In fact, I've already won. (Looks like I'll live to see another date.)
 		set {level3choice} = "bad"
 else:
 	join Killer 2
-	Killer (Default): What a pain…
-	Killer: I’ll give you one more chance…
-	Killer: Make this night interesting, won’t you?
-	Killer: You don’t want to die a boring death now, do you?
-	- Maybe the killer can surprise me?
+	Killer (Default): ...
+	Killer: I'm tired of this horsing around. Just sit still and let me catch you!
+	- It's the killer's job to catch the victim.
 		leave Killer
 		join you 2
-		you (confused): I don’t. Maybe the killer can surprise me? It’s your job, after all… Be a professional, now.
+		you (confused): Did you forget? It's the killer's job to catch the victim. My job is to run away, not make things easy for you.
+		you (provocative): But, you haven't caught me yet. Is it perhaps because... you don't actually want to kill me?
 		set {level3choice} = "good"
-	- I don’t want to die.
+	- Give up already, DONKEY.
 		leave Killer
 		join you 2
-		you (fearful): I don’t want to die. Get away from me!! (witchzard noises)
+		you (dissapointed): Give up already, DONKEY. You're gonna get caught, and you're gonna go to jail.
+		you: (Looks like I'll live to see another date.)
 		set {level3choice} = "bad"
 leave you
+if {level3choice} == "bad":
+	join Killer (killer_angry) 2
+	Killer: How dare you!
+	leave Killer
 join Killer 2
 Killer (killer_angry): That’s enough.
-Killer: All of this running and chasing... it serves no purpose.
+Killer: All of this running and chasing...
 Killer: It ends now.
 leave Killer
 set {nextScene} = "true"
