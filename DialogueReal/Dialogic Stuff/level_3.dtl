@@ -35,9 +35,13 @@ else:
 		you (fearful): I don’t want to die. Get away from me!! (witchzard noises)
 		set {level3choice} = "bad"
 leave you
+if {level3choice} == "bad":
+	join Killer (killer_angry) 2
+	Killer: How dare you!
+	leave Killer
 join Killer 2
 Killer (killer_angry): That’s enough.
-Killer: All of this running and chasing... it serves no purpose.
+Killer: All of this running and chasing...
 Killer: It ends now.
 leave Killer
 set {nextScene} = "true"
