@@ -20,16 +20,16 @@ you: (I need to make this count.)
 	set {level1choice} = "provocative"
 - Who are you?
 	you (fearful): Who are you? What are you doing?
-(Please, I can't die single!)
-leave you
-join Killer (killer_angry) 2
-Killer: "Who, what, why"? What  PREDICTABLE questions.
-Killer: None of that will help you in your current situation now. Where's the same energy you had at the party?
-Killer: (click...)
-Killer: I'm coming in~
-leave Killer
-join you (fearful) 2
-you (fearful): !!
-you: (Seems like I'm going to need to take a different approach!)
-leave you
+	(Please, I can't die single!)
+	leave you
+	join Killer (killer_angry) 2
+	Killer: "Who, what, why"? What  PREDICTABLE questions.
+	Killer: None of that will help you in your current situation now. Where's the same energy you had at the party?
+	Killer: (click...)
+	Killer: I'm coming in~
+	leave Killer
+	join you (fearful) 2
+	you (fearful): !!
+	you: (Seems like I'm going to need to take a different approach!)
+	leave you
 set {nextScene} = "true"
