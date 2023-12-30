@@ -1,8 +1,8 @@
 set {nextScene} = "false"
-join  1
+join narrator 2
 narrator: Every Halloween night...
 narrator: The ghosts, goblins, and ghouls party at Waterman Street’s spookiest party of the year, Spook Fest. Of those attending ...
-leave 
+leave narrator
 join you (happy) 2
 you: WHO WANTS TO BE MY DATE TONIGHT!!??
 leave you
@@ -44,7 +44,7 @@ leave you
 join "killer on phone" 2
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 7.png" fade="0.0"]
 RING RING RING
-"killer on phone" (Default): Congratulations! You won the Brown RISD Halloween raffle! Please proceed to Room 404 for some BABY CAKE! Make sure to come alone. It's your prize, after all... 
+"killer on phone" (Default): Congratulations! You won the Brown RISD Halloween raffle! Please proceed to Room 404 for some BABY CAKE! Make sure to come alone. It's your prize, after all...
 leave "killer on phone"
 join you 2
 you (confused): Well, at least I'll have cake if not a boyfriend.
@@ -54,13 +54,13 @@ join you (worried) 2
 you: (It's so empty in this hall... it's a little creepy, haha.)
 leave you
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 8.png" fade="0.0"]
-join  2
+join narrator 2
 Come this way... the cake is just a few steps ahead.
-leave --All--
+leave narrator
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 4a.png" fade="0.0"]
-join  1
-Hehohohohoo. (Suspiciously evil horse nickering.) 
-leave 
+join narrator 2
+Hehohohohoo. (Suspiciously evil horse nickering.)
+leave narrator
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 9.png" fade="0.0"]
 join Killer (Default) 2
 Killer: Finally, I have you exactly where I want you.
@@ -79,7 +79,7 @@ join you (fearful) 2
 you: (No! I can't die! I haven't gotten a boyfriend yet!)
 leave you
 join Killer 2
-Killer: Let's play a game, shall we? 
+Killer: Let's play a game, shall we?
 leave Killer
 [background arg="res://DialogueReal/Comic Background/beginning_comic_final/comic 11.png" fade="0.0"]
 join you (fearful) 2

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bp5ecewp3txcg" path="res://Sprites/Chase/Dorm Room Animations/dormhall table animation.png" id="8_fnht8"]
 [ext_resource type="Texture2D" uid="uid://exvqpg887271" path="res://Sprites/Chase/Dorm Room Animations/fridgeFINALANI.png" id="9_axwhj"]
 [ext_resource type="Texture2D" uid="uid://cp3j1kmbiqgo4" path="res://Sprites/Chase/Dorm Room Animations/trashcans(1)-export-export.png" id="10_gi76n"]
-[ext_resource type="PackedScene" uid="uid://bx5ldnrrii1da" path="res://ObjectScenes/next_Scene_2.tscn" id="11_3wcdn"]
+[ext_resource type="PackedScene" path="res://ObjectScenes/next_Scene_2.tscn" id="11_3wcdn"]
 [ext_resource type="AudioStream" uid="uid://c6brrkany4pkj" path="res://Audio/Gameplay Music.wav" id="12_xxpha"]
 [ext_resource type="Script" path="res://Scripts/KeyBehavior.gd" id="13_6ksyq"]
 [ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="14_srj4o"]

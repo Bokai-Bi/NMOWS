@@ -15,6 +15,9 @@
 "offset": Vector2(-50, 0),
 "portraits": {
 "narrator": {
+"export_overrides": {
+"image": "\"res://DialogueReal/Backgrounds/dialogueboxBlank.png\""
+},
 "image": "res://DialogueReal/Backgrounds/dialogueboxPlayer-happy.png",
 "mirror": false,
 "offset": Vector2(0, 0),
