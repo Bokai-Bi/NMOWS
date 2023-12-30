@@ -54,13 +54,15 @@ else:
 	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-12-x5.png" fade="0.0"]
 	Killer: But here you are. And I don't see the person I was hoping for.
 	Killer: In the end, to be seen and understood is no more than the foolish dreams of a mule.
+	leave Killer
 	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-13-x3.png" fade="0.0"]
 	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-14-x1.png" fade="0.0"]
-	[wait time="2.0"]
-	[background arg="BAD_ENDING-15-x2.png" fade="0.0"]
+	[wait time="1.0"]
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-15-x2.png" fade="0.0"]
 	[wait time="1.0"]
 	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-16-x1.png" fade="0.0"]
+	join Killer 2
 	Killer: You can keep the horse head. I’m going back to write my thesis.
 	Killer: I hope you had an amusing night. Goodbye.
 	leave Killer
