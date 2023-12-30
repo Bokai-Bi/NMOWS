@@ -29,6 +29,7 @@ var canMove
 
 var velocity = Vector2()
 var speed = 1
+var numKeyFound = 0
 
 ##sound stuff
 var hit_knife := AudioStreamPlayer.new()
@@ -46,6 +47,7 @@ func doorLocked():
 func _ready():
 	visionBlocker = get_node("VisionBlocker")
 	bloodSplatter = get_node("BloodSplatter")
+	numKeyFound = 0
 	popupText = get_node("Label")
 	in_hiding_range = false
 	canMove = true
@@ -64,6 +66,7 @@ func _input(event):
 			hide_player()
 		elif in_hiding_range and hiding:
 			unhide_player()
+	print(numKeyFound)
 	
 func pause_input():
 

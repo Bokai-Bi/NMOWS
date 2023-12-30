@@ -32,6 +32,7 @@ func _input(event):
 		var done = await lookForItem()
 		if done:
 			$"../Door".numKeyFound += 1
+			player.numKeyFound += 1
 			thisFound = true
 			player.setPopupText("Key found!", true, Color.GREEN_YELLOW)
 			var sfx = load("res://Audio/Sound Effects/Fun Button Sound (Collecting keys_).mp3")
