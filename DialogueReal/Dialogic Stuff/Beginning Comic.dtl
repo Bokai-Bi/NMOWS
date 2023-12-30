@@ -1,8 +1,10 @@
 set {nextScene} = "false"
 join narrator 2
 narrator: Every Halloween night...
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 1.png" fade="0.0"]
 narrator: The ghosts, goblins, and ghouls party at Waterman Street’s spookiest party of the year, Spook Fest. Of those attending ...
 leave narrator
+[background arg="res://DialogueReal/Comic Background/beginning_comic_final/Comic 2.png" fade="0.0"]
 join you (happy) 2
 you: WHO WANTS TO BE MY DATE TONIGHT!!??
 leave you
