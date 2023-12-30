@@ -31,23 +31,43 @@ if {level3choice} == "good":
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_10_x1.png" fade="0.0"]
 	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_11_x1.png" fade="0.0"]
-	[wait time="2.0"]
+	[wait time="3.0"]
 	[background arg="res://Credits Page update.png" fade="0.0"]
 else:
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-7-x1.png" fade="0.0"]
+	[wait time="2.0"]
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-8-x1.png" fade="0.0"]
+	[wait time="2.0"]
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-9-x2.png" fade="0.0"]
 	join Killer 2
 	Killer (Default): I’m tired...
 	Killer: I still have it inside me... an emptiness...
 	Killer: Mundanity, clawing at my soul... Do you know what it feels like?
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-10-x3.png" fade="0.0"]
 	Killer (killer_fearful): Life, a never-ending race, God as my cruel jockey...
 	Killer: ...
 	Killer (Default): I’m no different than a horse...
 	Killer (killer_angry): I'm done.
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-11-x4.png" fade="0.0"]
 	Killer (Default): I called you because you were trying so hard to date someone at that party, clumsily crawling towards your dream, in your own silly, awkward way…
 	Killer: I thought that maybe if I caught you, you'd show me where you get that determination from... and you'd teach me how to find my own dream...
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-12-x5.png" fade="0.0"]
 	Killer: But here you are. And I don't see the person I was hoping for.
 	Killer: In the end, to be seen and understood is no more than the foolish dreams of a mule.
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-13-x3.png" fade="0.0"]
+	[wait time="2.0"]
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-14-x1.png" fade="0.0"]
+	[wait time="2.0"]
+	[background arg="BAD_ENDING-15-x2.png" fade="0.0"]
+	[wait time="1.0"]
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-16-x1.png" fade="0.0"]
 	Killer: You can keep the horse head. I’m going back to write my thesis.
 	Killer: I hope you had an amusing night. Goodbye.
 	leave Killer
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-17-x1.png" fade="0.0"]
 	[wait time="2.0"]
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-18-x1.png" fade="0.0"]
+	[wait time="2.0"]
+	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-19-x1.png" fade="0.0"]
+	[wait time="3.0"]
 	[background arg="res://Credits Page update.png" fade="0.0"]
