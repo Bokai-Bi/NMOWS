@@ -39,25 +39,17 @@ else:
 label Impressed
 set {level2choice} = "impressed"
 join Killer 2
-Killer (killer_fearful): !!!!!!
-Killer: Is..!!! Is that so!!!!
-Killer: That is.. quite a challenge!!! But nothing is challenging enough to defeat the great HORSEFACE!!!!!!
-Killer: Prepare yourself...!!!
+Killer (killer_fearful): !!!!
+Killer: M-me?? You really think I...
+Killer: You don't know me!
 leave Killer
 set {nextScene} = "true"
 [end_timeline]
 label Unamused
 set {level2choice} = "unamused"
 join Killer 2
-Killer (Default): Well yes. I can certainly see your intelligence is intact.
-Killer: But... how do I say this... isn’t this kind of boring???
-Killer (killer_angry): I like my target STRONG! CHALLENGING!! MYSTERIOUS!!!
-Killer: A treat to kill when I hear the blood-curdling screams..! Yes!! WRITHING! WRIGGLING!
-Killer: You’re the kind of person to just get, like, killed when i sink that knife in, are you?
-Killer: I’m literally so disappointed in myself for picking you as my target. Come to think of it, there was a bald guy with a beard and glasses that looked pretty hot...
-Killer: He even selled those tasty blue thingies. Shoulda picked him instead. Or that sexy triolingo owl. Mmmmmmm.
-Killer: Oh I’m sorry I forgot that you were still here.
-Killer: (rolls eyes) Lets just get this over with before I lose all my patience.
+Killer (Default): Well, I guess, but... how do I say this... aren't things kind of boring??
+Killer (killer_angry): Show me something interesting or I might actually have to resign myself to the sounds of your blood-curdling screams!
 leave Killer
 set {nextScene} = "true"
 [end_timeline]
