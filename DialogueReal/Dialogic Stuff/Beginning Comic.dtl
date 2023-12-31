@@ -1,3 +1,4 @@
+[music path="res://Audio/Dialogue Scenes.mp3" fade="0.0" volume="0.0"]
 set {nextScene} = "false"
 join narrator 2
 narrator: Every Halloween night...

@@ -1,3 +1,4 @@
+[music path="res://Audio/Dialogue Scenes.mp3" fade="0.0" volume="0.0"]
 [background arg="res://DialogueReal/Comic Background/GOOD_ENDING_1_x1.png" fade="0.0"]
 [wait time="2.0"]
 [background arg="res://DialogueReal/Comic Background/GOOD_ENDING_2_x1.png" fade="0.0"]
@@ -11,6 +12,7 @@
 [background arg="res://DialogueReal/Comic Background/GOOD_ENDING_6_x1.png" fade="0.0"]
 [wait time="2.0"]
 if {level3choice} == "good":
+	[music path="res://Audio/Good Ending.wav" fade="0.0" volume="0.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_7_x3.png" fade="0.0"]
 	join Killer 2
 	Killer (Default): Finally... you have nowhere else to run...
@@ -34,12 +36,14 @@ if {level3choice} == "good":
 	Killer: Please... go out with me!!!
 	Killer: And we can gallop on the highlands of the Himalayans... And eat up all the grass on Brown's green!!!
 	leave Killer
+	[music path="res://Audio/ending_comic.mp3" fade="0.0" volume="0.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_10_x1.png" fade="0.0"]
 	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_11_x1.png" fade="0.0"]
 	[wait time="3.0"]
 	[background arg="res://Credits Page update.png" fade="0.0"]
 else:
+	[music path="res://Audio/Bad Ending.wav" fade="0.0" volume="0.0"]
 	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-7-x1.png" fade="0.0"]
 	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-8-x1.png" fade="0.0"]

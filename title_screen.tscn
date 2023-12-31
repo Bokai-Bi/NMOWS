@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgufxmcbnrhp1"]
+[gd_scene load_steps=7 format=3 uid="uid://bgufxmcbnrhp1"]
 
 [ext_resource type="Texture2D" uid="uid://de26nny838wgu" path="res://TITLE SCREEN.png" id="1_tkwrv"]
 [ext_resource type="Script" path="res://StartButton.gd" id="2_8uaoj"]
 [ext_resource type="Script" path="res://HowToPlay.gd" id="3_evhbl"]
 [ext_resource type="Script" path="res://Credits.gd" id="4_no7ev"]
 [ext_resource type="Script" path="res://ExitButton.gd" id="5_ng7mo"]
+[ext_resource type="AudioStream" uid="uid://bwjlshnukg454" path="res://Audio/Start Screen.mp3" id="6_1ve46"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -47,6 +48,10 @@ offset_right = 1076.0
 offset_bottom = 598.0
 scale = Vector2(1.24282, 0.660925)
 script = ExtResource("5_ng7mo")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1ve46")
+autoplay = true
 
 [connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
 [connection signal="pressed" from="HowToPlay" to="HowToPlay" method="_on_pressed"]
