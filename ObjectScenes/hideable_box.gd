@@ -10,5 +10,7 @@ func _ready():
 func hide_animation():
 	print("hehemeow...")
 	animationPlayer.play("test")
-	
+
+func reset_animation():
+	animationPlayer.play("RESET")
 

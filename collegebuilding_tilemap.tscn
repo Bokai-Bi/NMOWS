@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://rc052mglt64h"]
 
-[ext_resource type="Texture2D" uid="uid://b32gln0rmc5ef" path="res://College_Building_-_Iteration_1.png" id="1_5qrvn"]
-[ext_resource type="Texture2D" uid="uid://d2ipbae6ekh1q" path="res://college_building_tilemap_v2.png" id="2_4wieq"]
+[ext_resource type="Texture2D" uid="uid://b1nsmncx2qk03" path="res://College_Building_-_Iteration_1.png" id="1_5qrvn"]
+[ext_resource type="Texture2D" uid="uid://tb8ecf70i7q4" path="res://college_building_tilemap_v2.png" id="2_4wieq"]
 [ext_resource type="PackedScene" uid="uid://botod5i770as7" path="res://ObjectScenes/grid_player.tscn" id="2_tdkev"]
 [ext_resource type="Texture2D" uid="uid://w0du3o1xn003" path="res://college_building_tilemap_v3.png" id="3_0t0kk"]
 [ext_resource type="Texture2D" uid="uid://viasyjodesdx" path="res://collegebuilding_tilemap_3.png" id="4_f05fq"]
@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://KeyArea2D.gd" id="13_2ikvy"]
 [ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="13_xn81t"]
 [ext_resource type="Texture2D" uid="uid://chvta5x526mge" path="res://Sprites/Chase/College Building Animations/door.png" id="14_w8wt3"]
-[ext_resource type="PackedScene" path="res://ObjectScenes/next_Scene_1.tscn" id="15_jqr5o"]
+[ext_resource type="PackedScene" uid="uid://dt6gs1oilnb30" path="res://ObjectScenes/next_Scene_1.tscn" id="15_jqr5o"]
 [ext_resource type="AudioStream" uid="uid://c6brrkany4pkj" path="res://Audio/Gameplay Music.wav" id="17_vf00h"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_a7n5o"]
@@ -792,7 +792,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_33b6y"]
 resource_name = "test"
 length = 6.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -800,10 +799,10 @@ tracks/0/path = NodePath("Icon:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 2, 2.9, 4, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [2, 3, 0, 3, 2, 3]
+"values": [3, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gplkq"]
@@ -870,7 +869,6 @@ position = Vector2(623, 335)
 [node name="pianos" type="Node" parent="hideable objects"]
 
 [node name="hideable_box" type="Node2D" parent="hideable objects/pianos"]
-z_index = -1
 position = Vector2(616, 132)
 scale = Vector2(0.047, 0.047)
 
@@ -899,7 +897,6 @@ libraries = {
 }
 
 [node name="hideable_box2" type="Node2D" parent="hideable objects/pianos"]
-z_index = -1
 position = Vector2(271, 40)
 scale = Vector2(0.047, 0.047)
 
@@ -936,7 +933,6 @@ scale = Vector2(0.047, 0.046)
 script = ExtResource("6_6wmpy")
 
 [node name="Icon" type="Sprite2D" parent="hideable objects/lockers/hideable_box3/hideable_Box"]
-z_index = -1
 material = SubResource("ShaderMaterial_l26xk")
 rotation = 3.14159
 scale = Vector2(3.42188, 3.60938)
@@ -990,7 +986,6 @@ scale = Vector2(0.047, 0.046)
 script = ExtResource("6_6wmpy")
 
 [node name="Icon" type="Sprite2D" parent="hideable objects/lockers/hideable_box5/hideable_Box"]
-z_index = -1
 material = SubResource("ShaderMaterial_l26xk")
 rotation = 3.14159
 scale = Vector2(3.42188, 3.60938)

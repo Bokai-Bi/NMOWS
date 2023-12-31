@@ -37,10 +37,10 @@ var steps := AudioStreamPlayer.new()
 	
 func doorLocked():
 	popupText.visible = true
-	popupText.text = "You need more keys"
+	popupText.bbcode_text = "[center]You need more keys[/center]"
 	popupText.modulate = Color.WHITE
 	await get_tree().create_timer(1.0).timeout
-	if popupText.text == "You need more keys":
+	if popupText.bbcode_text == "[center]You need more keys[/center]":
 		popupText.visible = false
 
 # Called when the node enters the scene tree for the first time.
@@ -49,6 +49,7 @@ func _ready():
 	bloodSplatter = get_node("BloodSplatter")
 	numKeyFound = 0
 	popupText = get_node("Label")
+	popupText.bbcode_enabled = true
 	in_hiding_range = false
 	canMove = true
 	popupText.visible = false
@@ -163,10 +164,11 @@ func hide_player():
 	# disable movement and rendering
 	canMove = false
 	get_node("Sprite2D").visible = false
-	popupText.text = "Press E to unhide"
+	popupText.bbcode_text = "[center]Press E to unhide[/center]"
 	popupText.modulate = Color.WHITE
 
 func unhide_player():
+	hideObject.reset_animation()
 	get_node("CollisionShape2D").disabled = false
 	global_position = Vector2(preHideLocation.x, preHideLocation.y)
 	#print("Transporting to Prehide:")
@@ -176,7 +178,7 @@ func unhide_player():
 	# enable movement and rendering
 	canMove = true
 	get_node("Sprite2D").visible = true
-	popupText.text = "Press E to hide"
+	popupText.bbcode_text = "[center]Press E to hide[/center]"
 	popupText.modulate = Color.WHITE
 	
 
@@ -187,13 +189,13 @@ func _on_interaction_range_body_entered(body):
 		in_hiding_range = true
 		hideLocation = body.global_position
 		popupText.visible = true
-		popupText.text = "Press E to hide"
+		popupText.bbcode_text = "[center]Press E to hide[/center]"
 		popupText.modulate = Color.WHITE
 		hideObject = body
 		
 
 func setPopupText(t, v, c):
-	popupText.text = t
+	popupText.bbcode_text = "[center]" + t + "[/center]"
 	popupText.visible = v
 	popupText.modulate = c
 
