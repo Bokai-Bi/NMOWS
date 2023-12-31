@@ -67,7 +67,6 @@ func _input(event):
 			hide_player()
 		elif in_hiding_range and hiding:
 			unhide_player()
-	print(numKeyFound)
 	
 func pause_input():
 

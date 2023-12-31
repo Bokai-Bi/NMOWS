@@ -1,16 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://botod5i770as7"]
+[gd_scene load_steps=17 format=3 uid="uid://botod5i770as7"]
 
 [ext_resource type="Script" path="res://Scripts/GridPlayer.gd" id="1_k1buu"]
 [ext_resource type="Texture2D" uid="uid://b2irlmioj7bg3" path="res://Sprites/Chase/player_run.png" id="2_ic840"]
 [ext_resource type="FontFile" uid="uid://cotqlt6yhixp1" path="res://DialogueReal/Other/Minecraft.ttf" id="3_nhp3f"]
 [ext_resource type="Texture2D" uid="uid://dcyk8bbm4r0e0" path="res://Sprites/UI/vision blocker.png" id="3_tda5f"]
 [ext_resource type="Texture2D" uid="uid://c3o7fqi4v2eta" path="res://Sprites/UI/blood splatter.png" id="4_68rwe"]
-[ext_resource type="Texture2D" uid="uid://be6mg57q8q25s" path="res://Sprites/UI/scaled_key.png" id="4_p2smy"]
 [ext_resource type="Texture2D" uid="uid://bumixsxmugenu" path="res://spotlight border.png" id="4_q5yl7"]
 [ext_resource type="Texture2D" uid="uid://bc01pv1a61w5m" path="res://Arrow.png" id="5_xrwpc"]
 [ext_resource type="Script" path="res://ObjectScenes/KeyArrow.gd" id="6_5jy7p"]
-[ext_resource type="Script" path="res://ObjectScenes/key1.gd" id="10_au1og"]
-[ext_resource type="Script" path="res://ObjectScenes/key2.gd" id="11_2lvdl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_734vd"]
 size = Vector2(15.3846, 11.5385)
@@ -150,20 +147,6 @@ limit_top = 0
 limit_right = 643
 limit_bottom = 386
 limit_smoothed = true
-
-[node name="key1" type="Sprite2D" parent="Camera2D"]
-z_index = 2
-position = Vector2(75, -50)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_p2smy")
-script = ExtResource("10_au1og")
-
-[node name="key2" type="Sprite2D" parent="Camera2D"]
-z_index = 2
-position = Vector2(50, -50)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_p2smy")
-script = ExtResource("11_2lvdl")
 
 [node name="VisionBlocker" type="Sprite2D" parent="."]
 z_index = 1

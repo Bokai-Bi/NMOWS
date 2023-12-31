@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://m002x72863d0"]
+
+[ext_resource type="Texture2D" uid="uid://be6mg57q8q25s" path="res://Sprites/UI/scaled_key.png" id="1_mvwfn"]
+[ext_resource type="Script" path="res://ObjectScenes/key1.gd" id="2_2ibrb"]
+[ext_resource type="Script" path="res://ObjectScenes/key2.gd" id="3_17ehy"]
+
+[node name="ChaseUI" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Follow the arrow to find keys to the door!"
+horizontal_alignment = 1
+
+[node name="key1" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(1091, 25.6)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_mvwfn")
+script = ExtResource("2_2ibrb")
+
+[node name="key2" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(1128, 25.6)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_mvwfn")
+script = ExtResource("3_17ehy")

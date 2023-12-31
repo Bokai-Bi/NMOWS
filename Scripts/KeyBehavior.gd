@@ -33,6 +33,7 @@ func _input(event):
 		if done:
 			$"../Door".numKeyFound += 1
 			player.numKeyFound += 1
+			get_tree().call_group("keys", "update_keynum", player.numKeyFound)
 			thisFound = true
 			player.setPopupText("Key found!", true, Color.GREEN_YELLOW)
 			var sfx = load("res://Audio/Sound Effects/Fun Button Sound (Collecting keys_).mp3")

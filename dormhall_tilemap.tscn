@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dc8yd26ggjgm8"]
+[gd_scene load_steps=32 format=3 uid="uid://dc8yd26ggjgm8"]
 
 [ext_resource type="Texture2D" uid="uid://cjyf5k7n3bqeg" path="res://lvl2tilemap_interation2.png" id="1_1l73k"]
 [ext_resource type="Texture2D" uid="uid://cokx7ra8nbcpg" path="res://lvl2_tilemap_iteration1.png" id="2_lmf2a"]
@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://bp5ecewp3txcg" path="res://Sprites/Chase/Dorm Room Animations/dormhall table animation.png" id="8_fnht8"]
 [ext_resource type="Texture2D" uid="uid://exvqpg887271" path="res://Sprites/Chase/Dorm Room Animations/fridgeFINALANI.png" id="9_axwhj"]
 [ext_resource type="Texture2D" uid="uid://cp3j1kmbiqgo4" path="res://Sprites/Chase/Dorm Room Animations/trashcans(1)-export-export.png" id="10_gi76n"]
-[ext_resource type="PackedScene" path="res://ObjectScenes/next_Scene_2.tscn" id="11_3wcdn"]
+[ext_resource type="PackedScene" uid="uid://bx5ldnrrii1da" path="res://ObjectScenes/next_Scene_2.tscn" id="11_3wcdn"]
 [ext_resource type="AudioStream" uid="uid://c6brrkany4pkj" path="res://Audio/Gameplay Music.wav" id="12_xxpha"]
 [ext_resource type="Script" path="res://Scripts/KeyBehavior.gd" id="13_6ksyq"]
 [ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="14_srj4o"]
 [ext_resource type="Texture2D" uid="uid://dc71wj1a87f7v" path="res://Sprites/door_naturelab.png" id="15_8ajlv"]
+[ext_resource type="PackedScene" uid="uid://m002x72863d0" path="res://ObjectScenes/chase_ui.tscn" id="16_4a66i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uu45w"]
 texture = ExtResource("1_1l73k")
@@ -1892,7 +1893,7 @@ size = Vector2(815.104, 692.709)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6og3"]
 size = Vector2(53, 52)
 
-[node name="TileMap2" type="TileMap"]
+[node name="TileMap3" type="TileMap"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 tile_set = SubResource("TileSet_drifl")
 format = 2
@@ -2280,6 +2281,8 @@ polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDoor/Door/DoorArea2D"]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_w6og3")
+
+[node name="ChaseUI" parent="." instance=ExtResource("16_4a66i")]
 
 [connection signal="body_entered" from="KeyDoor/Key" to="KeyDoor/Key" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="KeyDoor/Key/KeyArea2D" to="KeyDoor/Key" method="_on_area_2d_body_entered" flags=18]
