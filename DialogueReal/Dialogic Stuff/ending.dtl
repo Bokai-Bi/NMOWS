@@ -12,16 +12,22 @@
 [wait time="2.0"]
 if {level3choice} == "good":
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_7_x3.png" fade="0.0"]
-	[wait time="2.0"]
-	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_8_x1.png" fade="0.0"]
-	[wait time="2.0"]
-	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_9_x16.png" fade="0.0"]
 	join Killer 2
 	Killer (Default): Finally... you have nowhere else to run...
-	Killer (killer_blushing): *ahem* From the moment I laid my eyes on you, I knew...
-	Killer: Even if I were to be a killer (and a horse...)
-	Killer: You would still treat me like a normal person. That your standards for me are as low as they are for everyone else...
-	Killer: And now I know for sure, from the bottom of my heart, that you have a kindred soul...
+	leave Killer
+	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_8_x1.png" fade="0.0"]
+	[wait time="2.0"]
+	join Killer 2
+	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_9_x16.png" fade="0.0"]
+	Killer (killer_blushing): *ahem*
+	Killer: I came out tonight just to vent, but when I heard you speak... something changed in me.
+	Killer: As awkward and clueless as you were in your endeavors, you never stopped trying to find love. At the party... While running away..
+	Killer: Even with 30 minutes left in your life as a single, sad, overworked college student.
+	Killer: You saw past the mask. You showed me it's the inside that counts.
+	Killer: You never give up on your dreams. You're sweet, you're funny, and most of all, you love horse puns...
+	Killer: And now I know for sure,
+	Killer: From the bottom of my heart,
+	Killer: That we are kindred spirits.
 	Killer: You are also
 	Killer: ...
 	Killer: A HORSE (YEEEEEEEEE-HAW!)
