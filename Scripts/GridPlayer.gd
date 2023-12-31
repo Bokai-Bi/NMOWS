@@ -40,7 +40,7 @@ func doorLocked():
 	popupText.bbcode_text = "[center]You need more keys[/center]"
 	popupText.modulate = Color.WHITE
 	await get_tree().create_timer(1.0).timeout
-	if popupText.bbcode_text == "[center]You need more keys[/center]":
+	if popupText.text == "[center]You need more keys[/center]":
 		popupText.visible = false
 
 # Called when the node enters the scene tree for the first time.
