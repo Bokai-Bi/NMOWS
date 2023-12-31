@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://ObjectScenes/Door.gd" id="12_donh2"]
 [ext_resource type="Texture2D" uid="uid://dc71wj1a87f7v" path="res://Sprites/door_naturelab.png" id="13_wtx6g"]
 [ext_resource type="AudioStream" uid="uid://c6brrkany4pkj" path="res://Audio/Gameplay Music.wav" id="14_3av4h"]
-[ext_resource type="PackedScene" uid="uid://dp3s7482q6brl" path="res://ObjectScenes/next_Scene_3.tscn" id="15_tlq7q"]
+[ext_resource type="PackedScene" path="res://ObjectScenes/next_Scene_3.tscn" id="15_tlq7q"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rkpsr"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

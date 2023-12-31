@@ -14,8 +14,10 @@ if {level3choice} == "good":
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_7_x3.png" fade="0.0"]
 	join Killer 2
 	Killer (Default): Finally... you have nowhere else to run...
+	leave Killer
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_8_x1.png" fade="0.0"]
 	[wait time="2.0"]
+	join Killer 2
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_9_x16.png" fade="0.0"]
 	Killer (killer_blushing): *ahem*
 	Killer: I came out tonight just to vent, but when I heard you speak... something changed in me.
