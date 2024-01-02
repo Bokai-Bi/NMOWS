@@ -45,4 +45,5 @@ Killer (killer_angry): That’s enough.
 Killer: All of this running and chasing...
 Killer: It ends now.
 leave Killer
+[music fade="0.0" volume="0.0"]
 set {nextScene} = "true"

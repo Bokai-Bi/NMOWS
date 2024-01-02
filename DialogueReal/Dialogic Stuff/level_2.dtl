@@ -51,5 +51,6 @@ join Killer 2
 Killer (Default): Well, I guess, but... how do I say this... aren't things kind of boring??
 Killer (killer_angry): Show me something interesting or I might actually have to resign myself to the sounds of your blood-curdling screams!
 leave Killer
+[music fade="0.0" volume="0.0"]
 set {nextScene} = "true"
 [end_timeline]

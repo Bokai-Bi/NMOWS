@@ -33,4 +33,5 @@ you: (I need to make this count.)
 	you (fearful): !!
 	you: (Seems like I'm going to need to take a different approach!)
 	leave you
+[music fade="0.0" volume="0.0"]
 set {nextScene} = "true"

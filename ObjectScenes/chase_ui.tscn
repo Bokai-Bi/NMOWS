@@ -6,26 +6,30 @@
 
 [node name="ChaseUI" type="CanvasLayer"]
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="RichTextLabel" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 26.0
+offset_left = 7.0
+offset_right = -381.0
+offset_bottom = 50.0
 grow_horizontal = 2
-text = "Follow the arrow to find keys to the door!"
-horizontal_alignment = 1
+scale = Vector2(1.5, 1.5)
+bbcode_enabled = true
+text = "[center][font_size={22}][color=goldenrod]Follow the arrow to find keys to the door![/color][/font_size][/center]
+
+"
+fit_content = true
 
 [node name="key1" type="Sprite2D" parent="."]
-visible = false
 z_index = 2
-position = Vector2(1091, 25.6)
-scale = Vector2(0.4, 0.4)
+position = Vector2(1050, 50)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_mvwfn")
 script = ExtResource("2_2ibrb")
 
 [node name="key2" type="Sprite2D" parent="."]
-visible = false
 z_index = 2
-position = Vector2(1128, 25.6)
-scale = Vector2(0.4, 0.4)
+position = Vector2(1120, 50)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_mvwfn")
 script = ExtResource("3_17ehy")

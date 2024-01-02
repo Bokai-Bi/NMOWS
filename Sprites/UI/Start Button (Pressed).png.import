@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca1lgrbqlce8y"
-path="res://.godot/imported/vision blocker.png-73e662343f825f0975efa025ba73b52e.ctex"
+uid="uid://bp6i8g7wirxhd"
+path="res://.godot/imported/Start Button (Pressed).png-164950121dda8ebe25669d2ee4fc7575.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/vision blocker.png"
-dest_files=["res://.godot/imported/vision blocker.png-73e662343f825f0975efa025ba73b52e.ctex"]
+source_file="res://Sprites/UI/Start Button (Pressed).png"
+dest_files=["res://.godot/imported/Start Button (Pressed).png-164950121dda8ebe25669d2ee4fc7575.ctex"]
 
 [params]
 

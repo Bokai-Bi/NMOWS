@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://6e04ms1uactl" path="res://Credits Page Update.png" id="1_vrl1r"]
 [ext_resource type="Script" path="res://ReturnButton.gd" id="2_0f8wr"]
-[ext_resource type="Texture2D" uid="uid://pfrhymnlih5u" path="res://Sprites/UI/Exit Button.png" id="3_1xgs8"]
+[ext_resource type="Texture2D" uid="uid://q2t5483l2den" path="res://Sprites/UI/X Button.png" id="3_8y5cp"]
 
 [node name="Credits" type="Node2D"]
 
@@ -13,15 +13,15 @@ texture = ExtResource("1_vrl1r")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = 501.0
-offset_top = 377.0
-offset_right = 663.0
-offset_bottom = 463.0
+offset_left = 1060.0
+offset_top = 22.0
+offset_right = 1117.0
+offset_bottom = 80.0
 script = ExtResource("2_0f8wr")
 
 [node name="ExitButton" type="Sprite2D" parent="."]
-position = Vector2(583, 421)
-scale = Vector2(0.397516, 0.349811)
-texture = ExtResource("3_1xgs8")
+position = Vector2(1090, 50)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_8y5cp")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

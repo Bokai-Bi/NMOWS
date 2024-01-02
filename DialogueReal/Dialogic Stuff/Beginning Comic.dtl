@@ -90,4 +90,5 @@ you: I don't know what's happening, but I have to run!
 leave you
 [background arg="res://How To Play Screen.png" fade="0.0"]
 [wait_input]
+[music fade="0.0" volume="0.0"]
 set {nextScene} = "true"

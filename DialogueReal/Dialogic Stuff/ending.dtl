@@ -1,4 +1,4 @@
-[music path="res://Audio/Dialogue Scenes.mp3" fade="0.0" volume="0.0"]
+[music path="res://Audio/ending_comic.mp3" fade="0.0" volume="0.0"]
 [background arg="res://DialogueReal/Comic Background/GOOD_ENDING_1_x1.png" fade="0.0"]
 [wait time="2.0"]
 [background arg="res://DialogueReal/Comic Background/GOOD_ENDING_2_x1.png" fade="0.0"]
@@ -36,7 +36,6 @@ if {level3choice} == "good":
 	Killer: Please... go out with me!!!
 	Killer: And we can gallop on the highlands of the Himalayans... And eat up all the grass on Brown's green!!!
 	leave Killer
-	[music path="res://Audio/ending_comic.mp3" fade="0.0" volume="0.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_10_x1.png" fade="0.0"]
 	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_11_x1.png" fade="0.0"]
