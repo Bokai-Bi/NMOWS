@@ -12,7 +12,7 @@
 [background arg="res://DialogueReal/Comic Background/GOOD_ENDING_6_x1.png" fade="0.0"]
 [wait time="2.0"]
 if {level3choice} == "good":
-	[music path="res://Audio/Good Ending.wav" fade="0.0" volume="0.0"]
+	[music path="res://Audio/Good Ending.mp3" fade="0.0" volume="0.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_7_x3.png" fade="0.0"]
 	join Killer 2
 	Killer (Default): Finally... you have nowhere else to run...
@@ -42,7 +42,7 @@ if {level3choice} == "good":
 	[wait time="3.0"]
 	[background arg="res://Credits Page update.png" fade="0.0"]
 else:
-	[music path="res://Audio/Bad Ending.wav" fade="0.0" volume="0.0"]
+	[music path="res://Audio/Bad Ending.mp3" fade="0.0" volume="0.0"]
 	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-7-x1.png" fade="0.0"]
 	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-8-x1.png" fade="0.0"]
