@@ -21,6 +21,7 @@ text = "[center][font_size={22}][color=goldenrod]Follow the arrow to find keys t
 fit_content = true
 
 [node name="key1" type="Sprite2D" parent="."]
+visible = false
 z_index = 2
 position = Vector2(1050, 50)
 scale = Vector2(0.75, 0.75)
@@ -28,6 +29,7 @@ texture = ExtResource("1_mvwfn")
 script = ExtResource("2_2ibrb")
 
 [node name="key2" type="Sprite2D" parent="."]
+visible = false
 z_index = 2
 position = Vector2(1120, 50)
 scale = Vector2(0.75, 0.75)
