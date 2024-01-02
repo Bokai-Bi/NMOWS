@@ -43,6 +43,7 @@ Killer (killer_fearful): !!!!
 Killer: M-me?? You really think I...
 Killer: You don't know me!
 leave Killer
+[music fade="0.0" volume="0.0"]
 set {nextScene} = "true"
 [end_timeline]
 label Unamused
