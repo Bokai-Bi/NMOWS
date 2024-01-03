@@ -40,7 +40,7 @@ if {level3choice} == "good":
 	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/GOOD_ENDING_11_x1.png" fade="0.0"]
 	[wait time="3.0"]
-	[background arg="res://Credits Page update.png" fade="0.0"]
+	[background arg="res://DialogueReal/Comic Background/Credits Page Update.png" fade="0.0"]
 else:
 	[music path="res://Audio/Bad Ending.mp3" fade="0.0" volume="0.0"]
 	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-7-x1.png" fade="0.0"]
@@ -79,6 +79,6 @@ else:
 	[wait time="2.0"]
 	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-18-x1.png" fade="0.0"]
 	[wait time="2.0"]
-	[background arg="res://DialogueReal/Comic Background/bad_ending_comics/BAD_ENDING-19-x1.png" fade="0.0"]
+	[background arg="BAD_ENDING-19-x1.png" fade="0.0"]
 	[wait time="3.0"]
-	[background arg="res://Credits Page update.png" fade="0.0"]
+	[background arg="res://DialogueReal/Comic Background/Credits Page Update.png" fade="0.0"]

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://f7q0pgcgmc4v" path="res://ObjectScenes/grid_killer.tscn" id="5_2b0qb"]
 [ext_resource type="Script" path="res://ObjectScenes/hideable_box.gd" id="6_7l68m"]
 [ext_resource type="Shader" path="res://hideable_box.gdshader" id="7_8n7pf"]
-[ext_resource type="Texture2D" uid="uid://bp5ecewp3txcg" path="res://Sprites/Chase/Dorm Room Animations/dormhall table animation.png" id="8_fnht8"]
+[ext_resource type="Texture2D" uid="uid://80dit544hf1v" path="res://Sprites/Chase/Dorm Room Animations/dormhall table animation_fixed.png" id="8_oanp3"]
 [ext_resource type="Texture2D" uid="uid://exvqpg887271" path="res://Sprites/Chase/Dorm Room Animations/fridgeFINALANI.png" id="9_axwhj"]
 [ext_resource type="Texture2D" uid="uid://cp3j1kmbiqgo4" path="res://Sprites/Chase/Dorm Room Animations/trashcans(1)-export-export.png" id="10_gi76n"]
 [ext_resource type="PackedScene" uid="uid://bx5ldnrrii1da" path="res://ObjectScenes/next_Scene_2.tscn" id="11_3wcdn"]
@@ -1858,10 +1858,10 @@ tracks/0/path = NodePath("Icon:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [1, 2]
+"values": [2, 1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_dtmmr"]
@@ -1956,10 +1956,10 @@ script = ExtResource("6_7l68m")
 [node name="Icon" type="Sprite2D" parent="hideable objects/tables/hideable_box/hideable_Box"]
 material = SubResource("ShaderMaterial_l26xk")
 scale = Vector2(3.42188, 3.60938)
-texture = ExtResource("8_fnht8")
+texture = ExtResource("8_oanp3")
 flip_h = true
 flip_v = true
-hframes = 3
+hframes = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/tables/hideable_box/hideable_Box"]
 position = Vector2(-4.76837e-07, 2)
@@ -1982,10 +1982,10 @@ script = ExtResource("6_7l68m")
 [node name="Icon" type="Sprite2D" parent="hideable objects/tables/hideable_box3/hideable_Box"]
 material = SubResource("ShaderMaterial_l26xk")
 scale = Vector2(3.42188, 3.60938)
-texture = ExtResource("8_fnht8")
+texture = ExtResource("8_oanp3")
 flip_h = true
 flip_v = true
-hframes = 3
+hframes = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/tables/hideable_box3/hideable_Box"]
 position = Vector2(-4.76837e-07, 2)
@@ -2008,10 +2008,10 @@ script = ExtResource("6_7l68m")
 [node name="Icon" type="Sprite2D" parent="hideable objects/tables/hideable_box4/hideable_Box"]
 material = SubResource("ShaderMaterial_l26xk")
 scale = Vector2(3.42188, 3.60938)
-texture = ExtResource("8_fnht8")
+texture = ExtResource("8_oanp3")
 flip_h = true
 flip_v = true
-hframes = 3
+hframes = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/tables/hideable_box4/hideable_Box"]
 position = Vector2(-4.76837e-07, 2)
@@ -2034,10 +2034,10 @@ script = ExtResource("6_7l68m")
 [node name="Icon" type="Sprite2D" parent="hideable objects/tables/hideable_box2/hideable_Box"]
 material = SubResource("ShaderMaterial_l26xk")
 scale = Vector2(3.42188, 3.60938)
-texture = ExtResource("8_fnht8")
+texture = ExtResource("8_oanp3")
 flip_h = true
 flip_v = true
-hframes = 3
+hframes = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hideable objects/tables/hideable_box2/hideable_Box"]
 scale = Vector2(3.42188, 3.60938)
